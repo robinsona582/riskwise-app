@@ -44,37 +44,37 @@
         :root {
             /* Colors - Primary (accent - use sparingly, for signal only) */
             --color-primary: #34D399;
-            --color-primary-dark: #34D399;
-            --color-primary-subtle: rgba(52, 211, 153, 0.10);
-            --color-primary-faint: rgba(52, 211, 153, 0.06);
+            --color-primary-dark: #2BC48A;
+            --color-primary-subtle: rgba(52, 211, 153, 0.08);
+            --color-primary-faint: rgba(52, 211, 153, 0.04);
             
             /* Colors - Semantic (muted, institutional — not emotional) */
-            --color-danger: #E53E3E;
-            --color-danger-subtle: rgba(229, 62, 62, 0.10);
-            --color-warning: #FBBF24;
-            --color-warning-subtle: rgba(251, 191, 36, 0.10);
-            --color-info: #93C5FD;
-            --color-info-subtle: rgba(147, 197, 253, 0.10);
+            --color-danger: #EF4444;
+            --color-danger-subtle: rgba(239, 68, 68, 0.08);
+            --color-warning: #F59E0B;
+            --color-warning-subtle: rgba(245, 158, 11, 0.08);
+            --color-info: #67E8F9;
+            --color-info-subtle: rgba(103, 232, 249, 0.08);
             
-            /* Colors - Background (tighter progression, less jump between layers) */
-            --bg-base: #0a0a0c;
-            --bg-surface: #101014;
-            --bg-elevated: #16161a;
-            --bg-hover: #1c1c21;
+            /* Colors - Background (tighter progression, refined surfaces) */
+            --bg-base: #09090b;
+            --bg-surface: #0f0f13;
+            --bg-elevated: #141418;
+            --bg-hover: #1a1a1f;
             --bg-overlay: rgba(0, 0, 0, 0.85);
             
-            /* Colors - Border (consistent opacity ramp) */
-            --border-subtle: rgba(255, 255, 255, 0.05);
-            --border-medium: rgba(255, 255, 255, 0.09);
-            --border-strong: rgba(255, 255, 255, 0.13);
+            /* Colors - Border (crisp, precise) */
+            --border-subtle: rgba(255, 255, 255, 0.04);
+            --border-medium: rgba(255, 255, 255, 0.07);
+            --border-strong: rgba(255, 255, 255, 0.12);
             
-            /* Colors - Text (refined hierarchy — primary is slightly warm-white for less eye strain) */
+            /* Colors - Text (refined hierarchy) */
             --text-primary: #f0f0f2;
-            --text-secondary: rgba(240, 240, 242, 0.72);
-            --text-tertiary: rgba(240, 240, 242, 0.50);
-            --text-muted: rgba(240, 240, 242, 0.44);
+            --text-secondary: rgba(240, 240, 242, 0.65);
+            --text-tertiary: rgba(240, 240, 242, 0.42);
+            --text-muted: rgba(240, 240, 242, 0.28);
             
-            /* Typography Scale — legible at all sizes */
+            /* Typography Scale */
             --text-3xl: 34px;
             --text-2xl: 26px;
             --text-xl: 20px;
@@ -94,17 +94,17 @@
             --space-10: 40px;
             --space-12: 48px;
             
-            /* Border Radius (strict 3-tier) */
+            /* Border Radius (tighter, sharper) */
             --radius-xs: 4px;
             --radius-sm: 6px;
-            --radius-md: 10px;
-            --radius-lg: 14px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
             
-            /* Shadows (layered for realistic depth) */
-            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.24), 0 2px 8px rgba(0, 0, 0, 0.12);
-            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.28), 0 8px 24px rgba(0, 0, 0, 0.16);
-            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.32), 0 16px 48px rgba(0, 0, 0, 0.20);
-            --shadow-glow: 0 0 40px rgba(52, 211, 153, 0.06);
+            /* Shadows (more depth, sharper edges) */
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3), 0 2px 6px rgba(0, 0, 0, 0.15);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.35), 0 8px 24px rgba(0, 0, 0, 0.2);
+            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.4), 0 16px 48px rgba(0, 0, 0, 0.25);
+            --shadow-glow: 0 0 30px rgba(52, 211, 153, 0.04);
             
             /* Transitions (refined easing — snappier fast, smoother slow) */
             --transition-fast: 0.12s cubic-bezier(0.2, 0, 0, 1);
@@ -194,7 +194,7 @@
             -moz-osx-font-smoothing: grayscale;
             
             /* Animated gradient background */
-            background: #0a0a0c;
+            background: #08080a;
             position: relative;
             overflow-x: hidden;
             
@@ -1020,18 +1020,18 @@
         /* Mode Switcher */
         .mode-switcher {
             display: flex;
-            gap: 4px;
-            padding: 4px;
-            background: rgba(0,0,0,0.4);
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 10px;
+            gap: 2px;
+            padding: 3px;
+            background: rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 9px;
         }
         
         .mode-btn {
             display: flex;
             align-items: center;
             gap: 6px;
-            padding: 8px 12px;
+            padding: 7px 12px;
             background: transparent;
             border: none;
             border-radius: 7px;
@@ -1040,22 +1040,22 @@
         }
         
         .mode-btn svg {
-            width: 14px;
-            height: 14px;
-            stroke: var(--text-tertiary);
+            width: 13px;
+            height: 13px;
+            stroke: rgba(255,255,255,0.25);
             transition: stroke 0.15s ease;
         }
         
         .mode-btn span {
             font-size: 12px;
             font-weight: 500;
-            color: var(--text-tertiary);
+            color: rgba(255,255,255,0.25);
             letter-spacing: 0.01em;
             transition: color 0.15s ease;
         }
         
         .mode-btn:hover {
-            background: rgba(255,255,255,0.05);
+            background: rgba(255,255,255,0.03);
         }
         
         .mode-btn:hover svg {
@@ -1067,7 +1067,7 @@
         }
         
         .mode-btn.active {
-            background: rgba(255,255,255,0.08);
+            background: rgba(255,255,255,0.05);
         }
         
         .mode-btn.active svg {
@@ -1075,7 +1075,8 @@
         }
         
         .mode-btn.active span {
-            color: rgba(255,255,255,0.9);
+            color: rgba(255,255,255,0.85);
+            font-weight: 600;
         }
         
         /* ============================================
@@ -2616,15 +2617,15 @@
             color: #34D399;
         }
         .mc-v2-title {
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 700;
-            color: rgba(240,240,242,0.85);
-            letter-spacing: -0.02em;
+            color: rgba(240,240,242,0.9);
+            letter-spacing: -0.025em;
             display: block;
         }
         .mc-v2-sub {
-            font-size: 12px;
-            color: rgba(255,255,255,0.30);
+            font-size: 11px;
+            color: rgba(255,255,255,0.22);
             display: block;
             margin-top: 4px;
             line-height: 1.5;
@@ -2632,23 +2633,26 @@
         .mc-v2-params {
             display: flex;
             justify-content: space-around;
-            padding: 14px 24px;
-            border-bottom: 1px solid var(--border-subtle);
+            padding: 12px 24px;
+            border-bottom: 1px solid rgba(255,255,255,0.03);
             flex-shrink: 0;
         }
         .mc-v2-param { text-align: center; }
         .mc-v2-param-val {
             font-family: 'IBM Plex Mono', monospace;
-            font-size: 16px;
-            font-weight: 600;
+            font-size: 15px;
+            font-weight: 700;
             color: var(--text-primary);
             display: block;
+            letter-spacing: -0.02em;
         }
         .mc-v2-param-lbl {
-            font-size: 12px;
-            color: var(--text-muted);
+            font-size: 10px;
+            color: rgba(255,255,255,0.22);
             display: block;
-            margin-top: 2px;
+            margin-top: 3px;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
         }
         .mc-v2-annotation {
             text-align: center;
@@ -2787,10 +2791,10 @@
             padding-bottom: 0;
         }
         .mc-v2-expect-title {
-            font-size: 11px;
+            font-size: 10px;
             font-weight: 700;
-            color: rgba(240,240,242,0.45);
-            letter-spacing: 0.05em;
+            color: rgba(240,240,242,0.35);
+            letter-spacing: 0.06em;
             text-transform: uppercase;
             margin-bottom: 8px;
         }
@@ -2798,17 +2802,16 @@
             display: flex;
             justify-content: space-between;
             align-items: baseline;
-            padding: 3px 6px;
-            margin: 0 -6px;
-            border-radius: 4px;
-            transition: background 0.15s ease;
+            padding: 4px 0;
+            border-radius: 0;
+            transition: none;
         }
         .mc-v2-expect-row:hover {
-            background: rgba(255,255,255,0.02);
+            background: none;
         }
         .mc-v2-expect-lbl {
             font-size: 12px;
-            color: rgba(255,255,255,0.4);
+            color: rgba(255,255,255,0.32);
         }
         .mc-v2-expect-val {
             font-family: 'IBM Plex Mono', monospace;
@@ -2816,6 +2819,7 @@
             font-weight: 600;
             color: var(--text-primary);
             font-variant-numeric: tabular-nums;
+            letter-spacing: -0.01em;
             transition: color 0.3s ease;
         }
         .mc-v2-expect-val.positive { color: var(--color-primary); }
@@ -2837,8 +2841,66 @@
             transition: width 0.4s ease, background 0.4s ease;
         }
         /* Insight strip - full width */
-        /* Risk Profile tooltip */
+        /* Risk Engine tooltip */
         .rp-info-trigger:hover svg { stroke: rgba(255,255,255,0.5); }
+        
+        /* Diagnostic Mode Selector */
+        .diag-mode-bar {
+            display: none;
+            justify-content: center;
+            gap: 2px;
+            padding: 6px;
+            background: rgba(255,255,255,0.015);
+            border: 1px solid rgba(255,255,255,0.04);
+            border-radius: 10px;
+            width: fit-content;
+            margin: 0 auto;
+        }
+        body.full-mode .diag-mode-bar {
+            display: flex;
+            position: absolute;
+            top: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 5;
+        }
+        .diag-mode-btn {
+            padding: 7px 16px;
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 500;
+            color: rgba(255,255,255,0.18);
+            background: none;
+            border: 1px solid transparent;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.15s;
+            letter-spacing: 0.02em;
+        }
+        .diag-mode-btn:hover {
+            color: rgba(255,255,255,0.35);
+            background: rgba(255,255,255,0.02);
+        }
+        .diag-mode-btn.active {
+            color: #f0f0f2;
+            background: rgba(255,255,255,0.03);
+            border-color: rgba(255,255,255,0.06);
+            font-weight: 600;
+        }
+        
+        /* Diagnostic panel content swapping */
+        .diag-content { display: none; }
+        .diag-content.active { display: flex; flex-direction: column; height: 100%; }
+        
+        /* Drawdown mode styles */
+        .dd-distribution-chart { width: 100%; height: 200px; position: relative; }
+        .dd-percentile-label { font-family: var(--font-mono); font-size: 28px; font-weight: 700; }
+        .dd-insight-box { padding: 10px 14px; border-radius: 8px; font-size: 12px; line-height: 1.6; }
+        .dd-insight-normal { background: rgba(52,211,153,0.03); border: 1px solid rgba(52,211,153,0.06); color: rgba(255,255,255,0.5); }
+        .dd-insight-warning { background: rgba(239,68,68,0.03); border: 1px solid rgba(239,68,68,0.06); color: rgba(255,255,255,0.5); }
+        .dd-stat-row { display: flex; justify-content: space-between; align-items: baseline; padding: 5px 0; font-size: 12px; }
+        .dd-stat-label { color: rgba(255,255,255,0.3); }
+        .dd-stat-value { font-family: var(--font-mono); font-weight: 600; letter-spacing: -0.01em; }
         
         .mc-v2-insight {
             padding: 14px 24px;
@@ -3651,14 +3713,14 @@
         /* Compact instrument panel */
         .instrument {
             width: 480px;
-            background: #131317;
-            border: 1px solid rgba(255, 255, 255, 0.07);
+            background: linear-gradient(180deg, #111115 0%, #0d0d11 100%);
+            border: 1px solid rgba(255, 255, 255, 0.06);
             border-radius: var(--radius-lg);
             overflow: hidden;
             box-shadow: 
                 var(--shadow-lg),
-                0 0 0 1px rgba(255, 255, 255, 0.03),
-                0 0 40px rgba(0, 0, 0, 0.3);
+                0 0 0 1px rgba(255, 255, 255, 0.02),
+                0 0 60px rgba(0, 0, 0, 0.4);
             transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1),
                         transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
@@ -3690,12 +3752,12 @@
         
         /* Header */
         .header {
-            padding: var(--space-5);
-            border-bottom: 1px solid var(--border-subtle);
+            padding: 16px var(--space-5);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, transparent 100%);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.015) 0%, transparent 100%);
             transition: padding var(--transition-smooth);
         }
         
@@ -4663,23 +4725,26 @@
         
         /* Trade Input Section */
         .trade-input-section {
-            padding: 20px var(--space-5);
-            border-top: 1px solid rgba(255, 255, 255, 0.06);
-            background: rgba(0, 0, 0, 0.18);
+            padding: 28px var(--space-5) 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.25) 100%);
             position: relative;
             transition: box-shadow 0.3s ease;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
         
         .trade-input-section:focus-within {
             box-shadow: 
-                0 0 30px rgba(52, 211, 153, 0.04),
-                0 0 60px rgba(52, 211, 153, 0.02),
-                inset 0 0 20px rgba(52, 211, 153, 0.02);
+                inset 0 1px 0 rgba(52, 211, 153, 0.03),
+                0 0 40px rgba(52, 211, 153, 0.02);
         }
         
         .trade-inputs-row {
             display: flex;
-            gap: var(--space-3);
+            gap: 12px;
         }
         
         .trade-input-field {
@@ -4700,11 +4765,11 @@
         }
         
         .input-label {
-            font-size: 13px;
+            font-size: 14px;
             letter-spacing: -0.01em;
-            color: rgba(240,240,242,0.55);
+            color: rgba(240,240,242,0.6);
             display: block;
-            margin-bottom: var(--space-3);
+            margin-bottom: 14px;
             font-weight: 600;
         }
         
@@ -4717,15 +4782,15 @@
         }
         
         .input-field {
-            background: rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(255,255,255,0.06);
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255,255,255,0.05);
             border-radius: var(--radius-sm);
-            padding: var(--space-3) var(--space-4);
+            padding: 14px var(--space-4);
             font-family: 'IBM Plex Mono', monospace;
-            font-size: var(--text-lg);
+            font-size: 18px;
             color: var(--text-primary);
             outline: none;
-            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.12);
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
             transition: 
                 border-color 0.15s ease,
                 box-shadow 0.15s ease;
@@ -4734,12 +4799,12 @@
         }
         
         .input-field:hover {
-            border-color: rgba(255, 255, 255, 0.10);
+            border-color: rgba(255, 255, 255, 0.08);
         }
         
         .input-field:focus {
-            border-color: rgba(52, 211, 153, 0.4);
-            box-shadow: 0 0 0 2px rgba(52, 211, 153, 0.1);
+            border-color: rgba(52, 211, 153, 0.3);
+            box-shadow: 0 0 0 2px rgba(52, 211, 153, 0.06), inset 0 1px 3px rgba(0, 0, 0, 0.2);
         }
         
         .input-field.negative {
@@ -4838,11 +4903,11 @@
         
         .pnl-submit-btn {
             position: absolute;
-            right: 4px;
-            width: 32px;
-            height: 32px;
-            background: var(--color-primary-subtle);
-            border: none;
+            right: 5px;
+            width: 38px;
+            height: 38px;
+            background: rgba(52, 211, 153, 0.06);
+            border: 1px solid rgba(52, 211, 153, 0.1);
             border-radius: var(--radius-sm);
             cursor: pointer;
             display: flex;
@@ -4851,17 +4916,17 @@
             transition: 
                 background var(--transition-fast),
                 transform var(--transition-fast),
-                box-shadow var(--transition-fast);
+                border-color var(--transition-fast);
         }
         
         .pnl-submit-btn:hover {
-            background: rgba(52, 211, 153, 0.2);
-            box-shadow: 0 0 12px rgba(52, 211, 153, 0.1);
+            background: rgba(52, 211, 153, 0.12);
+            border-color: rgba(52, 211, 153, 0.18);
         }
         
         .pnl-submit-btn:active {
             transform: scale(0.95);
-            background: rgba(52, 211, 153, 0.25);
+            background: rgba(52, 211, 153, 0.18);
         }
         
         /* Success animation */
@@ -5379,8 +5444,8 @@
             font-size: 22px;
             color: var(--text-primary);
             font-variant-numeric: tabular-nums;
-            letter-spacing: -0.02em;
-            font-weight: 600;
+            letter-spacing: -0.03em;
+            font-weight: 700;
             overflow: hidden;
             position: relative;
         }
@@ -10639,1875 +10704,738 @@
             }
         }
         
-        /* ===== LANDING PAGE ===== */
+        /* Mobile gate - hide on desktop and during landing */
+        .mobile-gate { display: none; }
+        body.show-landing .mobile-gate { display: none !important; }
+
+        /* ===== LANDING PAGE v7 ===== */
         .landing-wrapper {
             font-family: 'IBM Plex Sans', -apple-system, sans-serif;
-            overflow-x: hidden;
-            overflow-y: auto;
             position: fixed;
             inset: 0;
             z-index: 9999;
-            background: #0a0a0c;
-        }
-        .landing-wrapper::before {
-            content: '';
-            position: fixed;
-            top: -20%;
-            right: -10%;
-            width: 60%;
-            height: 80%;
-            background: radial-gradient(ellipse, rgba(52,211,153,0.04) 0%, transparent 60%);
-            pointer-events: none;
-            z-index: 0;
-        }
-        .landing-wrapper::after {
-            content: '';
-            position: fixed;
-            bottom: -30%;
-            left: -15%;
-            width: 50%;
-            height: 70%;
-            background: radial-gradient(ellipse, rgba(52,211,153,0.03) 0%, transparent 60%);
-            pointer-events: none;
-            z-index: 0;
-        }
-        
-        body.show-landing .landing-wrapper {
-            display: block;
-        }
-        body:not(.show-landing) .landing-wrapper {
-            display: none;
-        }
-        body.show-landing .shell,
-        body.show-landing .shell-controls,
-        body.show-landing .shell-controls-left,
-        body.show-landing #journalViewBox,
-        body.show-landing #progressionViewBox {
-            display: none !important;
-        }
-        
-        /* Navbar */
-        .lp-nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 200;
-            padding: 16px 32px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
             background: transparent;
-            transition: background 0.3s ease, border-color 0.3s ease;
-            border-bottom: 1px solid transparent;
+            overflow-x: hidden;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
         }
-        .lp-nav.scrolled {
-            background: rgba(10, 10, 12, 0.92);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border-bottom-color: rgba(255,255,255,0.04);
-        }
-        .lp-nav-logo {
+        body.show-landing .landing-wrapper { display: block; }
+        body:not(.show-landing) .landing-wrapper { display: none; }
+
+        .lp2-section {
+            padding: 100px 40px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            justify-content: center;
+            position: relative;
+            background: #06060a;
+            width: 100%;
+            box-sizing: border-box;
+            margin: 0;
         }
-        .lp-nav-logo-mark {
-            width: 28px; height: 28px;
-            border-radius: 7px;
-            overflow: hidden;
+        .lp2-hero.lp2-section {
+            background: transparent;
         }
-        .lp-nav-logo-mark img {
-            width: 100%; height: 100%; object-fit: cover;
+        /* Solid backdrop after hero to cover the product */
+        .lp2-sections-bg {
+            background: #06060a;
         }
-        .lp-nav-logo-text {
-            font-size: 16px;
-            font-weight: 600;
-            color: var(--text-primary);
-            letter-spacing: -0.02em;
+        .lp2-narrow {
+            max-width: 640px;
+            margin: 0 auto;
+            flex-direction: column;
+            text-align: center;
         }
-        .lp-nav-cta {
-            font-size: 13px;
-            font-weight: 500;
-            color: var(--color-primary);
-            background: rgba(52,211,153,0.08);
-            border: 1px solid rgba(52,211,153,0.15);
-            border-radius: 8px;
-            padding: 8px 18px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            letter-spacing: -0.01em;
-        }
-        .lp-nav-cta:hover {
-            background: rgba(52,211,153,0.14);
-            border-color: rgba(52,211,153,0.3);
-        }
-        
+
         /* Hero */
-        .lp-hero {
+        .lp2-hero {
+            min-height: 100vh;
+            padding: 0;
+            position: relative;
+            overflow: hidden;
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 100px 32px 60px;
-            position: relative;
-            text-align: center;
-            overflow: hidden;
+            justify-content: center;
         }
-        .lp-hero::before {
+        .lp2-hero-veil {
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(ellipse 25% 30% at 75% 45%, rgba(4,4,8,0.35) 0%, rgba(4,4,8,0.55) 100%),
+                radial-gradient(ellipse 55% 45% at 50% 50%, rgba(4,4,8,0.45) 0%, rgba(4,4,8,0.68) 40%, rgba(4,4,8,0.88) 100%);
+            backdrop-filter: blur(2px);
+            -webkit-backdrop-filter: blur(2px);
+            z-index: 1;
+        }
+        /* Subtle glow revealing the survival ring area */
+        .lp2-hero-veil::after {
             content: '';
             position: absolute;
-            top: -30%;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 1000px;
-            height: 1000px;
-            background: radial-gradient(ellipse, rgba(52,211,153,0.06) 0%, rgba(52,211,153,0.02) 30%, transparent 70%);
+            top: 30%;
+            right: 10%;
+            width: 320px;
+            height: 320px;
+            background: radial-gradient(circle, rgba(52,211,153,0.07) 0%, rgba(52,211,153,0.02) 40%, transparent 70%);
+            border-radius: 50%;
             pointer-events: none;
         }
-        .lp-hero::after {
-            content: '';
+        .lp2-nav {
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            bottom: 0;
-            background: 
-                linear-gradient(180deg, transparent 60%, var(--bg-base) 100%),
-                repeating-linear-gradient(0deg, transparent, transparent 80px, rgba(255,255,255,0.015) 80px, rgba(255,255,255,0.015) 81px),
-                repeating-linear-gradient(90deg, transparent, transparent 80px, rgba(255,255,255,0.015) 80px, rgba(255,255,255,0.015) 81px);
-            pointer-events: none;
-        }
-        
-        .lp-badge {
-            display: inline-flex;
+            z-index: 10;
+            display: flex;
             align-items: center;
-            gap: 8px;
-            padding: 6px 16px;
-            border-radius: 20px;
-            background: rgba(52,211,153,0.06);
-            border: 1px solid rgba(52,211,153,0.1);
-            margin-bottom: 36px;
-            animation: lpFadeUp 0.6s ease 0.1s backwards;
+            justify-content: space-between;
+            padding: 24px 60px;
+        }
+        .lp2-hero-center {
             position: relative;
             z-index: 2;
+            text-align: center;
+            max-width: 680px;
+            padding: 0 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-        .lp-badge-dot {
-            width: 6px; height: 6px;
-            border-radius: 50%;
-            background: var(--color-primary);
-            animation: lpPulse 2s ease-in-out infinite;
+        .lp2-scroll-hint {
+            position: absolute;
+            bottom: 32px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            color: rgba(255,255,255,0.15);
+            font-size: 11px;
+            font-family: 'IBM Plex Mono', monospace;
+            letter-spacing: 0.05em;
+            animation: lp2ScrollBounce 2s ease infinite;
         }
-        @keyframes lpPulse {
-            0%, 100% { opacity: 0.5; transform: scale(1); }
-            50% { opacity: 1; transform: scale(1.3); }
-        }
-        .lp-badge-text {
-            font-size: 12px;
-            font-weight: 500;
-            color: rgba(52,211,153,0.8);
-            letter-spacing: 0.02em;
+        @keyframes lp2ScrollBounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(4px); }
         }
         
-        .lp-headline {
-            font-size: clamp(42px, 6.5vw, 76px);
-            font-weight: 700;
-            color: var(--text-primary);
-            letter-spacing: -0.04em;
-            line-height: 1.05;
-            margin-bottom: 24px;
-            max-width: 800px;
-            animation: lpFadeUp 0.6s ease 0.2s backwards;
-            position: relative;
-            z-index: 2;
-        }
-        .lp-headline-accent {
-            background: linear-gradient(135deg, var(--color-primary) 0%, #6EE7B7 50%, #34D399 100%);
+        /* Hero gradient heading */
+        .lp2-h1-gradient {
+            font-size: clamp(40px, 5.5vw, 62px);
+            font-weight: 800;
+            line-height: 1.18;
+            letter-spacing: -0.045em;
+            margin: 0 0 40px;
+            background: linear-gradient(145deg, #ffffff 20%, rgba(255,255,255,0.25) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-        }
-        
-        .lp-sub {
-            font-size: clamp(16px, 2vw, 18px);
-            color: rgba(255,255,255,0.5);
-            max-width: 540px;
-            line-height: 1.6;
-            margin-bottom: 40px;
-            animation: lpFadeUp 0.6s ease 0.3s backwards;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .lp-cta-group {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 14px;
-            animation: lpFadeUp 0.6s ease 0.4s backwards;
-            position: relative;
-            z-index: 2;
-        }
-        .lp-cta-primary {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 16px 36px;
-            background: var(--color-primary);
-            color: #0a0a0c;
-            font-size: 15px;
-            font-weight: 700;
-            border: none;
-            border-radius: 12px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            letter-spacing: -0.01em;
-            box-shadow: 0 0 40px rgba(52,211,153,0.15), 0 4px 16px rgba(0,0,0,0.3);
-        }
-        .lp-cta-primary:hover {
-            background: #6EE7B7;
-            transform: translateY(-2px);
-            box-shadow: 0 0 60px rgba(52,211,153,0.25), 0 8px 32px rgba(0,0,0,0.3);
-        }
-        .lp-cta-primary svg {
-            width: 18px; height: 18px;
-            stroke: #0a0a0c;
-            transition: transform 0.2s ease;
-        }
-        .lp-cta-primary:hover svg {
-            transform: translateX(3px);
-        }
-        .lp-cta-note {
-            font-size: 13px;
-            color: var(--text-muted);
-        }
-        
-        /* Instrument preview */
-        .lp-preview {
-            margin-top: 64px;
-            width: 100%;
-            max-width: 900px;
-            animation: lpFadeUp 0.8s ease 0.5s backwards;
-            position: relative;
-            z-index: 2;
-        }
-        .lp-preview-frame {
-            background: linear-gradient(180deg, rgba(17,17,22,0.95) 0%, rgba(12,12,16,0.98) 100%);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255,255,255,0.06);
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 
-                0 32px 80px rgba(0,0,0,0.5), 
-                0 0 0 1px rgba(255,255,255,0.02),
-                0 0 120px rgba(52,211,153,0.06),
-                0 0 240px rgba(52,211,153,0.03);
-            position: relative;
-        }
-        .lp-preview-frame::before {
-            content: '';
-            position: absolute;
-            top: -80px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60%;
-            height: 200px;
-            background: radial-gradient(ellipse, rgba(52,211,153,0.08) 0%, transparent 70%);
-            pointer-events: none;
-            z-index: 0;
-        }
-        .lp-preview-bar {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            padding: 12px 16px;
-            border-bottom: 1px solid rgba(255,255,255,0.04);
-        }
-        .lp-preview-dot {
-            width: 8px; height: 8px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.08);
-        }
-        .lp-preview-body {
-            padding: 32px;
-            display: grid;
-            grid-template-columns: 1fr 1.3fr 1fr;
-            gap: 20px;
-            min-height: 220px;
-        }
-        @media (max-width: 700px) {
-            .lp-preview-body {
-                grid-template-columns: 1fr;
-                min-height: auto;
-            }
-        }
-        .lp-preview-col {
-            border-radius: 10px;
-            padding: 16px;
-            background: rgba(255,255,255,0.02);
-            border: 1px solid rgba(255,255,255,0.04);
-        }
-        .lp-preview-col-label {
-            font-size: 10px;
-            font-weight: 600;
-            color: rgba(255,255,255,0.25);
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            margin-bottom: 12px;
-        }
-        .lp-preview-stat {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 5px 0;
-        }
-        .lp-preview-stat-label {
-            font-size: 12px;
-            color: var(--text-muted);
-        }
-        .lp-preview-stat-value {
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 13px;
-            font-weight: 500;
-            color: var(--text-primary);
-        }
-        .lp-preview-stat-value.green { color: var(--color-primary); }
-        .lp-preview-stat-value.red { color: var(--color-danger); }
-        .lp-preview-center {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-        }
-        .lp-preview-equity {
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--text-primary);
-        }
-        .lp-preview-equity-label {
-            font-size: 11px;
-            color: var(--text-muted);
-        }
-        .lp-preview-streak {
-            display: flex;
-            gap: 4px;
-            margin-top: 8px;
-        }
-        .lp-preview-streak-dot {
-            width: 10px; height: 10px;
-            border-radius: 50%;
-        }
-        .lp-preview-streak-dot.w { background: var(--color-primary); }
-        .lp-preview-streak-dot.l { background: var(--color-danger); }
-        
-        /* Detailed instrument preview */
-        .lp-preview-instrument {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr 1fr;
-            gap: 12px;
-            padding: 16px;
-        }
-        @media (max-width: 800px) {
-            .lp-preview-instrument {
-                grid-template-columns: 1fr;
-            }
-        }
-        .lp-panel {
-            background: rgba(255,255,255,0.015);
-            border: 1px solid rgba(255,255,255,0.04);
-            border-radius: 10px;
-            padding: 14px 16px;
-            font-size: 11px;
-        }
-        .lp-panel-center {
-            background: #131317;
-            border-color: rgba(255,255,255,0.06);
-        }
-        .lp-panel-header {
-            font-size: 12px;
-            font-weight: 600;
-            color: rgba(255,255,255,0.4);
-            margin-bottom: 2px;
-        }
-        .lp-panel-sub {
-            font-size: 10px;
-            color: rgba(255,255,255,0.2);
-            margin-bottom: 12px;
-        }
-        .lp-dd-value {
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--text-primary);
-            text-align: center;
-        }
-        .lp-dd-value.red { color: var(--color-danger); }
-        .lp-dd-label {
-            font-size: 10px;
-            color: rgba(255,255,255,0.3);
-            text-align: center;
-        }
-        .lp-dd-dollar {
-            font-size: 10px;
-            color: rgba(255,255,255,0.25);
-            text-align: center;
-            margin-bottom: 10px;
-        }
-        .lp-recovery {
-            font-size: 10px;
-            color: rgba(255,255,255,0.35);
-            text-align: center;
-            padding: 6px 8px;
-            background: rgba(255,255,255,0.02);
-            border-radius: 6px;
-            margin-bottom: 10px;
-        }
-        .lp-recovery strong { color: var(--text-primary); }
-        .lp-stats-row {
-            display: flex;
-            gap: 4px;
-            margin-bottom: 12px;
-        }
-        .lp-mini-stat {
-            flex: 1;
-            text-align: center;
-            padding: 6px 2px;
-            background: rgba(255,255,255,0.02);
-            border-radius: 6px;
-            border: 1px solid rgba(255,255,255,0.03);
-        }
-        .lp-mini-val {
-            display: block;
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 11px;
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-        .lp-mini-lbl {
-            display: block;
-            font-size: 9px;
-            color: rgba(255,255,255,0.25);
-            margin-top: 1px;
-        }
-        .lp-heatmap-label {
-            font-size: 9px;
-            font-weight: 600;
-            color: rgba(255,255,255,0.25);
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-            margin-bottom: 6px;
-        }
-        .lp-heatmap { display: flex; flex-direction: column; gap: 3px; }
-        .lp-hm-row { display: flex; gap: 3px; align-items: center; }
-        .lp-hm-lbl { width: 28px; font-size: 9px; color: rgba(255,255,255,0.2); flex-shrink: 0; }
-        .lp-hm-cell {
-            flex: 1;
-            height: 22px;
-            border-radius: 3px;
-            background: rgba(255,255,255,0.02);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 9px;
-            font-weight: 500;
-            color: rgba(255,255,255,0.5);
-        }
-        .lp-hm-cell.g { background: rgba(52,211,153,0.15); color: rgba(52,211,153,0.8); }
-        .lp-hm-cell.r { background: rgba(239,68,68,0.15); color: rgba(239,68,68,0.8); }
-        
-        /* Center panel */
-        .lp-center-header {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 14px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid rgba(255,255,255,0.04);
-        }
-        .lp-logo-r {
-            width: 24px; height: 24px;
-            background: var(--color-primary);
-            color: #0a0a0c;
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 13px;
-            font-weight: 700;
-        }
-        .lp-logo-text-sm {
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-        .lp-trade-count {
-            margin-left: auto;
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 11px;
-            color: rgba(255,255,255,0.3);
-            padding: 3px 8px;
-            background: rgba(255,255,255,0.03);
-            border-radius: 5px;
-        }
-        .lp-state-label {
-            font-size: 10px;
-            color: rgba(255,255,255,0.3);
-            margin-bottom: 8px;
-        }
-        .lp-state-grid {
-            display: flex;
-            gap: 0;
-            margin-bottom: 12px;
-            border-bottom: 1px solid rgba(255,255,255,0.04);
-            padding-bottom: 10px;
-        }
-        .lp-state-item {
-            flex: 1;
-            text-align: center;
-        }
-        .lp-state-val {
-            display: block;
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 15px;
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-        .lp-state-val.red { color: var(--color-danger); }
-        .lp-state-lbl {
-            display: block;
-            font-size: 9px;
-            color: rgba(255,255,255,0.25);
-            margin-top: 2px;
-        }
-        .lp-variance {
-            font-size: 10px;
-            color: rgba(255,255,255,0.35);
-            padding: 6px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.04);
-            margin-bottom: 8px;
-        }
-        .lp-streak-section { margin-bottom: 12px; }
-        .lp-streak-label {
-            font-size: 10px;
-            color: rgba(255,255,255,0.3);
-            display: block;
-            margin-bottom: 6px;
-        }
-        .lp-streak-dots { display: flex; gap: 4px; }
-        .lp-sd {
-            width: 22px; height: 22px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 8px;
-            font-weight: 700;
-            color: #0a0a0c;
-        }
-        .lp-sd.w { background: var(--color-primary); }
-        .lp-sd.l { background: var(--color-danger); }
-        .lp-input-section {
-            padding-top: 10px;
-            border-top: 1px solid rgba(255,255,255,0.04);
-        }
-        .lp-input-label {
-            font-size: 10px;
-            color: rgba(255,255,255,0.3);
-            margin-bottom: 6px;
-        }
-        .lp-input-row { display: flex; gap: 6px; }
-        .lp-input-field {
-            flex: 1;
-            padding: 7px 10px;
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.06);
-            border-radius: 6px;
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 11px;
-            color: rgba(255,255,255,0.4);
-        }
-        .lp-input-prefix { color: rgba(255,255,255,0.2); }
-        .lp-input-btn {
-            width: 32px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--color-primary);
-            color: #0a0a0c;
-            border-radius: 6px;
-            font-size: 14px;
-            font-weight: 700;
-        }
-        
-        /* MC panel */
-        .lp-mc-params {
-            display: flex;
-            gap: 10px;
-            font-size: 10px;
-            color: rgba(255,255,255,0.3);
-            margin-bottom: 10px;
-        }
-        .lp-mc-params strong { color: var(--text-primary); font-weight: 600; }
-        .lp-mc-chart {
-            margin-bottom: 10px;
-            background: rgba(255,255,255,0.02);
-            border-radius: 6px;
-            padding: 6px;
-        }
-        .lp-mc-chart svg { width: 100%; height: auto; }
-        .lp-mc-outcomes { margin-bottom: 12px; }
-        .lp-mc-row {
-            display: flex;
-            justify-content: space-between;
-            padding: 3px 0;
-            font-size: 10px;
-            color: rgba(255,255,255,0.35);
-        }
-        .lp-mc-row .green { color: var(--color-primary); font-family: 'IBM Plex Mono', monospace; font-weight: 500; }
-        .lp-mc-row .red { color: var(--color-danger); font-family: 'IBM Plex Mono', monospace; font-weight: 500; }
-        .lp-mc-survival {
-            text-align: center;
-            padding: 10px 0;
-            border-top: 1px solid rgba(255,255,255,0.04);
-        }
-        .lp-mc-survival-num {
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 28px;
-            font-weight: 700;
-            color: #D4A84B;
-        }
-        .lp-mc-survival-label {
-            font-size: 9px;
-            font-weight: 600;
-            color: rgba(255,255,255,0.3);
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-            margin-top: 2px;
-        }
-        
-        /* Feature showcase */
-        .lp-showcase {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 40px 32px 80px;
-        }
-        .lp-feature {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 48px;
-            align-items: center;
-            padding: 60px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.03);
-        }
-        .lp-feature:last-child { border-bottom: none; }
-        .lp-feature-reverse { direction: rtl; }
-        .lp-feature-reverse > * { direction: ltr; }
-        @media (max-width: 700px) {
-            .lp-feature, .lp-feature-reverse {
-                grid-template-columns: 1fr;
-                direction: ltr;
-                gap: 32px;
-            }
-        }
-        .lp-feature-title {
-            font-size: clamp(22px, 2.5vw, 28px);
-            font-weight: 700;
-            color: var(--text-primary);
-            letter-spacing: -0.02em;
-            margin-bottom: 10px;
-        }
-        .lp-feature-desc {
-            font-size: 15px;
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-        .lp-feature-panel {
-            display: flex;
-            justify-content: center;
-        }
-        
-        /* Calendar for journal preview */
-        .lp-cal-grid { margin-bottom: 12px; }
-        .lp-cal-header {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            text-align: center;
-            font-size: 9px;
-            font-weight: 600;
-            color: rgba(255,255,255,0.2);
-            margin-bottom: 4px;
-        }
-        .lp-cal-row {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 3px;
-            margin-bottom: 3px;
-        }
-        .lp-cal-row > span {
-            min-height: 36px;
-            border-radius: 4px;
-        }
-        .lp-cal-day {
-            background: rgba(255,255,255,0.02);
-            border: 1px solid rgba(255,255,255,0.04);
-            padding: 3px;
-            text-align: center;
-            font-size: 10px;
-            font-weight: 500;
-            color: var(--text-primary);
-            border-radius: 4px;
-        }
-        .lp-cal-day small {
-            display: block;
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 8px;
-            margin-top: 1px;
-        }
-        .lp-cal-day.g { border-color: rgba(52,211,153,0.2); }
-        .lp-cal-day.g small { color: var(--color-primary); }
-        .lp-cal-day.r { border-color: rgba(239,68,68,0.2); }
-        .lp-cal-day.r small { color: var(--color-danger); }
-        .lp-cal-summary {
-            display: flex;
-            gap: 4px;
-        }
-        .lp-cal-sum-item {
-            flex: 1;
-            text-align: center;
-            padding: 8px 4px;
-            background: rgba(255,255,255,0.02);
-            border-radius: 6px;
-        }
-        .lp-cal-sum-item span {
-            display: block;
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 12px;
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-        .lp-cal-sum-item span:last-child {
-            font-family: inherit;
-            font-size: 9px;
-            font-weight: 400;
-            color: rgba(255,255,255,0.25);
-            margin-top: 2px;
-        }
-        .lp-cal-sum-item span.red { color: var(--color-danger); }
-        
-        /* Progression preview */
-        .lp-prog-stats {
-            display: flex;
-            gap: 12px;
-            font-size: 10px;
-            color: rgba(255,255,255,0.3);
-            margin-bottom: 10px;
-        }
-        .lp-prog-stats strong { color: var(--text-primary); }
-        .lp-prog-chart {
-            margin-bottom: 10px;
-            background: rgba(255,255,255,0.02);
-            border-radius: 6px;
-            padding: 8px;
-        }
-        .lp-prog-chart svg { width: 100%; height: auto; }
-        .lp-prog-goal {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 8px 10px;
-            background: rgba(255,255,255,0.02);
-            border-radius: 6px;
-            margin-bottom: 4px;
-            font-size: 12px;
-            color: var(--text-primary);
-        }
-        .lp-prog-goal-check {
-            color: var(--color-primary);
-            font-size: 14px;
-        }
-        .lp-prog-pending { color: rgba(255,255,255,0.2); }
-        
-        /* Preview labels under the instrument */
-        .lp-preview-labels {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr 1fr;
-            gap: 12px;
-            margin-top: 16px;
-            max-width: 860px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        @media (max-width: 700px) {
-            .lp-preview-labels { grid-template-columns: 1fr; }
-        }
-        .lp-preview-label-item {
-            text-align: center;
-            padding: 12px 8px;
-        }
-        .lp-preview-label-title {
-            display: block;
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 4px;
-        }
-        .lp-preview-label-desc {
-            display: block;
-            font-size: 12px;
-            color: var(--text-muted);
-            line-height: 1.4;
-        }
-        
-        /* Sections */
-        .lp-section {
-            padding: 100px 32px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        .lp-section-label {
-            font-size: 11px;
-            font-weight: 600;
-            color: var(--color-primary);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 16px;
-        }
-        .lp-section-title {
-            font-size: clamp(28px, 3.5vw, 40px);
-            font-weight: 700;
-            color: var(--text-primary);
-            letter-spacing: -0.03em;
-            line-height: 1.15;
-            margin-bottom: 16px;
-        }
-        .lp-section-desc {
-            font-size: 16px;
-            color: var(--text-secondary);
-            line-height: 1.6;
-            max-width: 560px;
-            margin-bottom: 48px;
-        }
-        
-        /* Problem section */
-        .lp-problem-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-        @media (max-width: 600px) {
-            .lp-problem-grid { grid-template-columns: 1fr; }
-        }
-        .lp-problem-card {
-            padding: 28px;
-            border-radius: 14px;
-            background: rgba(255,255,255,0.02);
-            border: 1px solid rgba(255,255,255,0.05);
-        }
-        .lp-problem-card-title {
-            font-size: 16px;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 8px;
-        }
-        .lp-problem-card-desc {
-            font-size: 14px;
-            color: var(--text-secondary);
-            line-height: 1.55;
-            margin-bottom: 14px;
-        }
-        .lp-problem-card-result {
-            font-size: 13px;
-            font-weight: 500;
-            color: var(--color-danger);
-            opacity: 0.8;
-        }
-        
-        /* How it works */
-        .lp-how-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
-        @media (max-width: 700px) {
-            .lp-how-grid { grid-template-columns: 1fr; }
-        }
-        .lp-how-step {
-            padding: 28px;
-            border-radius: 14px;
-            background: rgba(255,255,255,0.02);
-            border: 1px solid rgba(255,255,255,0.05);
-        }
-        .lp-how-step-num {
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 12px;
-            font-weight: 500;
-            color: var(--color-primary);
-            margin-bottom: 14px;
-            opacity: 0.7;
-        }
-        .lp-how-step-title {
-            font-size: 16px;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 8px;
-        }
-        .lp-how-step-desc {
-            font-size: 14px;
-            color: var(--text-secondary);
-            line-height: 1.55;
-        }
-        
-        /* Final CTA */
-        .lp-final-cta {
-            padding: 100px 32px;
-            text-align: center;
-        }
-        .lp-final-title {
-            font-size: clamp(28px, 3.5vw, 40px);
-            font-weight: 700;
-            color: var(--text-primary);
-            letter-spacing: -0.03em;
-            margin-bottom: 12px;
-        }
-        .lp-final-sub {
-            font-size: 16px;
-            color: var(--text-secondary);
-            margin-bottom: 36px;
-        }
-        
-        /* Footer */
-        .lp-footer {
-            padding: 40px 32px;
-            text-align: center;
-            border-top: 1px solid rgba(255,255,255,0.04);
-        }
-        .lp-footer-text {
-            font-size: 12px;
-            color: var(--text-muted);
-            max-width: 500px;
-            margin: 0 auto;
-            line-height: 1.5;
-        }
-        
-        /* Animations */
-        @keyframes lpFadeUp {
-            from { opacity: 0; transform: translateY(16px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        /* Upgrade modal */
-        .upgrade-modal-overlay {
-            position: fixed;
-            inset: 0;
-            z-index: 50000;
-            background: rgba(0,0,0,0.6);
-            backdrop-filter: blur(8px);
-            display: none;
-            align-items: center;
-            justify-content: center;
-            padding: 24px;
-        }
-        .upgrade-modal-overlay.open {
-            display: flex;
-        }
-        .upgrade-modal {
-            background: linear-gradient(180deg, #161620 0%, #111116 100%);
-            border: 1px solid rgba(52,211,153,0.12);
-            border-radius: 18px;
-            padding: 36px 32px;
-            max-width: 400px;
-            width: 100%;
-            text-align: center;
-            position: relative;
-            box-shadow: 0 32px 80px rgba(0,0,0,0.6);
-        }
-        .upgrade-modal-close {
-            position: absolute;
-            top: 14px;
-            right: 16px;
-            background: none;
-            border: none;
-            color: rgba(255,255,255,0.3);
-            font-size: 22px;
-            cursor: pointer;
-            line-height: 1;
-        }
-        .upgrade-modal-close:hover { color: rgba(255,255,255,0.6); }
-        .upgrade-modal-icon { margin-bottom: 16px; }
-        .upgrade-modal-title {
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--text-primary);
-            letter-spacing: -0.02em;
-            margin-bottom: 8px;
-        }
-        .upgrade-modal-desc {
-            font-size: 14px;
-            color: var(--text-secondary);
-            line-height: 1.55;
-            margin-bottom: 20px;
-        }
-        .upgrade-modal-features {
-            text-align: left;
-            margin-bottom: 24px;
-        }
-        .upgrade-feature {
-            font-size: 13px;
-            color: rgba(255,255,255,0.5);
-            padding: 5px 0;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .upgrade-check {
-            color: var(--color-primary);
-            font-weight: 700;
-            font-size: 14px;
-        }
-        .upgrade-modal-btn {
-            display: block;
-            width: 100%;
-            padding: 13px 20px;
-            background: var(--color-primary);
-            color: #0a0a0c;
-            font-size: 15px;
-            font-weight: 600;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            text-decoration: none;
-            text-align: center;
-            margin-bottom: 20px;
-            transition: background 0.15s ease;
-        }
-        .upgrade-modal-btn:hover { background: #6EE7B7; }
-        .upgrade-modal-key { 
-            padding-top: 16px;
-            border-top: 1px solid rgba(255,255,255,0.04);
-        }
-        .upgrade-key-row {
-            display: flex;
-            gap: 6px;
-        }
-        .upgrade-key-input {
-            flex: 1;
-            padding: 8px 12px;
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 8px;
-            color: var(--text-primary);
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 12px;
-            outline: none;
-        }
-        .upgrade-key-input:focus { border-color: rgba(52,211,153,0.3); }
-        .upgrade-key-btn {
-            padding: 8px 14px;
-            background: rgba(52,211,153,0.1);
-            border: 1px solid rgba(52,211,153,0.2);
-            border-radius: 8px;
-            color: var(--color-primary);
-            font-size: 12px;
-            font-weight: 600;
-            cursor: pointer;
-        }
-        .upgrade-key-btn:hover { background: rgba(52,211,153,0.18); }
-        .upgrade-key-error {
-            font-size: 11px;
-            color: var(--color-danger);
-            margin-top: 6px;
-        }
-        
-        /* Upgrade banner */
-        .upgrade-banner {
-            position: fixed;
-            top: 48px;
-            left: 0;
-            right: 0;
-            z-index: 150;
-            background: linear-gradient(90deg, rgba(52,211,153,0.12) 0%, rgba(52,211,153,0.06) 100%);
-            border-bottom: 1px solid rgba(52,211,153,0.15);
-            padding: 14px 24px;
-            backdrop-filter: blur(12px);
-        }
-        .upgrade-banner-inner {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-        }
-        .upgrade-banner-text {
-            font-size: 14px;
-            color: rgba(255,255,255,0.7);
-            font-weight: 500;
-        }
-        .upgrade-banner-btn {
-            padding: 9px 22px;
-            background: var(--color-primary);
-            color: #0a0a0c;
-            border: none;
-            border-radius: 8px;
-            font-size: 13px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: background 0.15s;
-            white-space: nowrap;
-            letter-spacing: 0.01em;
-        }
-        .upgrade-banner-btn:hover { background: #6EE7B7; }
-        body.show-landing .upgrade-banner { display: none !important; }
-        body.show-landing #demoBanner { display: none !important; }
-        
-        /* Mobile gate */
-        .mobile-gate {
-            display: none;
-            position: fixed;
-            inset: 0;
-            z-index: 100000;
-            background: #0a0a0c;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 32px;
-        }
-        .mobile-gate-logo {
-            width: 40px; height: 40px;
-            border-radius: 10px;
-            overflow: hidden;
-            margin-bottom: 20px;
-        }
-        .mobile-gate-logo img { width: 100%; height: 100%; object-fit: cover; }
-        .mobile-gate-title {
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--text-primary);
-            letter-spacing: -0.02em;
-            margin-bottom: 8px;
-        }
-        .mobile-gate-desc {
-            font-size: 14px;
-            color: var(--text-secondary);
-            line-height: 1.55;
-            max-width: 320px;
-            margin-bottom: 24px;
-        }
-        .mobile-gate-hint {
-            font-size: 12px;
-            color: var(--text-muted);
-        }
-        @media (max-width: 900px) {
-            .mobile-gate { display: flex; }
-            body.show-landing .mobile-gate { display: none; }
+            max-width: 620px;
         }
 
-        /* ============================================
-           DELIGHT LAYER — Subtle, earned moments
-           These details reward attention without demanding it
-           ============================================ */
-        
-        /* 1. Quiet breathing glow on the instrument card when idle
-              Signals "alive" without being distracting
-              NOTE: Uses outline instead of box-shadow animation to avoid
-              creating stacking contexts that break fixed overlays */
-        @keyframes instrumentBreath {
-            0%, 100% { outline-color: rgba(52, 211, 153, 0); }
-            50% { outline-color: rgba(52, 211, 153, 0.06); }
+        /* Subtitle rhythm lines */
+        .lp2-hero-sub-line {
+            font-size: 19px;
+            color: rgba(255,255,255,0.55);
+            line-height: 1.4;
+            margin: 0 0 6px;
+            font-weight: 500;
         }
-        
-        body:not(.full-mode):not(.journal-mode) .instrument:not(:hover) {
-            outline: 1px solid transparent;
-            outline-offset: -1px;
-            animation: instrumentBreath 6s ease-in-out infinite;
+        .lp2-hero-sub-bridge {
+            font-size: 17px;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.5;
+            margin: 24px 0 48px;
+            font-weight: 500;
         }
-        
-        /* 2. Satisfying trade count tick — number scales on update */
-        .log-toggle-count {
-            transition: transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1), color var(--transition-fast);
-        }
-        
-        .log-toggle-count.tick {
-            transform: scale(1.25);
-        }
-        
-        /* 3. Refined value change flash — green/red edge glow on stat update */
-        .stats-item.value-flash-positive {
-            box-shadow: inset 0 0 0 1px rgba(52, 211, 153, 0.25), 0 0 16px rgba(52, 211, 153, 0.08);
-            transition: box-shadow 0.5s ease;
-        }
-        
-        .stats-item.value-flash-negative {
-            box-shadow: inset 0 0 0 1px rgba(229, 62, 62, 0.25), 0 0 16px rgba(229, 62, 62, 0.08);
-            transition: box-shadow 0.5s ease;
-        }
-        
-        /* 4. Cursor trail glow on the risk curve SVG — makes it feel interactive */
-        .curve-svg:hover {
-            filter: drop-shadow(0 0 8px rgba(52, 211, 153, 0.12));
-            transition: filter 0.3s ease;
-        }
-        
-        /* 5. Instrument card hover — shadow-only, no transform (avoids stacking context) */
-        @media (hover: hover) and (min-width: 1024px) {
-            .instrument:hover {
-                box-shadow: 
-                    var(--shadow-lg),
-                    0 0 0 1px rgba(52, 211, 153, 0.08),
-                    0 0 80px rgba(52, 211, 153, 0.04);
-            }
-        }
-        
-        /* 6. Toast success gets a brief confetti-like shimmer */
-        .toast.success.show .toast-icon {
-            position: relative;
-        }
-        
-        .toast.success.show .toast-icon::before {
-            content: '';
-            position: absolute;
-            inset: -4px;
-            border-radius: inherit;
-            background: conic-gradient(
-                from 0deg,
-                transparent 0deg,
-                rgba(52, 211, 153, 0.3) 60deg,
-                transparent 120deg
-            );
-            animation: toastIconSweep 0.6s ease-out forwards;
-            opacity: 0;
-        }
-        
-        @keyframes toastIconSweep {
-            0% { opacity: 0; transform: rotate(-90deg) scale(0.8); }
-            30% { opacity: 1; }
-            100% { opacity: 0; transform: rotate(270deg) scale(1.2); }
-        }
-        
-        /* 7. Calendar day hover — gentle lift with earned shadow */
-        .journal-cal-day:not(.empty):hover {
-            transform: translateY(-2px) scale(1.02);
-            box-shadow: 0 6px 16px rgba(0,0,0,0.3), 0 0 0 1px rgba(255,255,255,0.06);
-        }
-        
-        /* 8. Streak dots entrance — stagger from left */
-        .streak-dot {
-            animation: streakDotIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) backwards;
-        }
-        .streak-dot:nth-child(1) { animation-delay: 0ms; }
-        .streak-dot:nth-child(2) { animation-delay: 40ms; }
-        .streak-dot:nth-child(3) { animation-delay: 80ms; }
-        .streak-dot:nth-child(4) { animation-delay: 120ms; }
-        .streak-dot:nth-child(5) { animation-delay: 160ms; }
-        .streak-dot:nth-child(6) { animation-delay: 200ms; }
-        .streak-dot:nth-child(7) { animation-delay: 240ms; }
-        .streak-dot:nth-child(8) { animation-delay: 280ms; }
-        .streak-dot:nth-child(9) { animation-delay: 320ms; }
-        .streak-dot:nth-child(10) { animation-delay: 360ms; }
-        
-        @keyframes streakDotIn {
-            from { opacity: 0; transform: scale(0.5); }
-            to { opacity: 1; transform: scale(1); }
-        }
-        
-        /* 9. Heatmap cell — refined hover with depth */
-        .session-heatmap-cell:hover {
-            transform: scale(1.15);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.4);
-            z-index: 2;
-        }
-        
-        /* 10. Mode switcher — active button gets a subtle underline glow */
-        .mode-btn.active::after {
-            content: '';
-            position: absolute;
-            bottom: 2px;
-            left: 25%;
-            right: 25%;
-            height: 2px;
-            background: var(--color-primary);
-            border-radius: 1px;
-            opacity: 0.5;
-            animation: modeUnderline 0.25s ease;
-        }
-        
-        .mode-btn {
-            position: relative;
-        }
-        
-        @keyframes modeUnderline {
-            from { opacity: 0; transform: scaleX(0); }
-            to { opacity: 0.5; transform: scaleX(1); }
-        }
-        
-        /* ---- NEW DELIGHTS 11–15 ---- */
-        
-        /* 11. Drawdown bar fill — animated gradient shimmer when updating
-              The bar already transitions width; this adds a moving highlight
-              that sweeps across the fill, like liquid settling */
-        .drawdown-bar-fill {
-            background-size: 200% 100%;
-            background-image: linear-gradient(
-                90deg,
-                var(--color-warning) 0%,
-                var(--color-danger) 40%,
-                rgba(255,255,255,0.15) 50%,
-                var(--color-danger) 60%,
-                var(--color-warning) 100%
-            );
-        }
-        
-        .drawdown-bar-fill.updating {
-            animation: drawdownShimmer 0.8s ease forwards;
-        }
-        
-        @keyframes drawdownShimmer {
-            from { background-position: 100% 0; }
-            to { background-position: 0% 0; }
-        }
-        
-        /* 12. PnL input focus — left border accent slides in
-              Gives the input a sense of activation energy */
-        .pnl-input-wrapper {
-            position: relative;
-        }
-        
-        .pnl-input-wrapper::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 20%;
-            bottom: 20%;
-            width: 2px;
-            background: var(--color-primary);
-            border-radius: 1px;
-            opacity: 0;
-            transform: scaleY(0);
-            transition: opacity 0.2s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-            z-index: 1;
-        }
-        
-        .pnl-input-wrapper:focus-within::before {
-            opacity: 1;
-            transform: scaleY(1);
-        }
-        
-        .import-toggle:focus-visible {
-            box-shadow: inset 0 0 0 1px rgba(52,211,153,0.3);
-        }
-        
-        /* 14. Timeline day stagger — day groups cascade in when journal opens */
-        .trade-log-overlay.open .timeline-day {
-            animation: timelineDayIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) backwards;
-        }
-        
-        .trade-log-overlay.open .timeline-day:nth-child(1) { animation-delay: 0ms; }
-        .trade-log-overlay.open .timeline-day:nth-child(2) { animation-delay: 60ms; }
-        .trade-log-overlay.open .timeline-day:nth-child(3) { animation-delay: 120ms; }
-        .trade-log-overlay.open .timeline-day:nth-child(4) { animation-delay: 180ms; }
-        .trade-log-overlay.open .timeline-day:nth-child(5) { animation-delay: 240ms; }
-        .trade-log-overlay.open .timeline-day:nth-child(n+6) { animation-delay: 300ms; }
-        
-        @keyframes timelineDayIn {
-            from { opacity: 0; transform: translateY(6px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        /* 15. Equity chart — crosshair cursor + subtle scan line on hover
-              Makes the chart feel like a real monitoring instrument */
-        .equity-chart:hover {
-            cursor: crosshair;
-        }
-        
-        .equity-chart::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 1px;
-            height: 100%;
-            background: linear-gradient(
-                180deg,
-                transparent 0%,
-                rgba(52, 211, 153, 0.2) 30%,
-                rgba(52, 211, 153, 0.4) 50%,
-                rgba(52, 211, 153, 0.2) 70%,
-                transparent 100%
-            );
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.2s ease;
-        }
-        
-        .equity-chart:hover::after {
-            opacity: 1;
-            animation: equityScanLine 2s linear infinite;
-        }
-        
-        @keyframes equityScanLine {
-            from { left: -5%; }
-            to { left: 105%; }
-        }
-        
-        /* 16. MC outcome values — slide up when changing */
-        .mc-v2-stat-value {
-            transition: color 0.3s ease;
-        }
-        .mc-value-update {
-            animation: mcValueSlide 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        @keyframes mcValueSlide {
-            0% { opacity: 0.4; transform: translateY(3px) scale(0.98); }
-            60% { opacity: 1; transform: translateY(-1px) scale(1.01); }
-            100% { opacity: 1; transform: translateY(0) scale(1); }
-        }
-        
-        /* 17. Period P&L rows — stagger fade in */
-        .pnl-period-row {
-            animation: pnlRowIn 0.3s ease backwards;
-        }
-        .pnl-period-row:nth-child(1) { animation-delay: 0ms; }
-        .pnl-period-row:nth-child(2) { animation-delay: 40ms; }
-        .pnl-period-row:nth-child(3) { animation-delay: 80ms; }
-        .pnl-period-row:nth-child(4) { animation-delay: 120ms; }
-        .pnl-period-row:nth-child(5) { animation-delay: 160ms; }
-        @keyframes pnlRowIn {
-            from { opacity: 0; transform: translateX(-6px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-        
-        /* 18. Journal trade list — row hover */
-        .trade-list-row:hover {
+
+        /* Badge pill */
+        .lp2-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 13px;
             background: rgba(255,255,255,0.02);
-            transition: background 0.15s ease;
+            border: 1px solid rgba(255,255,255,0.04);
+            border-radius: 50px;
+            font-size: 11px;
+            font-weight: 500;
+            margin-bottom: 28px;
+            font-family: 'IBM Plex Mono', monospace;
+            opacity: 0.55;
         }
-        
-        /* 19. Settings gear — active state when settings open */
-        .settings-toggle.active .settings-toggle-icon {
-            color: var(--color-primary);
-            animation: gearSpin 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        .lp2-badge-dot {
+            width: 5px;
+            height: 5px;
+            background: #34D399;
+            border-radius: 50%;
+            box-shadow: 0 0 6px rgba(52,211,153,0.6);
+            animation: lp2DotPulse 2s ease infinite;
         }
-        @keyframes gearSpin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(90deg); }
+        @keyframes lp2DotPulse {
+            0%, 100% { box-shadow: 0 0 6px rgba(52,211,153,0.6); }
+            50% { box-shadow: 0 0 12px rgba(52,211,153,0.9); }
         }
-        
-        /* 20. Paywall shake — input shakes when limit hit */
-        .paywall-shake {
-            animation: paywallShake 0.4s ease;
+
+        /* CTA buttons - clean, solid, authoritative */
+        .lp2-cta-glow {
+            display: inline-block;
+            padding: 14px 32px;
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 8px;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 600;
+            font-family: 'IBM Plex Sans', sans-serif;
+            cursor: pointer;
+            transition: all 0.2s;
         }
-        @keyframes paywallShake {
-            0%, 100% { transform: translateX(0); }
-            15% { transform: translateX(-6px); }
-            30% { transform: translateX(5px); }
-            45% { transform: translateX(-4px); }
-            60% { transform: translateX(3px); }
-            75% { transform: translateX(-2px); }
+        .lp2-cta-glow:hover {
+            background: rgba(255,255,255,0.05);
+            border-color: rgba(255,255,255,0.25);
         }
-        
-        /* 21. Survival ring entrance — scale up on first render */
-        .survival-ring-wrap {
-            animation: survivalRingEntrance 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.3s backwards;
+        .lp2-cta-glow-shine { display: none; }
+        .lp2-cta-glow-inner {
+            display: inline;
+            font: inherit;
+            color: inherit;
         }
-        @keyframes survivalRingEntrance {
-            from { opacity: 0; transform: scale(0.8); }
-            to { opacity: 1; transform: scale(1); }
+        .lp2-cta-glow-primary {
+            background: #34D399;
+            border: none;
+            color: #050508;
+            padding: 17px 40px;
+            font-size: 16px;
+            font-weight: 700;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(52,211,153,0.15);
         }
-        
-        /* 22. Journal month transition */
-        .journal-cal-month-transition {
-            animation: monthCrossfade 0.25s ease;
+        .lp2-cta-glow-primary:hover {
+            background: #3de8a8;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 28px rgba(52,211,153,0.2);
         }
-        @keyframes monthCrossfade {
-            from { opacity: 0; transform: translateY(6px); }
+        .lp2-cta-glow-inner-primary {
+            display: inline;
+            font: inherit;
+            color: inherit;
+        }
+
+        /* Hero fade animation */
+        @keyframes lpFadeIn {
+            from { opacity: 0; transform: translateY(24px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        
-        /* 23. Drawdown recovery pulse when in active drawdown */
-        .drawdown-recovery-estimate.in-drawdown {
-            animation: recoveryPulse 3s ease-in-out infinite;
+        .lp2-hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
         }
-        @keyframes recoveryPulse {
-            0%, 100% { border-color: rgba(255,255,255,0.04); }
-            50% { border-color: rgba(239,68,68,0.12); }
+        .lp2-hero-bg canvas {
+            width: 100%;
+            height: 100%;
         }
-        
-        /* 24. Trade count badge bounce */
-        .log-toggle-count.tick {
-            animation: countTick 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        .lp2-hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 80px;
+            max-width: 1200px;
+            width: 100%;
+            position: relative;
+            z-index: 2;
+            padding: 0 60px;
+            min-height: 100vh;
         }
-        @keyframes countTick {
-            0% { transform: scale(1); }
-            40% { transform: scale(1.25); }
-            100% { transform: scale(1); }
+        .lp2-hero-text {
+            flex: 1;
+            max-width: 540px;
         }
-        
-        /* 25. Drawdown bar danger glow */
-        .drawdown-bar-fill.danger-glow {
-            box-shadow: 0 0 12px rgba(239,68,68,0.3), 0 0 24px rgba(239,68,68,0.1);
+        .lp2-hero-visual {
+            flex: 0 0 340px;
+            perspective: 1000px;
         }
-        .drawdown-bar-fill.critical-glow {
-            box-shadow: 0 0 16px rgba(239,68,68,0.5), 0 0 32px rgba(239,68,68,0.2);
+        .lp2-label {
+            font-size: 12px;
+            font-weight: 700;
+            color: rgba(52,211,153,0.6);
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            margin-bottom: 28px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
-        
-        /* 26. P&L input live sign coloring */
-        .pnl-input.sign-positive {
-            border-color: rgba(52,211,153,0.3) !important;
+        .lp2-label::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: #34D399;
+            border-radius: 50%;
+            box-shadow: 0 0 8px rgba(52,211,153,0.5);
         }
-        .pnl-input.sign-negative {
-            border-color: rgba(239,68,68,0.3) !important;
+        .lp2-h1 {
+            font-size: clamp(38px, 5vw, 58px);
+            font-weight: 800;
+            color: #f0f0f2;
+            line-height: 1.1;
+            letter-spacing: -0.04em;
+            margin: 0 0 24px;
         }
-        
-        /* 27. MC chart redraw sweep */
-        .mc-redraw-sweep {
+        .lp2-hero-sub {
+            font-size: 17px;
+            color: rgba(255,255,255,0.38);
+            line-height: 1.7;
+            margin-bottom: 40px;
+        }
+        .lp2-cta {
+            padding: 16px 44px;
+            background: #34D399;
+            color: #050508;
+            font-size: 15px;
+            font-weight: 700;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-family: 'IBM Plex Sans', sans-serif;
+            transition: all 0.25s;
+            box-shadow: 0 0 50px rgba(52,211,153,0.12), 0 0 100px rgba(52,211,153,0.06);
+        }
+        .lp2-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 60px rgba(52,211,153,0.2), 0 0 120px rgba(52,211,153,0.08);
+        }
+        .lp2-subtext {
+            font-size: 12px;
+            color: rgba(255,255,255,0.22);
+            margin-top: 16px;
+            font-family: 'IBM Plex Mono', monospace;
+            letter-spacing: 0.02em;
+        }
+
+        /* Lens cards */
+        .lp2-lens-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 14px;
+            padding: 40px 32px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 80px rgba(52,211,153,0.03);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            transform: rotateY(-4deg) rotateX(2deg);
+            transition: transform 0.4s ease;
+        }
+        .lp2-lens-card:hover {
+            transform: rotateY(-1deg) rotateX(0deg);
+        }
+        .lp2-lens-card-sm {
+            padding: 28px 24px;
+            transform: none;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+        }
+        .lp2-lens-card-sm:hover { transform: none; }
+        .lp2-lens-header {
+            font-size: 10px;
+            font-weight: 700;
+            color: rgba(255,255,255,0.2);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+        .lp2-lens-number {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 52px;
+            font-weight: 700;
+            letter-spacing: -0.04em;
+            margin-bottom: 10px;
+        }
+        .lp2-lens-desc {
+            font-size: 12px;
+            color: rgba(255,255,255,0.22);
+            line-height: 1.5;
+            margin-bottom: 18px;
+        }
+        .lp2-lens-verdict {
+            font-size: 13px;
+            color: rgba(255,255,255,0.4);
+            padding: 10px 14px;
+            background: rgba(255,255,255,0.02);
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.04);
+        }
+
+        /* Body text styles */
+        .lp2-body-lg {
+            font-size: 26px;
+            font-weight: 700;
+            color: rgba(255,255,255,0.65);
+            margin-bottom: 44px;
+            letter-spacing: -0.02em;
+        }
+        .lp2-body-spaced {
+            font-size: 19px;
+            color: rgba(255,255,255,0.3);
+            line-height: 1.75;
+            margin-bottom: 30px;
+        }
+        .lp2-body-accent {
+            font-size: 22px;
+            font-weight: 700;
+            color: rgba(255,255,255,0.65);
+            margin-top: 24px;
+            margin-bottom: 12px;
+            letter-spacing: -0.01em;
+        }
+        .lp2-body-muted {
+            font-size: 16px;
+            color: rgba(255,255,255,0.28);
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+        .lp2-h2 {
+            font-size: clamp(30px, 4vw, 44px);
+            font-weight: 800;
+            color: #f0f0f2;
+            letter-spacing: -0.04em;
+            line-height: 1.1;
+            margin-bottom: 24px;
+        }
+        .lp2-h3 {
+            font-size: 28px;
+            font-weight: 800;
+            color: #f0f0f2;
+            letter-spacing: -0.03em;
+            line-height: 1.15;
+            margin-bottom: 14px;
+        }
+
+        /* Shift points */
+        .lp2-shift-points {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 36px;
+        }
+        .lp2-shift-point {
+            font-size: 16px;
+            color: rgba(255,255,255,0.5);
+            padding: 16px 22px;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.04);
+            border-radius: 10px;
+            transition: border-color 0.2s;
+        }
+        .lp2-shift-point:hover {
+            border-color: rgba(52,211,153,0.1);
+        }
+
+        /* Lens rows */
+        .lp2-lenses {
+            flex-direction: column;
+            max-width: 920px;
+            margin: 0 auto;
+            gap: 100px;
+            padding: 80px 40px;
+        }
+        .lp2-lens-row {
+            display: flex;
+            align-items: center;
+            gap: 70px;
+        }
+        .lp2-lens-row-reverse {
+            flex-direction: row-reverse;
+        }
+        .lp2-lens-text {
+            flex: 1;
+            text-align: left;
+        }
+        .lp2-lens-img {
+            flex: 0 0 270px;
+        }
+        .lp2-lens-tag {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+
+        /* Benefits */
+        .lp2-benefits {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .lp2-benefit {
+            font-size: 24px;
+            font-weight: 700;
+            color: rgba(255,255,255,0.55);
+            letter-spacing: -0.02em;
+        }
+
+        /* Moment section - divider glow */
+        .lp2-moment::before {
+            content: '';
             position: absolute;
             top: 0;
-            left: 0;
-            width: 2px;
-            height: 100%;
-            background: linear-gradient(180deg, transparent, rgba(255,255,255,0.15), transparent);
-            animation: mcSweep 0.4s ease-out forwards;
-            pointer-events: none;
-            z-index: 5;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(52,211,153,0.15), transparent);
         }
-        @keyframes mcSweep {
-            from { left: 0; opacity: 1; }
-            to { left: 100%; opacity: 0; }
+
+        /* Final CTA */
+        .lp2-final {
+            padding: 140px 40px;
         }
-        
-        /* 28. Today pulse in journal calendar */
-        .calendar-day.today {
-            animation: todayPulse 3s ease-in-out infinite;
+
+        /* Footer */
+        .lp2-footer {
+            text-align: center;
+            padding: 48px;
+            border-top: 1px solid rgba(255,255,255,0.03);
         }
-        @keyframes todayPulse {
-            0%, 100% { box-shadow: inset 0 0 0 1px rgba(52,211,153,0.15); }
-            50% { box-shadow: inset 0 0 0 1px rgba(52,211,153,0.35), 0 0 8px rgba(52,211,153,0.06); }
+        .lp2-footer p {
+            font-size: 12px;
+            color: rgba(255,255,255,0.12);
+            line-height: 1.8;
         }
-        
-        /* 29. Goal milestone pop */
-        .goal-achieved-pop {
-            animation: goalPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-        @keyframes goalPop {
-            0% { transform: scale(0.5); opacity: 0; }
-            60% { transform: scale(1.15); }
-            100% { transform: scale(1); opacity: 1; }
-        }
-        
-        /* 30. Survival counter spin-up */
-        .survival-counting {
-            transition: none !important;
-        }
-        
-        /* 31. MC median glow — bloom effect on the bright path */
-        .mc-median-glow {
-            filter: drop-shadow(0 0 4px rgba(52,211,153,0.5)) drop-shadow(0 0 10px rgba(52,211,153,0.2));
-            stroke-width: 2.5;
-        }
-        
-        /* 32. Heatmap cell click ripple */
-        .heatmap-ripple {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.15);
-            transform: scale(0);
-            animation: heatmapRipple 0.4s ease-out forwards;
-            pointer-events: none;
-        }
-        @keyframes heatmapRipple {
-            to { transform: scale(2.5); opacity: 0; }
-        }
-        
-        /* 33. Nav underline slide */
-        .mode-switcher {
-            position: relative;
-        }
-        .mode-switcher-indicator {
-            position: absolute;
-            bottom: 2px;
-            height: 2px;
-            background: var(--color-primary);
-            border-radius: 1px;
-            transition: left 0.25s cubic-bezier(0.16, 1, 0.3, 1), width 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-            opacity: 0.6;
-        }
-        
-        /* 34. Empty state shimmer */
-        .empty-shimmer {
-            background: linear-gradient(90deg, transparent 0%, rgba(52,211,153,0.06) 50%, transparent 100%);
-            background-size: 200% 100%;
-            animation: emptyShimmer 3s ease-in-out infinite;
-        }
-        @keyframes emptyShimmer {
-            0% { background-position: 200% 0; }
-            100% { background-position: -200% 0; }
-        }
-        
-        /* 35. Drawer section stagger */
-        .drawer-section-stagger {
-            animation: drawerStagger 0.3s ease backwards;
-        }
-        .drawer-section-stagger:nth-child(1) { animation-delay: 0ms; }
-        .drawer-section-stagger:nth-child(2) { animation-delay: 60ms; }
-        .drawer-section-stagger:nth-child(3) { animation-delay: 120ms; }
-        .drawer-section-stagger:nth-child(4) { animation-delay: 180ms; }
-        @keyframes drawerStagger {
-            from { opacity: 0; transform: translateY(6px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        /* 36. Custom scrollbars */
-        ::-webkit-scrollbar { width: 6px; height: 6px; }
-        ::-webkit-scrollbar-track { background: transparent; }
-        ::-webkit-scrollbar-thumb { 
-            background: rgba(255,255,255,0.08); 
-            border-radius: 3px; 
-        }
-        ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.15); }
-        * { scrollbar-width: thin; scrollbar-color: rgba(255,255,255,0.08) transparent; }
-        
-        /* 37. Drawdown bar gradient fill */
-        .drawdown-bar-fill {
-            background: linear-gradient(90deg, #D4A84B 0%, #EF4444 60%, #DC2626 100%) !important;
-        }
-        
-        /* 38. Logo pulse on trade */
-        .logo-pulse-win {
-            animation: logoPulseWin 0.5s ease;
-        }
-        .logo-pulse-loss {
-            animation: logoPulseLoss 0.5s ease;
-        }
-        @keyframes logoPulseWin {
-            0%, 100% { filter: brightness(1); }
-            50% { filter: brightness(1.8) drop-shadow(0 0 6px rgba(52,211,153,0.5)); }
-        }
-        @keyframes logoPulseLoss {
-            0%, 100% { filter: brightness(1); }
-            50% { filter: brightness(1.3) drop-shadow(0 0 6px rgba(239,68,68,0.4)); }
-        }
-        
-        /* 39. Landing preview animations */
-        .lp-preview-animate .lp-state-val {
-            animation: lpCountUp 1.5s ease 0.8s backwards;
-        }
-        .lp-preview-animate .lp-sd {
-            animation: lpDotPop 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
-        }
-        .lp-preview-animate .lp-sd:nth-child(1) { animation-delay: 1.0s; }
-        .lp-preview-animate .lp-sd:nth-child(2) { animation-delay: 1.1s; }
-        .lp-preview-animate .lp-sd:nth-child(3) { animation-delay: 1.2s; }
-        .lp-preview-animate .lp-sd:nth-child(4) { animation-delay: 1.3s; }
-        .lp-preview-animate .lp-sd:nth-child(5) { animation-delay: 1.4s; }
-        .lp-preview-animate .lp-sd:nth-child(6) { animation-delay: 1.5s; }
-        .lp-preview-animate .lp-sd:nth-child(7) { animation-delay: 1.6s; }
-        @keyframes lpCountUp {
-            from { opacity: 0; transform: translateY(4px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes lpDotPop {
-            from { opacity: 0; transform: scale(0); }
-            to { opacity: 1; transform: scale(1); }
-        }
-        
-        .lp-preview-animate .lp-mc-survival-num {
-            animation: lpSurvivalCount 1s ease 1.2s backwards;
-        }
-        @keyframes lpSurvivalCount {
-            from { opacity: 0; transform: scale(0.8); }
-            to { opacity: 1; transform: scale(1); }
-        }
-        
-        /* 40. ATH badge */
-        .ath-badge {
-            display: inline-block;
-            font-size: 8px;
-            font-weight: 700;
-            letter-spacing: 0.08em;
-            color: #D4A84B;
-            background: rgba(212,168,75,0.1);
-            border: 1px solid rgba(212,168,75,0.2);
-            padding: 1px 5px;
-            border-radius: 4px;
-            margin-left: 6px;
-            vertical-align: middle;
-            animation: athPop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-        @keyframes athPop {
-            from { opacity: 0; transform: scale(0.5); }
-            to { opacity: 1; transform: scale(1); }
-        }
-        
-        /* 41. Trade log alternating rows */
-        .trade-log-row:nth-child(even) {
-            background: rgba(255,255,255,0.01);
-        }
-        
-        /* 42. Position calc result pulse */
-        .position-calc-result-single.pulse-update {
-            animation: calcPulse 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-        @keyframes calcPulse {
-            0% { transform: scale(1); }
-            40% { transform: scale(1.04); }
-            100% { transform: scale(1); }
-        }
-        
-        /* 43. Newest streak dot pop */
-        .streak-dot.newest {
-            animation: dotPop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-        @keyframes dotPop {
-            from { transform: scale(0); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
-        }
-        
-        /* 44. Journal best/worst day borders */
-        .calendar-day.best-day {
-            box-shadow: inset 0 0 0 1.5px rgba(52,211,153,0.35);
-        }
-        .calendar-day.worst-day {
-            box-shadow: inset 0 0 0 1.5px rgba(239,68,68,0.3);
-        }
-        
-        /* 45. Scroll reveal for landing page */
-        .lp-scroll-reveal {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-        .lp-scroll-reveal.revealed {
+
+        /* Scroll reveal - visible by default, animated when observer fires */
+        .lp2-sr {
             opacity: 1;
             transform: translateY(0);
         }
-        
-        /* ===== NEW LANDING PAGE v6 ===== */
-        .lp-page-hero{position:relative;height:100vh;min-height:700px;overflow:hidden;display:flex;flex-direction:column}
-        .lp-inst-bg{position:absolute;inset:0;z-index:1}
-        .lp-inst-bg canvas{width:100%;height:100%}
-        .lp-veil{position:absolute;inset:0;z-index:2;pointer-events:none}
-        .lp-veil-center{position:absolute;inset:0;background:radial-gradient(ellipse 80% 70% at 50% 45%,rgba(3,3,5,0.55) 0%,rgba(3,3,5,0.7) 50%,rgba(3,3,5,0.85) 100%);transition:all 1.5s cubic-bezier(0.4,0,0.2,1)}
-        .lp-veil-top{position:absolute;top:0;left:0;right:0;height:25%;background:linear-gradient(180deg,rgba(3,3,5,0.9) 0%,transparent 100%);transition:all 1.5s ease}
-        .lp-veil-bottom{position:absolute;bottom:0;left:0;right:0;height:20%;background:linear-gradient(0deg,rgba(3,3,5,0.9) 0%,transparent 100%);transition:all 1.5s ease}
-        .lp-veil.lifted .lp-veil-center{background:radial-gradient(ellipse 80% 70% at 50% 45%,rgba(3,3,5,0.05) 0%,rgba(3,3,5,0.1) 50%,rgba(3,3,5,0.2) 100%)}
-        .lp-veil.lifted .lp-veil-top{background:linear-gradient(180deg,rgba(3,3,5,0.5) 0%,transparent 100%)}
-        .lp-veil.lifted .lp-veil-bottom{background:linear-gradient(0deg,rgba(3,3,5,0.6) 0%,transparent 100%)}
-        .lp-grain{position:absolute;inset:0;opacity:0.02;z-index:3;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-
-        .lp-nav{position:relative;z-index:10;padding:20px 40px;display:flex;align-items:center;justify-content:space-between}
-        .lp-nav-logo{display:flex;align-items:center;gap:10px}
-        .lp-nav-logo-text{font-size:15px;font-weight:700;letter-spacing:-0.02em;color:rgba(255,255,255,0.7)}
-        .lp-nav-right{display:flex;gap:8px;align-items:center}
-        .lp-nav-link{padding:7px 14px;font-size:12px;font-weight:500;color:rgba(255,255,255,0.25);background:none;border:none;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;transition:color 0.15s}
-        .lp-nav-link:hover{color:rgba(255,255,255,0.5)}
-        .lp-nav-cta{padding:8px 20px;font-size:12px;font-weight:600;color:#030305;background:#34D399;border:none;border-radius:8px;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;transition:all 0.2s}
-        .lp-nav-cta:hover{background:#6EE7B7}
-
-        .lp-hero{position:relative;z-index:10;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;height:calc(100vh - 72px);padding:0 24px;transition:all 0.8s ease}
-        .lp-hero.faded{opacity:0;transform:translateY(-40px);pointer-events:none}
-        .lp-hero-label{font-size:11px;font-weight:600;color:rgba(52,211,153,0.5);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:20px;animation:lpFadeUp 0.8s ease 0.1s backwards}
-        .lp-hero-h1{font-size:clamp(44px,7vw,80px);font-weight:800;letter-spacing:-0.05em;line-height:0.95;margin-bottom:18px;max-width:750px;animation:lpFadeUp 0.8s ease 0.15s backwards}
-        .lp-hero-sub{font-size:clamp(15px,1.6vw,17px);color:rgba(255,255,255,0.5);max-width:400px;line-height:1.6;margin-bottom:48px;font-weight:400;animation:lpFadeUp 0.8s ease 0.3s backwards}
-
-        .lp-trade-prompt{animation:lpFadeUp 0.8s ease 0.45s backwards;display:flex;flex-direction:column;align-items:center;gap:12px}
-        .lp-trade-prompt-label{font-size:12px;color:rgba(255,255,255,0.25);animation:lpSubtlePulse 3s ease-in-out infinite}
-        @keyframes lpSubtlePulse{0%,100%{opacity:0.35}50%{opacity:0.6}}
-        .lp-trade-input-box{display:flex;align-items:center;gap:0;background:rgba(255,255,255,0.025);border:1px solid rgba(52,211,153,0.12);border-radius:14px;padding:5px;backdrop-filter:blur(8px);transition:border-color 0.3s,box-shadow 0.3s;position:relative;overflow:hidden}
-        .lp-trade-input-box::before{content:'';position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(180deg,rgba(52,211,153,0.15) 0%,rgba(52,211,153,0) 40%,rgba(52,211,153,0) 60%,rgba(52,211,153,0.08) 100%);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
-        .lp-trade-input-box:focus-within{border-color:rgba(52,211,153,0.25);box-shadow:0 0 40px rgba(52,211,153,0.06)}
-        .lp-trade-field{display:flex;flex-direction:column;padding:12px 18px;min-width:130px}
-        .lp-trade-field label{font-size:9px;color:rgba(255,255,255,0.25);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px}
-        .lp-trade-field input{background:none;border:none;color:#f0f0f2;font-family:'IBM Plex Mono',monospace;font-size:20px;font-weight:700;width:100%;outline:none;letter-spacing:-0.02em}
-        .lp-trade-field input::placeholder{color:rgba(255,255,255,0.1)}
-        .lp-trade-divider{width:1px;height:36px;background:rgba(255,255,255,0.06);flex-shrink:0}
-        .lp-trade-submit{padding:16px 28px;background:rgba(52,211,153,0.08);border:1px solid rgba(52,211,153,0.18);color:#34D399;font-size:15px;font-weight:700;border-radius:10px;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;transition:all 0.2s;margin:3px;white-space:nowrap}
-        .lp-trade-submit:hover{background:rgba(52,211,153,0.14);border-color:rgba(52,211,153,0.3)}
-
-        .lp-float-stats{position:absolute;z-index:10;opacity:0;transition:all 0.8s ease 0.8s;pointer-events:none;inset:0}
-        .lp-float-stats.visible{opacity:1}
-        .lp-float-stat{position:absolute;background:rgba(3,3,5,0.8);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.05);border-radius:10px;padding:12px 16px;display:flex;flex-direction:column;align-items:center}
-        .lp-float-stat-val{font-family:'IBM Plex Mono',monospace;font-size:20px;font-weight:700}
-        .lp-float-stat-lbl{font-size:9px;color:rgba(255,255,255,0.25);margin-top:3px;text-transform:uppercase;letter-spacing:0.04em}
-        .lp-fs-survival{top:25%;right:8%}
-        .lp-fs-streak{top:55%;left:6%}
-        .lp-fs-risk{bottom:22%;right:12%}
-
-        .lp-reveal-bar{position:absolute;bottom:0;left:0;right:0;z-index:10;padding:20px 32px;display:flex;align-items:center;justify-content:center;gap:16px;background:linear-gradient(0deg,rgba(3,3,5,0.95) 0%,transparent 100%);opacity:0;transform:translateY(20px);transition:all 0.8s ease 0.6s;pointer-events:none}
-        .lp-reveal-bar.visible{opacity:1;transform:translateY(0);pointer-events:auto}
-        .lp-reveal-bar-text{font-size:14px;color:rgba(255,255,255,0.5)}
-        .lp-reveal-bar-text em{color:#f0f0f2;font-style:normal;font-weight:600}
-        .lp-reveal-bar-cta{padding:12px 32px;background:#34D399;color:#030305;font-size:14px;font-weight:700;border:none;border-radius:50px;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;transition:all 0.2s;box-shadow:0 0 30px rgba(52,211,153,0.1)}
-        .lp-reveal-bar-cta:hover{background:#6EE7B7;transform:translateY(-1px)}
-
-        .lp-scroll-hint{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);z-index:10;animation:lpBob 2.5s ease-in-out infinite;opacity:0.3}
-        @keyframes lpBob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
-
-        /* Scroll sections */
-        .lp-sections{position:relative;z-index:5;background:#0a0a0c}
-        .lp-sect{padding:120px 40px;max-width:1000px;margin:0 auto}
-        .lp-sect-divider{width:60px;height:1px;background:rgba(52,211,153,0.2);margin:0 auto}
-        .lp-sect-split{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
-        .lp-sect-label{font-size:11px;font-weight:600;color:rgba(52,211,153,0.5);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:16px}
-        .lp-sect-h2{font-size:clamp(28px,3.5vw,42px);font-weight:800;letter-spacing:-0.04em;line-height:1.05;margin-bottom:16px;color:#f0f0f2}
-        .lp-sect-p{font-size:16px;color:rgba(255,255,255,0.5);line-height:1.7;margin-bottom:20px}
-        .lp-sect-detail{font-size:14px;color:rgba(255,255,255,0.3);line-height:1.7}
-
-        .lp-panels-illust{display:flex;gap:8px;height:340px}
-        .lp-panel-ill{flex:1;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.04);border-radius:12px;padding:16px;display:flex;flex-direction:column;transition:border-color 0.3s}
-        .lp-panel-ill:hover{border-color:rgba(52,211,153,0.12)}
-        .lp-panel-ill-label{font-size:9px;font-weight:600;color:rgba(255,255,255,0.25);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:auto}
-        .lp-panel-ill-body{display:flex;flex-direction:column;justify-content:center;flex:1}
-        .lp-panel-ill-title{font-size:14px;font-weight:700;color:#f0f0f2;margin-bottom:4px}
-        .lp-panel-ill-desc{font-size:12px;color:rgba(255,255,255,0.3);line-height:1.5}
-        .lp-panel-ill-arrow{display:flex;align-items:center;font-size:16px;color:rgba(52,211,153,0.2);flex-shrink:0;padding:0 4px}
-
-        .lp-calib-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
-        .lp-calib-card{background:rgba(255,255,255,0.015);border:1px solid rgba(255,255,255,0.04);border-radius:14px;padding:28px 24px;transition:border-color 0.3s,transform 0.3s}
-        .lp-calib-card:hover{border-color:rgba(52,211,153,0.1);transform:translateY(-4px)}
-        .lp-calib-icon{width:40px;height:40px;border-radius:10px;background:rgba(52,211,153,0.06);border:1px solid rgba(52,211,153,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:20px}
-        .lp-calib-title{font-size:16px;font-weight:700;margin-bottom:8px;letter-spacing:-0.02em;color:#f0f0f2}
-        .lp-calib-desc{font-size:14px;color:rgba(255,255,255,0.45);line-height:1.6}
-
-        .lp-built-for{text-align:center}
-        .lp-audience-row{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
-        .lp-audience-tag{padding:8px 18px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);border-radius:8px;font-size:13px;color:rgba(255,255,255,0.45);font-weight:500}
-
-        .lp-final-cta-section{text-align:center;padding:80px 40px 120px}
-        .lp-final-h{font-size:clamp(28px,4vw,48px);font-weight:800;letter-spacing:-0.04em;margin-bottom:16px;color:#f0f0f2}
-        .lp-final-sub{font-size:16px;color:rgba(255,255,255,0.45);margin-bottom:36px;max-width:400px;margin-left:auto;margin-right:auto;line-height:1.6}
-        .lp-final-btn{display:inline-flex;align-items:center;gap:10px;padding:18px 44px;background:#34D399;color:#030305;font-size:17px;font-weight:700;border:none;border-radius:50px;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;transition:all 0.25s;box-shadow:0 0 50px rgba(52,211,153,0.1)}
-        .lp-final-btn:hover{background:#6EE7B7;transform:translateY(-2px);box-shadow:0 0 70px rgba(52,211,153,0.2)}
-        .lp-final-note{font-size:12px;color:rgba(255,255,255,0.25);margin-top:16px}
-
-        .lp-footer{text-align:center;padding:40px;border-top:1px solid rgba(255,255,255,0.04)}
-        .lp-footer-text{font-size:11px;color:rgba(255,255,255,0.25);line-height:1.6;max-width:500px;margin:0 auto}
-
-        .lp-sr{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease}
-        .lp-sr.visible{opacity:1;transform:translateY(0)}
-
-        @keyframes lpFadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-
-        @media(max-width:900px){
-            .lp-sect-split{grid-template-columns:1fr;gap:40px}
-            .lp-panels-illust{height:auto;flex-direction:column}
-            .lp-panel-ill-arrow{transform:rotate(90deg)}
-            .lp-calib-grid{grid-template-columns:1fr}
-            .lp-nav{padding:16px 20px}
-            .lp-sect{padding:80px 24px}
-            .lp-trade-input-box{flex-direction:column;width:100%;max-width:320px}
-            .lp-trade-divider{width:100%;height:1px}
-            .lp-trade-field{min-width:auto}
+        .lp2-sr.animate-in {
+            animation: lp2RevealUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
         }
+        @keyframes lp2RevealUp {
+            from { opacity: 0; transform: translateY(32px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Section dividers */
+        .lp2-section + .lp2-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 1px;
+            background: rgba(255,255,255,0.06);
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .lp2-hero-content { flex-direction: column; gap: 40px; text-align: center; padding: 80px 24px; }
+            .lp2-hero-visual { flex: none; width: 100%; max-width: 300px; }
+            .lp2-section { padding: 60px 24px; }
+            .lp2-lens-row, .lp2-lens-row-reverse { flex-direction: column; gap: 30px; text-align: center; }
+            .lp2-lens-text { text-align: center; }
+            .lp2-lens-img { flex: none; width: 100%; max-width: 280px; }
+            .lp2-lenses { gap: 60px; }
+            .lp2-lens-card { transform: none; }
+        }
+
     </style>
     <script src="https://gumroad.com/js/gumroad.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" defer></script>
 </head>
 <body class="show-landing">
+<script>
+// Immediately remove show-landing for returning users to prevent flash
+try {
+    if (localStorage.getItem('riskwise_has_used')) {
+        document.body.classList.remove('show-landing');
+    }
+} catch(e) {}
+</script>
     <!-- Landing Page Wrapper -->
-    <div class="landing-wrapper"></div>
+    <div class="landing-wrapper">
+        <!-- SECTION 1: HERO — product visible behind -->
+        <section class="lp2-section lp2-hero">
+            <div class="lp2-hero-veil"></div>
+            <nav class="lp2-nav">
+                <div style="display:flex;align-items:center;gap:10px;">
+                    <svg width="22" height="22" viewBox="0 0 100 100" fill="none"><path d="M50 5L90 25V75L50 95L10 75V25L50 5Z" fill="rgba(52,211,153,0.15)" stroke="#34D399" stroke-width="3"/><path d="M35 55L50 35L65 55" stroke="#34D399" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><path d="M50 35V70" stroke="#34D399" stroke-width="5" stroke-linecap="round"/></svg>
+                    <span style="font-size:16px;font-weight:700;color:rgba(255,255,255,0.85);letter-spacing:-0.02em;">RiskWise</span>
+                </div>
+                <button class="lp2-cta-glow" id="lp2CtaNav"><span class="lp2-cta-glow-shine"></span><span class="lp2-cta-glow-inner">Get Started</span></button>
+            </nav>
+            <div class="lp2-hero-center" style="animation:lpFadeIn 0.8s ease 0.3s both;">
+                <h1 class="lp2-h1-gradient">You don't know what your results actually mean.</h1>
+                <p class="lp2-hero-sub-line">Good decisions can lose.</p>
+                <p class="lp2-hero-sub-line">Bad ones can win.</p>
+                <p class="lp2-hero-sub-bridge">RiskWise shows you what's actually happening underneath.</p>
+                <button class="lp2-cta-glow lp2-cta-glow-primary" id="lp2CtaHero"><span class="lp2-cta-glow-shine"></span><span class="lp2-cta-glow-inner lp2-cta-glow-inner-primary">Show me what my results mean →</span></button>
+                <div class="lp2-subtext" style="margin-top:20px;">No signals. No predictions. Just clarity.</div>
+            </div>
+            <div class="lp2-scroll-hint"><span>Scroll</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></div>
+        </section>
+        <!-- All sections below hero wrapped in solid background -->
+        <div class="lp2-sections-bg">
+        <!-- SECTION 2: THE PROBLEM -->
+        <section class="lp2-section lp2-narrow">
+            <div class="lp2-sr">
+                <p class="lp2-body-lg">You've felt this before.</p>
+                <p class="lp2-body-spaced">You hit a losing streak.<br>And suddenly… nothing makes sense anymore.</p>
+                <p class="lp2-body-spaced">You change something<br>that didn't need changing.</p>
+                <p class="lp2-body-spaced">You don't know if your strategy is failing…<br>or if this is just part of the process.</p>
+                <p class="lp2-body-spaced">You hesitate when you should act.<br>You act when you should wait.</p>
+                <p class="lp2-body-accent" style="margin-top:32px;">You thought it was discipline.</p>
+                <p class="lp2-body-accent">It's not.</p>
+                <p class="lp2-body-accent" style="color:#34D399;font-size:26px;">It's interpretation.</p>
+            </div>
+        </section>
+
+        <!-- SECTION 3: THE SHIFT -->
+        <section class="lp2-section lp2-narrow">
+            <div class="lp2-sr">
+                <h2 class="lp2-h2">Trading doesn't fail the way you think it does.</h2>
+                <p class="lp2-body-muted" style="margin-bottom:40px;">The hardest part isn't finding an edge.<br>It's recognizing what a working edge actually looks like.</p>
+                <p class="lp2-body-spaced" style="font-size:22px;color:rgba(255,255,255,0.55);">You can be right and still lose.</p>
+                <p class="lp2-body-spaced" style="font-size:22px;color:rgba(255,255,255,0.55);">You can be wrong and still win.</p>
+                <p class="lp2-body-accent" style="color:#f0f0f2;font-size:28px;margin-top:40px;letter-spacing:-0.03em;">Your results don't tell you which is which.</p>
+                <p class="lp2-body-muted" style="margin-top:40px;">So most traders end up fixing the wrong thing.</p>
+            </div>
+        </section>
+
+        <!-- SECTION 4: INTRODUCE RISKWISE -->
+        <section class="lp2-section lp2-narrow">
+            <div class="lp2-sr">
+                <h2 class="lp2-h2">RiskWise shows you what's actually happening beneath your results.</h2>
+                <p class="lp2-body-muted">No signals. No opinions. Just reality.</p>
+            </div>
+        </section>
+
+        <!-- SECTION 5: THE LENSES -->
+        <section class="lp2-section lp2-lenses">
+            <div class="lp2-sr lp2-lens-row">
+                <div class="lp2-lens-text">
+                    <div class="lp2-lens-tag" style="color:#34D399;">Drawdown</div>
+                    <h3 class="lp2-h3">Nothing is broken.</h3>
+                    <p class="lp2-body-muted">Your current drawdown is expected for your edge. Most traders would think something is wrong here. It's not.</p>
+                </div>
+                <div class="lp2-lens-img">
+                    <div class="lp2-lens-card lp2-lens-card-sm">
+                        <div class="lp2-lens-number" style="color:#34D399;font-size:32px;">96%</div>
+                        <div class="lp2-lens-desc">of paths hit this deep or worse</div>
+                        <div class="lp2-lens-verdict" style="font-size:11px;">This drawdown is <strong style="color:#34D399;">normal</strong>.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lp2-sr lp2-lens-row lp2-lens-row-reverse">
+                <div class="lp2-lens-text">
+                    <div class="lp2-lens-tag" style="color:#67E8F9;">Streak</div>
+                    <h3 class="lp2-h3">This is part of your edge.</h3>
+                    <p class="lp2-body-muted">Winning and losing streaks aren't anomalies. They're built into your distribution.</p>
+                </div>
+                <div class="lp2-lens-img">
+                    <div class="lp2-lens-card lp2-lens-card-sm">
+                        <div class="lp2-lens-number" style="color:#67E8F9;font-size:32px;">5 losses</div>
+                        <div class="lp2-lens-desc">47% chance of happening</div>
+                        <div class="lp2-lens-verdict" style="font-size:11px;">This streak is <strong style="color:#67E8F9;">expected</strong>.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lp2-sr lp2-lens-row">
+                <div class="lp2-lens-text">
+                    <div class="lp2-lens-tag" style="color:#A78BFA;">Path</div>
+                    <h3 class="lp2-h3">If you stay consistent, this is where it leads.</h3>
+                    <p class="lp2-body-muted">Not a prediction. A probability-weighted outcome based on your actual data.</p>
+                </div>
+                <div class="lp2-lens-img">
+                    <div class="lp2-lens-card lp2-lens-card-sm">
+                        <div class="lp2-lens-number" style="color:#A78BFA;font-size:32px;">+12.4%</div>
+                        <div class="lp2-lens-desc">median outcome · next 50 trades</div>
+                        <div class="lp2-lens-verdict" style="font-size:11px;"><strong style="color:#A78BFA;">Positive expectancy</strong>.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lp2-sr lp2-lens-row lp2-lens-row-reverse">
+                <div class="lp2-lens-text">
+                    <div class="lp2-lens-tag" style="color:#F59E0B;">Edge</div>
+                    <h3 class="lp2-h3">Not proven yet.</h3>
+                    <p class="lp2-body-muted">You don't have enough evidence to confirm an edge. This is where most traders become overconfident — or quit too early.</p>
+                </div>
+                <div class="lp2-lens-img">
+                    <div class="lp2-lens-card lp2-lens-card-sm">
+                        <div class="lp2-lens-number" style="color:#F59E0B;font-size:32px;">Unclear</div>
+                        <div class="lp2-lens-desc">62% confidence</div>
+                        <div class="lp2-lens-verdict" style="font-size:11px;">Results <strong style="color:#F59E0B;">could still be random</strong>.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lp2-sr lp2-lens-row">
+                <div class="lp2-lens-text">
+                    <div class="lp2-lens-tag" style="color:#EF4444;">Risk</div>
+                    <h3 class="lp2-h3">Above this, your edge starts breaking.</h3>
+                    <p class="lp2-body-muted">Your sizing determines whether your edge survives long enough to play out.</p>
+                </div>
+                <div class="lp2-lens-img">
+                    <div class="lp2-lens-card lp2-lens-card-sm">
+                        <div class="lp2-lens-number" style="color:#EF4444;font-size:32px;">2.9%</div>
+                        <div class="lp2-lens-desc">max risk before survival drops below 50%</div>
+                        <div class="lp2-lens-verdict" style="font-size:11px;">Your edge supports up to <strong style="color:#34D399;">2.9%</strong> risk.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: THE MOMENT -->
+        <section class="lp2-section lp2-narrow lp2-moment" style="padding:160px 40px;">
+            <div class="lp2-sr">
+                <h2 style="font-size:clamp(36px,5vw,52px);font-weight:800;color:#f0f0f2;letter-spacing:-0.04em;line-height:1.1;margin-bottom:0;">One moment changes everything.</h2>
+                <p class="lp2-body-spaced" style="margin-top:60px;">The moment you realize:</p>
+                <p class="lp2-body-spaced" style="font-size:21px;">Your losses don't mean you're wrong.</p>
+                <p class="lp2-body-spaced" style="font-size:21px;">Your drawdown doesn't mean your strategy is broken.</p>
+                <p class="lp2-body-spaced" style="font-size:21px;">Your edge hasn't failed —<br>you just didn't understand it.</p>
+                <p style="font-size:24px;font-weight:700;color:#34D399;margin-top:60px;letter-spacing:-0.02em;">That's when trading starts to make sense.</p>
+            </div>
+        </section>
+
+        <!-- SECTION 7: BENEFITS -->
+        <section class="lp2-section lp2-narrow">
+            <div class="lp2-sr lp2-benefits">
+                <div class="lp2-benefit">Stop guessing.</div>
+                <div class="lp2-benefit">Stop overreacting.</div>
+                <div class="lp2-benefit">Stop fixing what isn't broken.</div>
+                <p class="lp2-body-accent" style="margin-top:40px;">And for the first time:<br>understand what's actually happening.</p>
+            </div>
+        </section>
+
+        <!-- SECTION 8: FINAL CTA -->
+        <section class="lp2-section lp2-narrow lp2-final">
+            <div class="lp2-sr">
+                <p class="lp2-body-muted" style="margin-bottom:16px;">Stop guessing what your results mean.</p>
+                <h2 class="lp2-h2">Know what's happening.<br>Then trade.</h2>
+                <div style="margin-top:44px;">
+                    <button class="lp2-cta-glow lp2-cta-glow-primary" id="lp2CtaFinal">
+                        <span class="lp2-cta-glow-shine"></span>
+                        <span class="lp2-cta-glow-inner lp2-cta-glow-inner-primary">Show me what my results mean →</span>
+                    </button>
+                </div>
+                <div class="lp2-subtext" style="margin-top:20px;">No signals. No strategies. Just clarity.</div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <div class="lp2-footer">
+            <p>RiskWise doesn't tell you what to do.<br>It shows you what's actually happening.</p>
+        </div>
+        </div><!-- /lp2-sections-bg -->
+    </div>
 
     <!-- Mobile Gate -->
     <div class="mobile-gate">
@@ -12659,8 +11587,8 @@
             <span class="reality-anchor-text" id="realityAnchorText"></span>
         </div>
         
-        <!-- Current Streak (in instrument) -->
-        <div class="instrument-streak">
+        <!-- Streak data (hidden from center, JS still updates these) -->
+        <div class="instrument-streak" style="display:none;">
             <div class="instrument-streak-header">Current Streak</div>
             <div class="streak-visual" id="streakVisual">
                 <div class="streak-empty">Log trades to see streaks</div>
@@ -12831,6 +11759,7 @@
     
     <!-- Left Drawer for Full Mode -->
     <!-- Left Drawer: Drawdown Diagnostics + Session Heatmap -->
+    <!-- Diagnostic Mode Selector -->
     <div class="drawer drawer-left" id="drawerLeft">
         <div class="diag-left-panel">
             <!-- Header -->
@@ -12940,30 +11869,21 @@
         </div>
     </div>
     
-    <!-- Right Drawer: Monte Carlo -->
+    <!-- Right Drawer: Risk Engine (Monte Carlo Terminal) -->
     <div class="drawer drawer-right" id="drawerRight">
-        <div class="mc-panel-v2">
-            <!-- Header -->
-            <div class="mc-v2-header" style="position:relative;">
-                <span class="mc-v2-title">Risk Profile <span class="rp-info-trigger" style="display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:50%;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);cursor:help;vertical-align:middle;margin-left:4px;">
+        <!-- Permanent Risk Engine header with lens tabs -->
+        <div style="padding:16px 24px 0;border-bottom:1px solid var(--border-subtle);">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px;">
+                <span class="mc-v2-title">Risk Engine <span class="rp-info-trigger" style="display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:50%;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);cursor:help;vertical-align:middle;margin-left:4px;">
                     <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
                 </span></span>
-                <div class="rp-tooltip" style="display:none;margin-top:10px;width:100%;padding:14px 16px;background:rgba(12,12,16,0.98);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.08);border-radius:10px;box-shadow:0 12px 40px rgba(0,0,0,0.6);z-index:200;">
-                    <div style="font-size:12px;font-weight:700;color:var(--text-primary);margin-bottom:8px;">How the Risk Profile works</div>
-                    <div style="font-size:11px;font-weight:400;color:rgba(255,255,255,0.45);line-height:1.65;margin-bottom:8px;">RiskWise uses a <strong style="color:rgba(255,255,255,0.65);">Monte Carlo simulation</strong> — a method used in quantitative finance to model uncertainty by running thousands of possible outcomes.</div>
-                    <div style="font-size:11px;font-weight:400;color:rgba(255,255,255,0.45);line-height:1.65;margin-bottom:8px;">We take your <strong style="color:rgba(255,255,255,0.65);">actual trade history</strong> — your win rate, reward-to-risk ratio, and risk per trade — and simulate <strong style="color:rgba(255,255,255,0.65);">500 possible futures</strong> for your next trading horizon.</div>
-                    <div style="font-size:11px;font-weight:400;color:rgba(255,255,255,0.45);line-height:1.65;margin-bottom:8px;">Each path follows the probability distribution your real trades produced. The result shows how likely your account is to stay above your drawdown floor — and at what risk level that breaks down.</div>
-                    <div style="font-size:11px;font-weight:400;color:rgba(52,211,153,0.6);line-height:1.65;"><strong>This is not a prediction.</strong> It's a probability map built from your own data.</div>
-                </div>
-                <button id="mcShareBtn" title="Share snapshot" style="position:absolute;top:18px;right:20px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:6px 12px;cursor:pointer;display:flex;align-items:center;gap:6px;color:rgba(255,255,255,0.45);font-size:11px;font-weight:600;transition:all 0.15s;font-family:inherit;">
+                <button id="mcShareBtn" title="Share snapshot" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:6px 12px;cursor:pointer;display:flex;align-items:center;gap:6px;color:rgba(255,255,255,0.45);font-size:11px;font-weight:600;transition:all 0.15s;font-family:inherit;">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
                     Share
                 </button>
-                <span class="mc-v2-sub">Your live risk calibration. Every trade you log recalculates your survival probability and risk limits across <span id="mcSubHorizon">50</span> simulated futures.</span>
             </div>
-            
-            <!-- Params Row - Full Width -->
-            <div class="mc-v2-params">
+            <div style="font-size:11px;color:rgba(255,255,255,0.25);margin-bottom:10px;">Monte Carlo simulation of your edge. Recalibrates with every trade.</div>
+            <div class="mc-v2-params" style="margin-bottom:10px;padding:10px 0;border-top:1px solid var(--border-subtle);border-bottom:none;">
                 <div class="mc-v2-param" title="Percentage of trades that were profitable">
                     <span class="mc-v2-param-val" id="mcWinRate">—</span>
                     <span class="mc-v2-param-lbl">Win %</span>
@@ -12981,6 +11901,26 @@
                     <span class="mc-v2-param-lbl">Current DD</span>
                 </div>
             </div>
+            <div class="rp-tooltip" style="display:none;margin-bottom:12px;width:100%;padding:14px 16px;background:rgba(12,12,16,0.98);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.08);border-radius:10px;box-shadow:0 12px 40px rgba(0,0,0,0.6);z-index:200;">
+                <div style="font-size:12px;font-weight:700;color:var(--text-primary);margin-bottom:8px;">How the Risk Engine works</div>
+                <div style="font-size:11px;font-weight:400;color:rgba(255,255,255,0.45);line-height:1.65;margin-bottom:8px;">RiskWise uses a <strong style="color:rgba(255,255,255,0.65);">Monte Carlo simulation</strong> — a method used in quantitative finance to model uncertainty by running thousands of possible outcomes.</div>
+                <div style="font-size:11px;font-weight:400;color:rgba(255,255,255,0.45);line-height:1.65;margin-bottom:8px;">We take your <strong style="color:rgba(255,255,255,0.65);">actual trade history</strong> — your win rate, reward-to-risk ratio, and risk per trade — and simulate <strong style="color:rgba(255,255,255,0.65);">500 possible futures</strong> for your next trading horizon.</div>
+                <div style="font-size:11px;font-weight:400;color:rgba(52,211,153,0.6);line-height:1.65;"><strong>This is not a prediction.</strong> It's a probability map built from your own data.</div>
+            </div>
+            <div style="display:flex;gap:2px;padding:4px;background:rgba(255,255,255,0.015);border-radius:8px;margin-bottom:-1px;">
+                <button class="diag-mode-btn active" data-diag-mode="risk" style="flex:1;text-align:center;">Risk</button>
+                <button class="diag-mode-btn" data-diag-mode="drawdown" style="flex:1;text-align:center;">Drawdown</button>
+                <button class="diag-mode-btn" data-diag-mode="streak" style="flex:1;text-align:center;">Streak</button>
+                <button class="diag-mode-btn" data-diag-mode="path" style="flex:1;text-align:center;">Path</button>
+                <button class="diag-mode-btn" data-diag-mode="edge" style="flex:1;text-align:center;">Edge</button>
+            </div>
+        </div>
+        
+        <!-- Tab: Risk (default active) -->
+        <div class="diag-content active" data-diag-mode="risk">
+        <div class="mc-panel-v2" style="min-height:0;">
+            
+            <!-- Params Row - Full Width -->
             
             <!-- RISK PROFILE — full panel, the centerpiece -->
             <div class="mc-v2-columns" style="flex-direction:column;flex:1;overflow-y:auto;">
@@ -13009,8 +11949,8 @@
                     <div id="riskSensitivityMeta" style="font-size:10px;color:rgba(255,255,255,0.25);margin-bottom:14px;font-family:var(--font-mono);">% of paths above 30% drawdown floor · 500 paths per level</div>
                     <div id="riskSensitivityInline" style="display:flex;flex-direction:column;gap:3px;font-family:var(--font-mono);font-size:12px;"></div>
                     <div id="riskSensitivityEmpty" style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 16px;text-align:center;">
-                        <div style="font-size:11px;font-weight:600;color:var(--color-primary);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px;">Risk Profile</div>
-                        <div style="font-size:13px;color:rgba(255,255,255,0.35);margin-bottom:10px;">Log 10+ trades to activate your risk profile.</div>
+                        <div style="font-size:11px;font-weight:600;color:var(--color-primary);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px;">Risk Engine</div>
+                        <div style="font-size:13px;color:rgba(255,255,255,0.35);margin-bottom:10px;">Log 10+ trades to activate the Risk Engine.</div>
                         <div style="font-size:12px;color:rgba(255,255,255,0.2);font-family:var(--font-mono);" id="riskProfileProgress" class="empty-shimmer">0 of 10 trades</div>
                     </div>
                 </div>
@@ -13094,6 +12034,177 @@
             <!-- Insight Strip - Full Width -->
             <div class="mc-v2-insight" id="mcInsightStrip">
                 <span class="mc-v2-insight-text" id="mcInsightText">Based on all-trade average risk of <span id="mcEffRisk">—</span> per trade.</span>
+            </div>
+        </div>
+        </div><!-- /diag-content risk right -->
+        
+        <!-- DRAWDOWN MODE — Right Panel: Diagnostics -->
+        <div class="diag-content" data-diag-mode="drawdown">
+            <div style="padding:16px 24px;flex:1;display:flex;flex-direction:column;gap:0;overflow-y:auto;">
+                
+                <!-- Headline: Is this normal? -->
+                <div style="text-align:center;padding:16px 0 12px;">
+                    <div style="font-size:11px;color:rgba(255,255,255,0.3);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:10px;">Is this drawdown normal?</div>
+                    <div style="font-family:var(--font-mono);font-size:40px;font-weight:700;" id="ddPercentileVal">—</div>
+                    <div style="font-size:12px;color:rgba(255,255,255,0.3);margin-top:6px;" id="ddPercentileDesc">of simulated paths hit a drawdown this deep or worse</div>
+                </div>
+                
+                <!-- Distribution chart -->
+                <div style="height:140px;margin:0 -4px;">
+                    <canvas id="ddDistCanvas" style="width:100%;height:100%;"></canvas>
+                </div>
+                
+                <!-- Verdict -->
+                <div class="dd-insight-box dd-insight-normal" id="ddInsightBox" style="margin:12px 0;">
+                    Log 10+ trades to see where your drawdown falls.
+                </div>
+                
+                <div style="height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.04),transparent);margin:4px 0;"></div>
+                
+                <!-- Where you stand -->
+                <div style="display:flex;flex-direction:column;gap:4px;padding:12px 0;">
+                    <div style="font-size:10px;font-weight:700;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:2px;">Where You Stand</div>
+                    <div class="dd-stat-row"><span class="dd-stat-label">You're down</span><span class="dd-stat-value" id="ddCurrentDD" style="color:#EF4444;">—</span></div>
+                    <div class="dd-stat-row"><span class="dd-stat-label">Typical worst drawdown at this risk</span><span class="dd-stat-value" id="ddExpectedDD" style="color:#D4A84B;">—</span></div>
+                    <div class="dd-stat-row"><span class="dd-stat-label">Your drawdown floor</span><span class="dd-stat-value" id="ddFloorSetting">—</span></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- STREAK LENS -->
+        <div class="diag-content" data-diag-mode="streak">
+            <div style="padding:16px 24px;flex:1;display:flex;flex-direction:column;gap:0;overflow-y:auto;">
+                
+                <!-- Headline: Is this streak normal? -->
+                <div style="text-align:center;padding:16px 0 12px;">
+                    <div style="font-size:11px;color:rgba(255,255,255,0.3);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:10px;">Is this streak normal?</div>
+                    <div style="display:flex;align-items:baseline;justify-content:center;gap:8px;">
+                        <span style="font-family:var(--font-mono);font-size:40px;font-weight:700;" id="streakLensLength">—</span>
+                        <span style="font-family:var(--font-mono);font-size:20px;font-weight:700;" id="streakLensType" style="color:rgba(255,255,255,0.5);">—</span>
+                    </div>
+                    <div style="font-size:12px;color:rgba(255,255,255,0.3);margin-top:6px;" id="streakLensProbLine">Log trades to see streak analysis.</div>
+                </div>
+                
+                <!-- Streak probability distribution chart -->
+                <div style="height:160px;margin:0 -4px;">
+                    <canvas id="streakDistCanvas" style="width:100%;height:100%;"></canvas>
+                </div>
+                
+                <!-- Verdict -->
+                <div class="dd-insight-box dd-insight-normal" id="streakInsightBox" style="margin:12px 0;">
+                    Log trades to activate streak analysis.
+                </div>
+                
+                <div style="height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.04),transparent);margin:4px 0;"></div>
+                
+                <!-- Context -->
+                <div style="display:flex;flex-direction:column;gap:4px;padding:12px 0;">
+                    <div style="font-size:10px;font-weight:700;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:2px;">At Your Win Rate</div>
+                    <div class="dd-stat-row"><span class="dd-stat-label">Win rate</span><span class="dd-stat-value" id="streakLensWR">—</span></div>
+                    <div class="dd-stat-row"><span class="dd-stat-label">Expected longest losing streak</span><span class="dd-stat-value" id="streakLensExpLoss" style="color:#EF4444;">—</span></div>
+                    <div class="dd-stat-row"><span class="dd-stat-label">Expected longest winning streak</span><span class="dd-stat-value" id="streakLensExpWin" style="color:#34D399;">—</span></div>
+                    <div class="dd-stat-row"><span class="dd-stat-label">Trades logged</span><span class="dd-stat-value" id="streakLensTradeCount">—</span></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- PATH LENS -->
+        <div class="diag-content" data-diag-mode="path">
+            <div style="padding:16px 24px;flex:1;display:flex;flex-direction:column;gap:0;overflow-y:auto;">
+                
+                <!-- Headline: Where does this go? -->
+                <div style="text-align:center;padding:16px 0 8px;">
+                    <div style="font-size:11px;color:rgba(255,255,255,0.3);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:10px;">Where does this go from here?</div>
+                    <div style="font-family:var(--font-mono);font-size:36px;font-weight:700;color:#34D399;" id="pathMedianReturn">—</div>
+                    <div style="font-size:12px;color:rgba(255,255,255,0.3);margin-top:4px;">median outcome over next <span id="pathHorizonLabel">50</span> trades</div>
+                </div>
+                
+                <!-- Fan chart -->
+                <div style="height:200px;margin:8px -4px;">
+                    <canvas id="pathFanCanvas" style="width:100%;height:100%;"></canvas>
+                </div>
+                
+                <!-- Verdict -->
+                <div class="dd-insight-box dd-insight-normal" id="pathInsightBox" style="margin:8px 0 12px;">
+                    Log 10+ trades to see projected paths.
+                </div>
+                
+                <div style="height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.04),transparent);margin:0;"></div>
+                
+                <!-- Outcome range -->
+                <div style="display:flex;flex-direction:column;gap:4px;padding:12px 0;">
+                    <div style="font-size:10px;font-weight:700;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:2px;">Outcome Range</div>
+                    <div class="dd-stat-row"><span class="dd-stat-label">Best case (top 10%)</span><span class="dd-stat-value" id="pathBestCase" style="color:#34D399;">—</span></div>
+                    <div class="dd-stat-row"><span class="dd-stat-label">Median outcome</span><span class="dd-stat-value" id="pathMedian">—</span></div>
+                    <div class="dd-stat-row"><span class="dd-stat-label">Worst case (bottom 10%)</span><span class="dd-stat-value" id="pathWorstCase" style="color:#EF4444;">—</span></div>
+                    <div class="dd-stat-row"><span class="dd-stat-label">Chance of new equity high</span><span class="dd-stat-value" id="pathNewHighProb" style="color:#34D399;">—</span></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- EDGE LENS -->
+        <div class="diag-content" data-diag-mode="edge">
+            <div style="padding:16px 24px;flex:1;display:flex;flex-direction:column;gap:0;overflow-y:auto;">
+                
+                <!-- Headline: Is this edge real? -->
+                <div style="text-align:center;padding:16px 0 12px;">
+                    <div style="font-size:11px;color:rgba(255,255,255,0.3);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:10px;">Is this edge statistically real?</div>
+                    <div style="font-family:var(--font-mono);font-size:36px;font-weight:700;" id="edgeConfidenceVal">—</div>
+                    <div style="font-size:12px;color:rgba(255,255,255,0.3);margin-top:4px;" id="edgeConfidenceLabel">confidence level</div>
+                </div>
+                
+                <!-- Confidence bar -->
+                <div style="padding:0 4px;margin-bottom:4px;">
+                    <div style="height:28px;background:rgba(255,255,255,0.015);border-radius:6px;overflow:hidden;position:relative;border:1px solid rgba(255,255,255,0.03);">
+                        <div id="edgeConfBar" style="height:100%;width:0%;border-radius:5px;transition:width 0.5s ease;"></div>
+                        <!-- Threshold markers -->
+                        <div style="position:absolute;top:0;bottom:0;left:50%;width:1px;background:rgba(255,255,255,0.08);"></div>
+                        <div style="position:absolute;top:0;bottom:0;left:90%;width:1px;background:rgba(255,255,255,0.08);"></div>
+                        <div style="position:absolute;top:0;bottom:0;left:95%;width:1px;background:rgba(52,211,153,0.2);"></div>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;font-size:8px;color:rgba(255,255,255,0.15);font-family:var(--font-mono);margin-top:3px;padding:0 2px;">
+                        <span>0%</span>
+                        <span style="position:relative;left:-25%;">50%</span>
+                        <span style="position:relative;left:-5%;">90%</span>
+                        <span>95%+</span>
+                    </div>
+                </div>
+                
+                <!-- Verdict -->
+                <div class="dd-insight-box dd-insight-normal" id="edgeInsightBox" style="margin:10px 0;">
+                    Log trades to analyze your edge.
+                </div>
+                
+                <div style="height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.04),transparent);margin:4px 0;"></div>
+                
+                <!-- Win Rate Confidence Interval -->
+                <div style="display:flex;flex-direction:column;gap:4px;padding:12px 0;">
+                    <div style="font-size:10px;font-weight:700;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:2px;">True Win Rate Range (95% CI)</div>
+                    <div style="text-align:center;padding:8px 0;">
+                        <span style="font-family:var(--font-mono);font-size:14px;color:rgba(255,255,255,0.35);" id="edgeWRLow">—</span>
+                        <span style="font-family:var(--font-mono);font-size:20px;font-weight:700;color:rgba(255,255,255,0.8);margin:0 12px;" id="edgeWRCenter">—</span>
+                        <span style="font-family:var(--font-mono);font-size:14px;color:rgba(255,255,255,0.35);" id="edgeWRHigh">—</span>
+                    </div>
+                    <div style="font-size:10px;color:rgba(255,255,255,0.2);text-align:center;" id="edgeWRExplain">Your true win rate is somewhere in this range.</div>
+                </div>
+                
+                <div style="height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.04),transparent);margin:0;"></div>
+                
+                <!-- Statistical tests -->
+                <div style="display:flex;flex-direction:column;gap:4px;padding:12px 0;">
+                    <div style="font-size:10px;font-weight:700;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:2px;">Statistical Tests</div>
+                    <div class="dd-stat-row"><span class="dd-stat-label">P-value (vs random)</span><span class="dd-stat-value" id="edgePValue">—</span></div>
+                    <div class="dd-stat-row"><span class="dd-stat-label">Trades logged</span><span class="dd-stat-value" id="edgeTradeCount">—</span></div>
+                    <div class="dd-stat-row"><span class="dd-stat-label">Trades needed for 95% confidence</span><span class="dd-stat-value" id="edgeTradesNeeded" style="color:#67E8F9;">—</span></div>
+                </div>
+                
+                <div style="height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.04),transparent);margin:0;"></div>
+                
+                <!-- Sample size context -->
+                <div style="display:flex;flex-direction:column;gap:4px;padding:12px 0 16px;">
+                    <div style="font-size:10px;font-weight:700;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:2px;">What This Means</div>
+                    <div style="font-size:12px;color:rgba(255,255,255,0.35);line-height:1.6;" id="edgeSampleExplain">Log trades to see sample size analysis.</div>
+                </div>
             </div>
         </div>
     </div>
@@ -13939,7 +13050,7 @@
         </div>
     </div>
     
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
         // Free tier limits (must be at top — hoisted functions reference these)
         const FREE_MANUAL_TRADE_LIMIT = 20;
         const FREE_IMPORT_LIMIT = 1;
@@ -17206,6 +16317,16 @@
                     }, 1500);
                 }
             }
+            
+            // Update whichever lens is currently active
+            try {
+                if (typeof currentDiagMode !== 'undefined' && currentDiagMode !== 'risk') {
+                    if (currentDiagMode === 'drawdown') runDrawdownAnalysis();
+                    if (currentDiagMode === 'streak') runStreakAnalysis();
+                    if (currentDiagMode === 'path') runPathAnalysis();
+                    if (currentDiagMode === 'edge') runEdgeAnalysis();
+                }
+            } catch(e) { console.log('Lens update:', e); }
         }
         
         function renderMCChart(svg, paths, startingEquity, horizon) {
@@ -18384,7 +17505,7 @@
                         });
                         // Reset insight strip
                         const insightText = document.getElementById('mcInsightText');
-                        if (insightText) insightText.innerHTML = 'Log 10+ trades to activate your risk profile.';
+                        if (insightText) insightText.innerHTML = 'Log 10+ trades to activate the Risk Engine.';
                         // Reset toast flag
                         window._riskFindingShown = false;
                         
@@ -19609,7 +18730,7 @@
         }
         
         if (isDemoMode) {
-            // Load demo data immediately so the instrument is visible behind the overlay
+            // Load demo data in background so it's ready when landing is dismissed
             const demo = generateDemoTrades();
             state.startingBalance = 25000;
             state.trades = demo.trades;
@@ -19618,10 +18739,8 @@
             storage.set('riskwise_demo_mode', 'true');
             saveState();
             
-            // Remove show-landing to reveal the app
-            document.body.classList.remove('show-landing');
-            
-            // Update all displays with demo data
+            // Do NOT remove show-landing — the landing page scroll experience is active
+            // App renders in background, hidden by the landing-wrapper
             updateDisplay();
             updateDrawer();
             updatePnlInputState();
@@ -19633,47 +18752,101 @@
             var demoBannerEl = document.getElementById('demoBanner');
             if (demoBannerEl) demoBannerEl.style.display = 'block';
             
-            // Show hero overlay on top of the running instrument
-            setTimeout(function() {
-                var overlay = document.createElement('div');
-                overlay.id = 'lpHeroOverlay';
-                overlay.style.cssText = 'position:fixed;inset:0;z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:rgba(5,5,8,0.6);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);opacity:0;transition:opacity 0.5s ease;cursor:default;';
-                
-                overlay.innerHTML = '' +
-                    '<div style="position:absolute;top:20px;left:40px;display:flex;align-items:center;gap:10px;">' +
-                        '<svg width="22" height="22" viewBox="0 0 100 100" fill="none"><path d="M50 5L90 25V75L50 95L10 75V25L50 5Z" fill="rgba(52,211,153,0.2)" stroke="#34D399" stroke-width="4"/><path d="M35 55L50 35L65 55" stroke="#34D399" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><path d="M50 35V70" stroke="#34D399" stroke-width="6" stroke-linecap="round"/></svg>' +
-                        '<span style="font-size:15px;font-weight:700;color:rgba(255,255,255,0.7);font-family:IBM Plex Sans,-apple-system,sans-serif;">RiskWise</span>' +
-                    '</div>' +
-                    '<div style="font-size:11px;font-weight:600;color:rgba(52,211,153,0.5);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:20px;font-family:IBM Plex Sans,sans-serif;">Risk Journal for Traders</div>' +
-                    '<h1 style="font-size:clamp(44px,7vw,80px);font-weight:800;letter-spacing:-0.05em;line-height:0.95;margin-bottom:18px;max-width:750px;color:#f0f0f2;font-family:IBM Plex Sans,sans-serif;">Your strategy has a<br>breaking point.</h1>' +
-                    '<p style="font-size:clamp(15px,1.6vw,17px);color:rgba(255,255,255,0.45);max-width:500px;line-height:1.6;margin-bottom:44px;font-weight:400;font-family:IBM Plex Sans,sans-serif;">Other journals show you what happened. RiskWise simulates your edge to reveal the exact risk level where it breaks \u2014 before your next drawdown decides for you.</p>' +
-                    '<button id="lpOverlayCta" style="padding:18px 48px;background:#34D399;color:#030305;font-size:17px;font-weight:700;border:none;border-radius:50px;cursor:pointer;font-family:IBM Plex Sans,sans-serif;transition:all 0.25s;box-shadow:0 0 50px rgba(52,211,153,0.15);">Find your breaking point \u2192</button>' +
-                    '<div style="font-size:11px;color:rgba(255,255,255,0.15);margin-top:20px;font-family:IBM Plex Mono,monospace;letter-spacing:0.03em;">Powered by Monte Carlo simulation \u00B7 Real-time risk calibration</div>';
-                
-                document.body.appendChild(overlay);
-                
-                requestAnimationFrame(function() {
-                    requestAnimationFrame(function() {
-                        overlay.style.opacity = '1';
-                    });
+            // Landing page scroll reveal
+            var lp2SrEls = document.querySelectorAll('.lp2-sr');
+            var lp2Root = document.querySelector('.landing-wrapper');
+            var lp2Observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-in');
+                    }
                 });
-                
-                document.getElementById('lpOverlayCta').addEventListener('click', function() {
-                    overlay.style.opacity = '0';
-                    overlay.style.pointerEvents = 'none';
+            }, { threshold: 0.1, root: lp2Root });
+            lp2SrEls.forEach(function(el) { lp2Observer.observe(el); });
+            
+            
+            
+            // CTA handlers — both hero and final CTA do the same thing
+            function dismissLanding() {
+                var wrapper = document.querySelector('.landing-wrapper');
+                if (wrapper) {
+                    wrapper.style.transition = 'opacity 0.4s ease';
+                    wrapper.style.opacity = '0';
+                }
+                setTimeout(function() {
+                    document.body.classList.remove('show-landing');
                     storage.set('riskwise_has_used', 'true');
-                    setTimeout(function() { overlay.remove(); }, 500);
-                });
-            }, 200);
+                }, 400);
+            }
+            
+            var heroBtn = document.getElementById('lp2CtaHero');
+            var finalBtn = document.getElementById('lp2CtaFinal');
+            var navBtn = document.getElementById('lp2CtaNav');
             
         } else if (hasUsedApp) {
             document.body.classList.remove('show-landing');
+            
+            // If returning but state is empty (cleared demo, never imported), reload demo
+            if (state.trades.length === 0 && storage.get('riskwise_demo_mode')) {
+                const demo = generateDemoTrades();
+                state.startingBalance = 25000;
+                state.trades = demo.trades;
+                state.currentBalance = demo.finalBalance;
+                state.peakBalance = Math.max(25000, ...demo.trades.map(t => t.balance));
+                saveState();
+                updateDisplay();
+                updateDrawer();
+                updatePnlInputState();
+                updateStartingBalanceLock();
+                runMCProjection();
+                if (typeof renderLogCalendar === 'function') renderLogCalendar();
+                if (typeof renderGoalsPanel === 'function') renderGoalsPanel();
+            }
+            
             // Show demo banner if still in demo mode
             if (storage.get('riskwise_demo_mode')) {
                 var demoBannerReturn = document.getElementById('demoBanner');
                 if (demoBannerReturn) demoBannerReturn.style.display = 'block';
             }
         }
+        
+        // Landing page CTA handlers — always attach regardless of mode
+        function dismissLandingGlobal() {
+            var wrapper = document.querySelector('.landing-wrapper');
+            if (wrapper) {
+                wrapper.style.transition = 'opacity 0.4s ease';
+                wrapper.style.opacity = '0';
+            }
+            setTimeout(function() {
+                document.body.classList.remove('show-landing');
+                storage.set('riskwise_has_used', 'true');
+                // Load demo data if no trades exist
+                if (state.trades.length === 0) {
+                    var demo = generateDemoTrades();
+                    state.startingBalance = 25000;
+                    state.trades = demo.trades;
+                    state.currentBalance = demo.finalBalance;
+                    state.peakBalance = Math.max(25000, ...demo.trades.map(function(t){return t.balance}));
+                    storage.set('riskwise_demo_mode', 'true');
+                    saveState();
+                    updateDisplay();
+                    updateDrawer();
+                    updatePnlInputState();
+                    updateStartingBalanceLock();
+                    runMCProjection();
+                    if (typeof renderLogCalendar === 'function') renderLogCalendar();
+                    if (typeof renderGoalsPanel === 'function') renderGoalsPanel();
+                    var db = document.getElementById('demoBanner');
+                    if (db) db.style.display = 'block';
+                }
+            }, 400);
+        }
+        var heroBtn2 = document.getElementById('lp2CtaHero');
+        var finalBtn2 = document.getElementById('lp2CtaFinal');
+        var navBtn2 = document.getElementById('lp2CtaNav');
+        if (heroBtn2) heroBtn2.addEventListener('click', dismissLandingGlobal);
+        if (finalBtn2) finalBtn2.addEventListener('click', dismissLandingGlobal);
+        if (navBtn2) navBtn2.addEventListener('click', dismissLandingGlobal);
         
         // Demo banner CTA — clear demo data, start real onboarding
         const demoBannerBtn = document.getElementById('demoBannerBtn');
@@ -22498,7 +21671,841 @@
             }
         });
         
-        // Risk Profile tooltip - hover
+        // Risk Engine Tab Selector (right panel only)
+        const diagModeBtns = document.querySelectorAll('.diag-mode-btn');
+        const diagContents = document.querySelectorAll('.diag-content');
+        var currentDiagMode = "risk";;
+        
+        function switchDiagMode(mode) {
+            currentDiagMode = mode;
+            diagModeBtns.forEach(function(b) { 
+                b.classList.toggle('active', b.getAttribute('data-diag-mode') === mode);
+            });
+            diagContents.forEach(function(c) {
+                c.classList.toggle('active', c.getAttribute('data-diag-mode') === mode);
+            });
+            if (mode === 'drawdown') runDrawdownAnalysis();
+            if (mode === 'streak') runStreakAnalysis();
+            if (mode === 'path') runPathAnalysis();
+            if (mode === 'edge') runEdgeAnalysis();
+        }
+        
+        diagModeBtns.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var mode = this.getAttribute('data-diag-mode');
+                if (mode !== currentDiagMode) {
+                    switchDiagMode(mode);
+                }
+            });
+        });
+        
+        // Update edge summary (default right panel)
+        // Drawdown Analysis
+        function runDrawdownAnalysis() {
+            if (state.trades.length < 10) return;
+            
+            var stats = getStats();
+            var startEq = state.currentBalance;
+            var peakEq = state.peakBalance || startEq;
+            var currentDD = (peakEq - startEq) / peakEq;
+            var avgRisk = stats.blendedAvgRisk ? stats.blendedAvgRisk / startEq : 0.02;
+            var winRate = stats.winRate / 100;
+            var avgR = stats.avgR || 0.3;
+            var maxDD = state.ddCeiling || 0.30;
+            var rMultiples = [];
+            state.trades.forEach(function(t) {
+                if (t.risk && t.risk > 0) rMultiples.push(t.pnl / t.risk);
+                else if (t.pnl) rMultiples.push(t.pnl > 0 ? 1.5 : -1);
+            });
+            if (rMultiples.length < 5) return;
+            
+            // Simulate 1000 paths and collect max drawdowns
+            var simDDs = [];
+            var PATHS = 1000;
+            var HORIZON = 50;
+            for (var p = 0; p < PATHS; p++) {
+                var eq = startEq;
+                var pk = peakEq;
+                var worstDD = 0;
+                for (var t = 0; t < HORIZON; t++) {
+                    var R = rMultiples[Math.floor(Math.random() * rMultiples.length)];
+                    eq *= (1 + avgRisk * R);
+                    if (eq > pk) pk = eq;
+                    var dd = (pk - eq) / pk;
+                    if (dd > worstDD) worstDD = dd;
+                }
+                simDDs.push(worstDD);
+            }
+            simDDs.sort(function(a, b) { return a - b; });
+            
+            // Calculate percentile rank of current DD
+            var rank = 0;
+            for (var i = 0; i < simDDs.length; i++) {
+                if (simDDs[i] <= currentDD) rank++;
+            }
+            var percentile = Math.round((rank / PATHS) * 100);
+            
+            // Expected max DD (median of sim)
+            var expectedMaxDD = simDDs[Math.floor(PATHS * 0.5)];
+            
+            // Recovery calc
+            var avgWinDollar = 0;
+            var winCount = 0;
+            state.trades.forEach(function(t) { if (t.pnl > 0) { avgWinDollar += t.pnl; winCount++; } });
+            avgWinDollar = winCount > 0 ? avgWinDollar / winCount : 0;
+            var ddDollars = peakEq - startEq;
+            var recoveryTrades = avgWinDollar > 0 ? Math.ceil(ddDollars / (avgWinDollar * winRate)) : 0;
+            
+            // Recovery probability — how many paths recover to peak within 50 trades
+            var recoveredCount = 0;
+            for (var p = 0; p < PATHS; p++) {
+                var eq2 = startEq;
+                var recovered = false;
+                for (var t2 = 0; t2 < HORIZON; t2++) {
+                    var R2 = rMultiples[Math.floor(Math.random() * rMultiples.length)];
+                    eq2 *= (1 + avgRisk * R2);
+                    if (eq2 >= peakEq) { recovered = true; break; }
+                }
+                if (recovered) recoveredCount++;
+            }
+            var recoveryProb = Math.round((recoveredCount / PATHS) * 100);
+            
+            // Update left panel
+            var percEl = document.getElementById('ddPercentileVal');
+            var percDescEl = document.getElementById('ddPercentileDesc');
+            var insightEl = document.getElementById('ddInsightBox');
+            
+            if (percEl) {
+                var pathsThisDeep = 100 - percentile;
+                percEl.textContent = pathsThisDeep + '%';
+                percEl.style.color = percentile <= 70 ? '#34D399' : percentile <= 90 ? '#D4A84B' : '#EF4444';
+            }
+            if (percDescEl) {
+                percDescEl.textContent = 'of simulated paths hit a drawdown this deep or worse';
+            }
+            if (insightEl) {
+                if (percentile <= 75) {
+                    insightEl.className = 'dd-insight-box dd-insight-normal';
+                    insightEl.innerHTML = 'This drawdown is <strong style="color:#34D399;">normal</strong> for your edge. Most simulated paths experience a drawdown this size or larger.';
+                } else if (percentile <= 90) {
+                    insightEl.className = 'dd-insight-box dd-insight-normal';
+                    insightEl.innerHTML = 'This drawdown is <strong style="color:#D4A84B;">larger than usual</strong> but still within the range your edge produces. Worth watching.';
+                } else {
+                    insightEl.className = 'dd-insight-box dd-insight-warning';
+                    insightEl.innerHTML = 'This drawdown is <strong style="color:#EF4444;">outside normal range</strong> for your edge. Only ' + (100 - percentile) + '% of simulated paths got this deep.';
+                }
+            }
+            
+            // Update right panel
+            var ddCurEl = document.getElementById('ddCurrentDD');
+            var ddExpEl = document.getElementById('ddExpectedDD');
+            var ddFloorEl = document.getElementById('ddFloorSetting');
+            var ddRecEl = document.getElementById('ddRecoveryTrades');
+            var ddRecProbEl = document.getElementById('ddRecoveryProb');
+            var ddHistEl = document.getElementById('ddHistoryList');
+            
+            if (ddCurEl) ddCurEl.textContent = '-' + (currentDD * 100).toFixed(1) + '%';
+            if (ddExpEl) ddExpEl.textContent = '-' + (expectedMaxDD * 100).toFixed(1) + '%';
+            if (ddFloorEl) ddFloorEl.textContent = (maxDD * 100).toFixed(0) + '%';
+            if (ddRecEl) ddRecEl.textContent = currentDD > 0 ? '~' + recoveryTrades + ' trades' : 'Not in drawdown';
+            if (ddRecProbEl) {
+                ddRecProbEl.textContent = recoveryProb + '%';
+                ddRecProbEl.style.color = recoveryProb >= 70 ? '#34D399' : recoveryProb >= 40 ? '#D4A84B' : '#EF4444';
+            }
+            
+            // Drawdown history
+            if (ddHistEl && state.trades.length > 0) {
+                var ddHistory = [];
+                var pk3 = state.startingBalance || state.trades[0].balance;
+                var inDD = false;
+                var ddStart = 0;
+                var ddPeak = 0;
+                var ddWorst = 0;
+                
+                state.trades.forEach(function(t, idx) {
+                    var bal = t.balance || (state.startingBalance + state.trades.slice(0, idx + 1).reduce(function(s, tr) { return s + (tr.pnl || 0); }, 0));
+                    if (bal > pk3) pk3 = bal;
+                    var dd = (pk3 - bal) / pk3;
+                    
+                    if (dd >= 0.02 && !inDD) {
+                        inDD = true;
+                        ddStart = idx;
+                        ddPeak = pk3;
+                        ddWorst = dd;
+                    } else if (inDD && dd > ddWorst) {
+                        ddWorst = dd;
+                    } else if (inDD && dd < 0.005) {
+                        ddHistory.push({ depth: ddWorst, trades: idx - ddStart });
+                        inDD = false;
+                    }
+                });
+                if (inDD) ddHistory.push({ depth: ddWorst, trades: state.trades.length - ddStart });
+                
+                // Show last 5
+                var histHtml = '';
+                ddHistory.slice(-5).reverse().forEach(function(d) {
+                    var col = d.depth >= 0.15 ? '#EF4444' : d.depth >= 0.08 ? '#D4A84B' : 'rgba(255,255,255,0.5)';
+                    histHtml += '<div class="dd-stat-row"><span class="dd-stat-label">' + d.trades + ' trades to recover</span><span class="dd-stat-value" style="color:' + col + ';">-' + (d.depth * 100).toFixed(1) + '%</span></div>';
+                });
+                if (histHtml) ddHistEl.innerHTML = histHtml;
+                else ddHistEl.innerHTML = '<div style="color:rgba(255,255,255,0.2);">No completed drawdowns yet.</div>';
+            }
+            
+            // Draw distribution chart
+            drawDDDistribution(simDDs, currentDD);
+        }
+        
+        function drawDDDistribution(simDDs, currentDD) {
+            var canvas = document.getElementById('ddDistCanvas');
+            if (!canvas) return;
+            var rect = canvas.parentElement.getBoundingClientRect();
+            var dpr = window.devicePixelRatio || 1;
+            canvas.width = rect.width * dpr;
+            canvas.height = rect.height * dpr;
+            canvas.style.width = rect.width + 'px';
+            canvas.style.height = rect.height + 'px';
+            var ctx = canvas.getContext('2d');
+            ctx.scale(dpr, dpr);
+            var w = rect.width, h = rect.height;
+            var pad = { top: 10, right: 20, bottom: 30, left: 10 };
+            var pw = w - pad.left - pad.right, ph = h - pad.top - pad.bottom;
+            
+            // Build histogram bins
+            var maxVal = Math.max.apply(null, simDDs);
+            var binCount = 30;
+            var binWidth = maxVal / binCount;
+            var bins = new Array(binCount).fill(0);
+            simDDs.forEach(function(dd) {
+                var bin = Math.min(Math.floor(dd / binWidth), binCount - 1);
+                bins[bin]++;
+            });
+            var maxBin = Math.max.apply(null, bins);
+            
+            // Draw bars
+            var barW = pw / binCount - 1;
+            bins.forEach(function(count, i) {
+                var barH = (count / maxBin) * ph;
+                var x = pad.left + i * (pw / binCount);
+                var y = pad.top + ph - barH;
+                var ddVal = (i + 0.5) * binWidth;
+                
+                // Color based on whether below or above current DD
+                if (ddVal <= currentDD) {
+                    ctx.fillStyle = 'rgba(52,211,153,0.25)';
+                } else {
+                    ctx.fillStyle = 'rgba(255,255,255,0.06)';
+                }
+                ctx.beginPath();
+                var bx=x, by=y, bw=Math.max(barW,2), bh=barH, br=2;
+                ctx.moveTo(bx+br,by);ctx.lineTo(bx+bw-br,by);ctx.quadraticCurveTo(bx+bw,by,bx+bw,by+br);ctx.lineTo(bx+bw,by+bh-br);ctx.quadraticCurveTo(bx+bw,by+bh,bx+bw-br,by+bh);ctx.lineTo(bx+br,by+bh);ctx.quadraticCurveTo(bx,by+bh,bx,by+bh-br);ctx.lineTo(bx,by+br);ctx.quadraticCurveTo(bx,by,bx+br,by);ctx.closePath();
+                ctx.fill();
+            });
+            
+            // Draw current DD line
+            var ddX = pad.left + (currentDD / maxVal) * pw;
+            if (ddX > pad.left && ddX < w - pad.right) {
+                ctx.strokeStyle = '#EF4444';
+                ctx.lineWidth = 2;
+                ctx.setLineDash([4, 3]);
+                ctx.beginPath();
+                ctx.moveTo(ddX, pad.top);
+                ctx.lineTo(ddX, pad.top + ph);
+                ctx.stroke();
+                ctx.setLineDash([]);
+                
+                // Label
+                ctx.fillStyle = '#EF4444';
+                ctx.font = '600 10px IBM Plex Mono';
+                ctx.textAlign = 'center';
+                ctx.fillText('You: -' + (currentDD * 100).toFixed(1) + '%', ddX, pad.top + ph + 16);
+            }
+            
+            // X axis label
+            ctx.fillStyle = 'rgba(255,255,255,0.15)';
+            ctx.font = '400 9px IBM Plex Sans';
+            ctx.textAlign = 'left';
+            ctx.fillText('0%', pad.left, pad.top + ph + 16);
+            ctx.textAlign = 'right';
+            ctx.fillText('-' + (maxVal * 100).toFixed(0) + '%', w - pad.right, pad.top + ph + 16);
+        }
+        
+        // Edge Analysis — statistical significance
+        function runEdgeAnalysis() {
+            if (state.trades.length < 5) return;
+            
+            var n = state.trades.length;
+            var wins = 0;
+            var rMultiples = [];
+            state.trades.forEach(function(t) {
+                if (t.pnl > 0) wins++;
+                if (t.risk && t.risk > 0) rMultiples.push(t.pnl / t.risk);
+                else if (t.pnl) rMultiples.push(t.pnl > 0 ? 1.5 : -1);
+            });
+            var winRate = wins / n;
+            
+            // Binomial test: P(X >= wins | p=0.5, n)
+            // Using normal approximation for binomial
+            var expectedWins = n * 0.5;
+            var stdDev = Math.sqrt(n * 0.5 * 0.5);
+            var zScore = (wins - expectedWins) / stdDev;
+            
+            // P-value (one-tailed: probability of this win rate or better if random)
+            // Normal CDF approximation
+            function normalCDF(z) {
+                var a1=0.254829592, a2=-0.284496736, a3=1.421413741, a4=-1.453152027, a5=1.061405429;
+                var p=0.3275911;
+                var sign = z < 0 ? -1 : 1;
+                z = Math.abs(z) / Math.sqrt(2);
+                var t = 1.0 / (1.0 + p * z);
+                var y = 1.0 - (((((a5*t+a4)*t)+a3)*t+a2)*t+a1)*t*Math.exp(-z*z);
+                return 0.5 * (1.0 + sign * y);
+            }
+            
+            var pValue = 1 - normalCDF(zScore);
+            var confidence = (1 - pValue) * 100;
+            
+            // T-test on R-multiples (are they significantly > 0?)
+            var meanR = 0, sumR = 0;
+            rMultiples.forEach(function(r) { sumR += r; });
+            meanR = sumR / rMultiples.length;
+            var variance = 0;
+            rMultiples.forEach(function(r) { variance += (r - meanR) * (r - meanR); });
+            variance = variance / (rMultiples.length - 1);
+            var stdErr = Math.sqrt(variance / rMultiples.length);
+            var tStat = stdErr > 0 ? meanR / stdErr : 0;
+            var tPValue = tStat > 0 ? (1 - normalCDF(tStat)) : 1; // approximation
+            
+            // Use the more conservative of the two tests
+            var finalPValue = Math.max(pValue, tPValue);
+            var finalConfidence = Math.min(confidence, (1 - tPValue) * 100);
+            finalConfidence = Math.max(0, Math.min(100, finalConfidence));
+            
+            // 95% CI for win rate (Wilson score interval)
+            var z95 = 1.96;
+            var denom = 1 + z95 * z95 / n;
+            var center = (winRate + z95 * z95 / (2 * n)) / denom;
+            var margin = z95 * Math.sqrt((winRate * (1 - winRate) + z95 * z95 / (4 * n)) / n) / denom;
+            var ciLow = Math.max(0, center - margin);
+            var ciHigh = Math.min(1, center + margin);
+            
+            // Estimated trades needed for 95% confidence
+            // Based on t-test: n = (z * stdDev / meanR)^2
+            // This uses the R-multiple distribution, not just win rate
+            // Answers: "how many trades to prove expectancy > 0?"
+            var tradesNeeded = 9999;
+            if (meanR > 0 && variance > 0) {
+                var stdDevR = Math.sqrt(variance);
+                // For one-tailed 95%: z = 1.645
+                tradesNeeded = Math.ceil(Math.pow(1.645 * stdDevR / meanR, 2));
+                tradesNeeded = Math.max(tradesNeeded, 30);
+            } else if (meanR <= 0) {
+                // Negative expectancy — can't reach significance for a positive edge
+                tradesNeeded = 9999;
+            }
+            
+            // Update headline
+            var confEl = document.getElementById('edgeConfidenceVal');
+            var confLabelEl = document.getElementById('edgeConfidenceLabel');
+            if (confEl) {
+                if (finalConfidence >= 95) {
+                    confEl.textContent = 'Yes';
+                    confEl.style.color = '#34D399';
+                } else if (finalConfidence >= 80) {
+                    confEl.textContent = 'Likely';
+                    confEl.style.color = '#D4A84B';
+                } else if (finalConfidence >= 60) {
+                    confEl.textContent = 'Unclear';
+                    confEl.style.color = '#D4A84B';
+                } else {
+                    confEl.textContent = 'Not yet';
+                    confEl.style.color = 'rgba(255,255,255,0.4)';
+                }
+            }
+            if (confLabelEl) {
+                confLabelEl.textContent = finalConfidence.toFixed(0) + '% confidence that this edge is real';
+            }
+            
+            // Confidence bar
+            var barEl = document.getElementById('edgeConfBar');
+            if (barEl) {
+                barEl.style.width = Math.min(finalConfidence, 100) + '%';
+                barEl.style.background = finalConfidence >= 95 ? '#34D399' : finalConfidence >= 80 ? '#D4A84B' : finalConfidence >= 60 ? 'rgba(212,168,75,0.5)' : 'rgba(255,255,255,0.1)';
+            }
+            
+            // Verdict
+            var insightEl = document.getElementById('edgeInsightBox');
+            if (insightEl) {
+                if (n < 30) {
+                    insightEl.className = 'dd-insight-box dd-insight-normal';
+                    insightEl.innerHTML = '<strong style="color:rgba(255,255,255,0.6);">Not enough data.</strong> At ' + n + ' trades, your results cannot be distinguished from random chance. Keep logging.';
+                } else if (finalConfidence >= 95) {
+                    insightEl.className = 'dd-insight-box dd-insight-normal';
+                    insightEl.innerHTML = 'Your edge is <strong style="color:#34D399;">statistically significant</strong>. There is less than a 5% chance these results are random.';
+                } else if (finalConfidence >= 80) {
+                    insightEl.className = 'dd-insight-box dd-insight-normal';
+                    insightEl.innerHTML = 'Your edge is <strong style="color:#D4A84B;">showing positive signs</strong> but hasn\'t reached statistical significance yet. More trades will clarify.';
+                } else {
+                    insightEl.className = 'dd-insight-box dd-insight-normal';
+                    insightEl.innerHTML = 'Your results <strong style="color:rgba(255,255,255,0.5);">could still be random</strong>. At ' + n + ' trades, the sample size isn\'t large enough to confirm an edge.';
+                }
+            }
+            
+            // Win rate CI
+            var wrLowEl = document.getElementById('edgeWRLow');
+            var wrCenterEl = document.getElementById('edgeWRCenter');
+            var wrHighEl = document.getElementById('edgeWRHigh');
+            var wrExplainEl = document.getElementById('edgeWRExplain');
+            if (wrLowEl) wrLowEl.textContent = (ciLow * 100).toFixed(0) + '%';
+            if (wrCenterEl) wrCenterEl.textContent = (winRate * 100).toFixed(0) + '%';
+            if (wrHighEl) wrHighEl.textContent = (ciHigh * 100).toFixed(0) + '%';
+            if (wrExplainEl) {
+                var range = ciHigh - ciLow;
+                if (range > 0.20) {
+                    wrExplainEl.textContent = 'Wide range — your true win rate is still uncertain. More trades will narrow this.';
+                } else if (range > 0.10) {
+                    wrExplainEl.textContent = 'Narrowing. Your true win rate is becoming clearer with more data.';
+                } else {
+                    wrExplainEl.textContent = 'Tight range. Your win rate estimate is reliable at this sample size.';
+                }
+            }
+            
+            // Stats
+            var pvEl = document.getElementById('edgePValue');
+            var tcEl = document.getElementById('edgeTradeCount');
+            var tnEl = document.getElementById('edgeTradesNeeded');
+            var sampleEl = document.getElementById('edgeSampleExplain');
+            
+            if (pvEl) {
+                pvEl.textContent = finalPValue < 0.001 ? '< 0.001' : finalPValue.toFixed(3);
+                pvEl.style.color = finalPValue < 0.05 ? '#34D399' : finalPValue < 0.2 ? '#D4A84B' : 'rgba(255,255,255,0.4)';
+            }
+            if (tcEl) tcEl.textContent = n;
+            if (tnEl) {
+                if (finalConfidence >= 95) {
+                    tnEl.textContent = '✓ Reached';
+                    tnEl.style.color = '#34D399';
+                } else if (tradesNeeded >= 9999 || meanR <= 0) {
+                    tnEl.textContent = 'N/A — expectancy ≤ 0';
+                    tnEl.style.color = 'rgba(255,255,255,0.3)';
+                } else {
+                    tnEl.textContent = '~' + tradesNeeded + ' trades';
+                    tnEl.style.color = '#67E8F9';
+                }
+            }
+            if (sampleEl) {
+                if (n < 30) {
+                    sampleEl.textContent = 'Under 30 trades is considered too small for statistical inference. Most statisticians require 100+ trades minimum, and 200+ for reliable conclusions. Every trade you log narrows the uncertainty.';
+                } else if (n < 100) {
+                    sampleEl.textContent = 'At ' + n + ' trades you\'re building a sample but the confidence interval is still wide. The difference between a 52% and 58% win rate is invisible at this sample size. Keep logging — clarity comes with volume.';
+                } else if (n < 200) {
+                    sampleEl.textContent = 'At ' + n + ' trades your data is starting to tell a real story. The confidence interval is narrowing and patterns are becoming distinguishable from noise.';
+                } else {
+                    sampleEl.textContent = 'At ' + n + ' trades you have a meaningful dataset. Statistical tests at this sample size can reliably distinguish a real edge from random variance.';
+                }
+            }
+        }
+        
+        // Path Analysis
+        function runPathAnalysis() {
+            if (state.trades.length < 10) return;
+            
+            var stats = getStats();
+            var startEq = state.currentBalance;
+            var peakEq = state.peakBalance || startEq;
+            var avgRisk = stats.blendedAvgRisk ? stats.blendedAvgRisk / startEq : 0.02;
+            var rMultiples = [];
+            state.trades.forEach(function(t) {
+                if (t.risk && t.risk > 0) rMultiples.push(t.pnl / t.risk);
+                else if (t.pnl) rMultiples.push(t.pnl > 0 ? 1.5 : -1);
+            });
+            if (rMultiples.length < 5) return;
+            
+            var HORIZON = state.mcHorizon || 50;
+            var PATHS = 500;
+            var allPaths = [];
+            var finalEquities = [];
+            var newHighCount = 0;
+            
+            for (var p = 0; p < PATHS; p++) {
+                var path = [startEq];
+                var eq = startEq;
+                var reachedHigh = false;
+                for (var t = 0; t < HORIZON; t++) {
+                    var R = rMultiples[Math.floor(Math.random() * rMultiples.length)];
+                    eq *= (1 + avgRisk * R);
+                    if (eq < 0) eq = 0;
+                    path.push(eq);
+                    if (eq > peakEq) reachedHigh = true;
+                }
+                allPaths.push(path);
+                finalEquities.push(eq);
+                if (reachedHigh) newHighCount++;
+            }
+            
+            finalEquities.sort(function(a, b) { return a - b; });
+            
+            var median = finalEquities[Math.floor(PATHS * 0.5)];
+            var p10 = finalEquities[Math.floor(PATHS * 0.1)];
+            var p90 = finalEquities[Math.floor(PATHS * 0.9)];
+            var newHighPct = Math.round((newHighCount / PATHS) * 100);
+            
+            var medianReturn = ((median - startEq) / startEq) * 100;
+            var bestReturn = ((p90 - startEq) / startEq) * 100;
+            var worstReturn = ((p10 - startEq) / startEq) * 100;
+            
+            // Update headline
+            var headlineEl = document.getElementById('pathMedianReturn');
+            if (headlineEl) {
+                headlineEl.textContent = (medianReturn >= 0 ? '+' : '') + medianReturn.toFixed(1) + '%';
+                headlineEl.style.color = medianReturn >= 0 ? '#34D399' : '#EF4444';
+            }
+            var horizLabelEl = document.getElementById('pathHorizonLabel');
+            if (horizLabelEl) horizLabelEl.textContent = HORIZON;
+            
+            // Verdict
+            var insightEl = document.getElementById('pathInsightBox');
+            if (insightEl) {
+                if (medianReturn >= 5) {
+                    insightEl.className = 'dd-insight-box dd-insight-normal';
+                    insightEl.innerHTML = 'Your edge is <strong style="color:#34D399;">producing positive expectancy</strong>. The median path grows your account by ' + medianReturn.toFixed(1) + '% over ' + HORIZON + ' trades.';
+                } else if (medianReturn >= 0) {
+                    insightEl.className = 'dd-insight-box dd-insight-normal';
+                    insightEl.innerHTML = 'Your edge is <strong style="color:#D4A84B;">roughly breakeven</strong> at current risk. The median path moves ' + medianReturn.toFixed(1) + '% over ' + HORIZON + ' trades.';
+                } else {
+                    insightEl.className = 'dd-insight-box dd-insight-warning';
+                    insightEl.innerHTML = 'Your edge is <strong style="color:#EF4444;">producing negative expectancy</strong> at current risk. The median path loses ' + Math.abs(medianReturn).toFixed(1) + '% over ' + HORIZON + ' trades.';
+                }
+            }
+            
+            // Stats
+            var bestEl = document.getElementById('pathBestCase');
+            var medEl = document.getElementById('pathMedian');
+            var worstEl = document.getElementById('pathWorstCase');
+            var highEl = document.getElementById('pathNewHighProb');
+            
+            if (bestEl) {
+                bestEl.textContent = (bestReturn >= 0 ? '+' : '') + bestReturn.toFixed(1) + '%';
+                bestEl.style.color = bestReturn >= 0 ? '#34D399' : '#EF4444';
+            }
+            if (medEl) {
+                medEl.textContent = (medianReturn >= 0 ? '+' : '') + medianReturn.toFixed(1) + '%';
+                medEl.style.color = medianReturn >= 0 ? '#34D399' : '#EF4444';
+            }
+            if (worstEl) {
+                worstEl.textContent = (worstReturn >= 0 ? '+' : '') + worstReturn.toFixed(1) + '%';
+                worstEl.style.color = worstReturn >= 0 ? '#34D399' : '#EF4444';
+            }
+            if (highEl) {
+                highEl.textContent = newHighPct + '%';
+                highEl.style.color = newHighPct >= 60 ? '#34D399' : newHighPct >= 30 ? '#D4A84B' : '#EF4444';
+            }
+            
+            // Draw fan chart
+            drawPathFanChart(allPaths, startEq, peakEq, HORIZON);
+        }
+        
+        function drawPathFanChart(allPaths, startEq, peakEq, horizon) {
+            var canvas = document.getElementById('pathFanCanvas');
+            if (!canvas) return;
+            var rect = canvas.parentElement.getBoundingClientRect();
+            var dpr = window.devicePixelRatio || 1;
+            canvas.width = rect.width * dpr;
+            canvas.height = rect.height * dpr;
+            canvas.style.width = rect.width + 'px';
+            canvas.style.height = rect.height + 'px';
+            var ctx = canvas.getContext('2d');
+            ctx.scale(dpr, dpr);
+            var w = rect.width, h = rect.height;
+            var pad = { top: 12, right: 12, bottom: 24, left: 50 };
+            var pw = w - pad.left - pad.right, ph = h - pad.top - pad.bottom;
+            
+            // Calculate percentile bands at each step
+            var steps = horizon + 1;
+            var p10 = [], p25 = [], p50 = [], p75 = [], p90 = [];
+            
+            for (var s = 0; s < steps; s++) {
+                var vals = [];
+                allPaths.forEach(function(path) { vals.push(path[s]); });
+                vals.sort(function(a, b) { return a - b; });
+                p10.push(vals[Math.floor(vals.length * 0.1)]);
+                p25.push(vals[Math.floor(vals.length * 0.25)]);
+                p50.push(vals[Math.floor(vals.length * 0.5)]);
+                p75.push(vals[Math.floor(vals.length * 0.75)]);
+                p90.push(vals[Math.floor(vals.length * 0.9)]);
+            }
+            
+            // Find min/max for scaling
+            var allMin = Infinity, allMax = -Infinity;
+            [p10, p90].forEach(function(arr) {
+                arr.forEach(function(v) {
+                    if (v < allMin) allMin = v;
+                    if (v > allMax) allMax = v;
+                });
+            });
+            allMin *= 0.95; allMax *= 1.05;
+            
+            function toX(step) { return pad.left + (step / horizon) * pw; }
+            function toY(val) { return pad.top + ph * (1 - (val - allMin) / (allMax - allMin)); }
+            
+            // Grid lines
+            for (var i = 0; i <= 4; i++) {
+                var gy = pad.top + (ph / 4) * i;
+                ctx.strokeStyle = 'rgba(255,255,255,0.02)';
+                ctx.lineWidth = 1;
+                ctx.beginPath(); ctx.moveTo(pad.left, gy); ctx.lineTo(w - pad.right, gy); ctx.stroke();
+            }
+            
+            // Starting equity reference line
+            var startY = toY(startEq);
+            ctx.strokeStyle = 'rgba(255,255,255,0.06)';
+            ctx.setLineDash([4, 3]);
+            ctx.beginPath(); ctx.moveTo(pad.left, startY); ctx.lineTo(w - pad.right, startY); ctx.stroke();
+            ctx.setLineDash([]);
+            
+            // P10-P90 band (outer)
+            ctx.beginPath();
+            for (var s = 0; s < steps; s++) ctx.lineTo(toX(s), toY(p90[s]));
+            for (var s = steps - 1; s >= 0; s--) ctx.lineTo(toX(s), toY(p10[s]));
+            ctx.closePath();
+            ctx.fillStyle = 'rgba(52,211,153,0.04)';
+            ctx.fill();
+            
+            // P25-P75 band (inner)
+            ctx.beginPath();
+            for (var s = 0; s < steps; s++) ctx.lineTo(toX(s), toY(p75[s]));
+            for (var s = steps - 1; s >= 0; s--) ctx.lineTo(toX(s), toY(p25[s]));
+            ctx.closePath();
+            ctx.fillStyle = 'rgba(52,211,153,0.06)';
+            ctx.fill();
+            
+            // P90 line (best case)
+            ctx.beginPath();
+            for (var s = 0; s < steps; s++) { s === 0 ? ctx.moveTo(toX(s), toY(p90[s])) : ctx.lineTo(toX(s), toY(p90[s])); }
+            ctx.strokeStyle = 'rgba(52,211,153,0.15)';
+            ctx.lineWidth = 1;
+            ctx.stroke();
+            
+            // P10 line (worst case)
+            ctx.beginPath();
+            for (var s = 0; s < steps; s++) { s === 0 ? ctx.moveTo(toX(s), toY(p10[s])) : ctx.lineTo(toX(s), toY(p10[s])); }
+            ctx.strokeStyle = 'rgba(239,68,68,0.15)';
+            ctx.lineWidth = 1;
+            ctx.stroke();
+            
+            // Median line
+            ctx.beginPath();
+            for (var s = 0; s < steps; s++) { s === 0 ? ctx.moveTo(toX(s), toY(p50[s])) : ctx.lineTo(toX(s), toY(p50[s])); }
+            ctx.strokeStyle = 'rgba(52,211,153,0.5)';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+            
+            // Labels
+            ctx.fillStyle = 'rgba(255,255,255,0.15)';
+            ctx.font = '400 9px IBM Plex Mono';
+            ctx.textAlign = 'left';
+            ctx.fillText('Now', pad.left, h - 4);
+            ctx.textAlign = 'right';
+            ctx.fillText('+' + horizon + ' trades', w - pad.right, h - 4);
+            
+            // Y axis labels
+            ctx.textAlign = 'right';
+            ctx.fillStyle = 'rgba(52,211,153,0.3)';
+            ctx.fillText('$' + Math.round(p90[steps - 1]).toLocaleString(), pad.left - 6, toY(p90[steps - 1]) + 3);
+            ctx.fillStyle = 'rgba(255,255,255,0.2)';
+            ctx.fillText('$' + Math.round(p50[steps - 1]).toLocaleString(), pad.left - 6, toY(p50[steps - 1]) + 3);
+            ctx.fillStyle = 'rgba(239,68,68,0.3)';
+            ctx.fillText('$' + Math.round(p10[steps - 1]).toLocaleString(), pad.left - 6, toY(p10[steps - 1]) + 3);
+        }
+        
+        // Streak Analysis
+        function runStreakAnalysis() {
+            if (state.trades.length < 5) return;
+            
+            var winRate = 0;
+            var wins = 0;
+            state.trades.forEach(function(t) { if (t.pnl > 0) wins++; });
+            winRate = wins / state.trades.length;
+            var lossRate = 1 - winRate;
+            
+            // Calculate current streak
+            var currentLen = 0, currentType = '';
+            if (state.trades.length > 0) {
+                var last = state.trades[state.trades.length - 1];
+                currentType = last.pnl > 0 ? 'W' : 'L';
+                currentLen = 1;
+                for (var i = state.trades.length - 2; i >= 0; i--) {
+                    if ((state.trades[i].pnl > 0 && currentType === 'W') || (state.trades[i].pnl <= 0 && currentType === 'L')) {
+                        currentLen++;
+                    } else break;
+                }
+            }
+            
+            // Calculate probability of hitting a streak of length N
+            // P(streak >= N in T trades) ≈ 1 - (1 - p^N)^(T-N+1) where p is the per-trade probability
+            var tradeCount = state.trades.length;
+            var streakProbs = [];
+            var streakRate = currentType === 'L' ? lossRate : winRate;
+            
+            for (var n = 1; n <= 12; n++) {
+                var pSingle = Math.pow(streakRate, n);
+                var pNever = Math.pow(1 - pSingle, Math.max(tradeCount - n + 1, 1));
+                var pAtLeastOnce = Math.min((1 - pNever) * 100, 100);
+                streakProbs.push({ length: n, prob: pAtLeastOnce });
+            }
+            
+            // Current streak probability
+            var currentProb = 0;
+            streakProbs.forEach(function(s) { if (s.length === currentLen) currentProb = s.prob; });
+            
+            // Expected longest streaks via simulation
+            var simWinStreaks = [], simLossStreaks = [];
+            for (var s = 0; s < 1000; s++) {
+                var maxW = 0, maxL = 0, cw = 0, cl = 0;
+                for (var t = 0; t < tradeCount; t++) {
+                    if (Math.random() < winRate) { cw++; cl = 0; if (cw > maxW) maxW = cw; }
+                    else { cl++; cw = 0; if (cl > maxL) maxL = cl; }
+                }
+                simWinStreaks.push(maxW);
+                simLossStreaks.push(maxL);
+            }
+            simWinStreaks.sort(function(a, b) { return a - b; });
+            simLossStreaks.sort(function(a, b) { return a - b; });
+            var medianWinStreak = simWinStreaks[500];
+            var medianLossStreak = simLossStreaks[500];
+            
+            // Update headline
+            var lenEl = document.getElementById('streakLensLength');
+            var typeEl = document.getElementById('streakLensType');
+            var probLineEl = document.getElementById('streakLensProbLine');
+            
+            if (lenEl) {
+                lenEl.textContent = currentLen;
+                lenEl.style.color = currentType === 'W' ? '#34D399' : '#EF4444';
+            }
+            if (typeEl) {
+                typeEl.textContent = currentType === 'W' ? 'wins' : 'losses';
+                typeEl.style.color = currentType === 'W' ? '#34D399' : '#EF4444';
+            }
+            if (probLineEl) {
+                probLineEl.textContent = 'A ' + currentLen + '-' + (currentType === 'W' ? 'win' : 'loss') + ' streak has a ' + Math.round(currentProb) + '% chance of happening in ' + tradeCount + ' trades';
+            }
+            
+            // Verdict
+            var insightEl = document.getElementById('streakInsightBox');
+            if (insightEl) {
+                if (currentProb >= 50) {
+                    insightEl.className = 'dd-insight-box dd-insight-normal';
+                    insightEl.innerHTML = 'This streak is <strong style="color:#34D399;">expected</strong>. At your win rate, this happens more often than not.';
+                } else if (currentProb >= 15) {
+                    insightEl.className = 'dd-insight-box dd-insight-normal';
+                    insightEl.innerHTML = 'This streak is <strong style="color:#D4A84B;">uncommon but not unusual</strong>. It has a ' + Math.round(currentProb) + '% chance of occurring in ' + tradeCount + ' trades.';
+                } else {
+                    insightEl.className = 'dd-insight-box dd-insight-warning';
+                    insightEl.innerHTML = 'This streak is <strong style="color:#EF4444;">statistically rare</strong> for your win rate. Only a ' + Math.round(currentProb) + '% chance in ' + tradeCount + ' trades. Your edge may be shifting.';
+                }
+            }
+            
+            // Context stats
+            var wrEl = document.getElementById('streakLensWR');
+            var expLossEl = document.getElementById('streakLensExpLoss');
+            var expWinEl = document.getElementById('streakLensExpWin');
+            var countEl = document.getElementById('streakLensTradeCount');
+            
+            if (wrEl) wrEl.textContent = Math.round(winRate * 100) + '%';
+            if (expLossEl) expLossEl.textContent = medianLossStreak + ' trades';
+            if (expWinEl) expWinEl.textContent = medianWinStreak + ' trades';
+            if (countEl) countEl.textContent = tradeCount;
+            
+            // Draw chart
+            drawStreakChart(streakProbs, currentLen, currentType);
+        }
+        
+        function drawStreakChart(streakProbs, currentLen, currentType) {
+            var canvas = document.getElementById('streakDistCanvas');
+            if (!canvas) return;
+            var rect = canvas.parentElement.getBoundingClientRect();
+            var dpr = window.devicePixelRatio || 1;
+            canvas.width = rect.width * dpr;
+            canvas.height = rect.height * dpr;
+            canvas.style.width = rect.width + 'px';
+            canvas.style.height = rect.height + 'px';
+            var ctx = canvas.getContext('2d');
+            ctx.scale(dpr, dpr);
+            var w = rect.width, h = rect.height;
+            var pad = { top: 10, right: 16, bottom: 28, left: 16 };
+            var pw = w - pad.left - pad.right, ph = h - pad.top - pad.bottom;
+            
+            var maxProb = 100;
+            var barCount = streakProbs.length;
+            var barW = (pw / barCount) - 4;
+            var gap = 4;
+            
+            // 50% reference line
+            var refY = pad.top + ph * (1 - 50 / maxProb);
+            ctx.strokeStyle = 'rgba(255,255,255,0.06)';
+            ctx.lineWidth = 1;
+            ctx.setLineDash([4, 3]);
+            ctx.beginPath();
+            ctx.moveTo(pad.left, refY);
+            ctx.lineTo(w - pad.right, refY);
+            ctx.stroke();
+            ctx.setLineDash([]);
+            ctx.fillStyle = 'rgba(255,255,255,0.12)';
+            ctx.font = '400 9px IBM Plex Mono';
+            ctx.textAlign = 'right';
+            ctx.fillText('50%', pad.left - 4, refY + 3);
+            
+            streakProbs.forEach(function(s, i) {
+                var barH = (s.prob / maxProb) * ph;
+                var x = pad.left + i * (barW + gap);
+                var y = pad.top + ph - barH;
+                var isCurrent = s.length === currentLen;
+                
+                // Bar color
+                if (isCurrent) {
+                    ctx.fillStyle = currentType === 'W' ? 'rgba(52,211,153,0.5)' : 'rgba(239,68,68,0.5)';
+                } else {
+                    ctx.fillStyle = s.prob >= 50 ? 'rgba(52,211,153,0.15)' : 'rgba(255,255,255,0.06)';
+                }
+                
+                // Draw bar
+                var br = 3;
+                ctx.beginPath();
+                ctx.moveTo(x + br, y); ctx.lineTo(x + barW - br, y); ctx.quadraticCurveTo(x + barW, y, x + barW, y + br);
+                ctx.lineTo(x + barW, y + barH); ctx.lineTo(x, y + barH);
+                ctx.lineTo(x, y + br); ctx.quadraticCurveTo(x, y, x + br, y);
+                ctx.closePath();
+                ctx.fill();
+                
+                // Highlight current bar
+                if (isCurrent) {
+                    ctx.strokeStyle = currentType === 'W' ? '#34D399' : '#EF4444';
+                    ctx.lineWidth = 1.5;
+                    ctx.stroke();
+                }
+                
+                // Label
+                ctx.fillStyle = isCurrent ? 'rgba(255,255,255,0.7)' : 'rgba(255,255,255,0.2)';
+                ctx.font = (isCurrent ? '700' : '400') + ' 9px IBM Plex Mono';
+                ctx.textAlign = 'center';
+                ctx.fillText(s.length, x + barW / 2, pad.top + ph + 14);
+                
+                // Prob on top of current bar
+                if (isCurrent && barH > 15) {
+                    ctx.fillStyle = currentType === 'W' ? '#34D399' : '#EF4444';
+                    ctx.font = '700 10px IBM Plex Mono';
+                    ctx.fillText(Math.round(s.prob) + '%', x + barW / 2, y - 6);
+                }
+            });
+            
+            // X axis label
+            ctx.fillStyle = 'rgba(255,255,255,0.12)';
+            ctx.font = '400 9px IBM Plex Sans';
+            ctx.textAlign = 'center';
+            ctx.fillText('streak length', w / 2, h - 2);
+        }
+        
+        // Risk Engine tooltip - hover
         const rpTrigger = document.querySelector('.rp-info-trigger');
         const rpTooltip = document.querySelector('.rp-tooltip');
         if (rpTrigger && rpTooltip) {
