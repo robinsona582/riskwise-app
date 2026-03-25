@@ -13,8 +13,8 @@
     
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="RiskWise — How much risk can your edge support?">
-    <meta property="og:description" content="Import your trades and reveal the probability structure behind your P&L. Know exactly where your sizing breaks.">
+    <meta property="og:title" content="RiskWise — You don't know what your results actually mean.">
+    <meta property="og:description" content="Good trades can lose. Bad trades can win. RiskWise shows you the probability structure behind your P&L.">
     <meta property="og:image" content="https://www.riskwisehq.com/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -23,8 +23,8 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@RiskWiseHQ">
-    <meta name="twitter:title" content="RiskWise — How much risk can your edge support?">
-    <meta name="twitter:description" content="Import your trades and reveal the probability structure behind your P&L. Know exactly where your sizing breaks.">
+    <meta name="twitter:title" content="RiskWise — You don't know what your results actually mean.">
+    <meta name="twitter:description" content="Good trades can lose. Bad trades can win. RiskWise shows you the probability structure behind your P&L.">
     <meta name="twitter:image" content="https://www.riskwisehq.com/og-image.png">
     <meta name="robots" content="index, follow">
     
@@ -1038,14 +1038,14 @@
             border: none;
             border-radius: 7px;
             cursor: pointer;
-            transition: all 0.15s ease;
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
         }
         
         .mode-btn svg {
             width: 13px;
             height: 13px;
             stroke: rgba(255,255,255,0.25);
-            transition: stroke 0.15s ease;
+            transition: stroke 0.2s ease;
         }
         
         .mode-btn span {
@@ -1053,11 +1053,11 @@
             font-weight: 500;
             color: rgba(255,255,255,0.38);
             letter-spacing: 0.01em;
-            transition: color 0.15s ease;
+            transition: color 0.2s ease;
         }
         
         .mode-btn:hover {
-            background: rgba(255,255,255,0.03);
+            background: rgba(255,255,255,0.04);
         }
         
         .mode-btn:hover svg {
@@ -1069,7 +1069,8 @@
         }
         
         .mode-btn.active {
-            background: rgba(255,255,255,0.05);
+            background: rgba(255,255,255,0.06);
+            box-shadow: 0 0 16px rgba(52, 211, 153, 0.04);
         }
         
         .mode-btn.active svg {
@@ -1077,7 +1078,7 @@
         }
         
         .mode-btn.active span {
-            color: rgba(255,255,255,0.85);
+            color: rgba(255,255,255,0.9);
             font-weight: 600;
         }
         
@@ -2466,6 +2467,7 @@
             color: var(--text-tertiary);
             font-variant-numeric: tabular-nums;
             letter-spacing: -0.01em;
+            transition: color 0.3s ease;
         }
         .period-pnl-value.positive {
             color: var(--color-primary);
@@ -2876,23 +2878,104 @@
             border: 1px solid transparent;
             border-radius: 6px;
             cursor: pointer;
-            transition: all 0.15s;
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
             letter-spacing: 0.02em;
         }
         .diag-mode-btn:hover {
-            color: rgba(255,255,255,0.35);
-            background: rgba(255,255,255,0.02);
+            color: rgba(255,255,255,0.5);
+            background: rgba(255,255,255,0.03);
         }
         .diag-mode-btn.active {
             color: #f0f0f2;
-            background: rgba(255,255,255,0.03);
-            border-color: rgba(255,255,255,0.06);
+            background: rgba(255,255,255,0.05);
+            border-color: rgba(255,255,255,0.08);
             font-weight: 600;
+            box-shadow: 0 0 12px rgba(255,255,255,0.02);
         }
         
         /* Diagnostic panel content swapping */
-        .diag-content { display: none; }
-        .diag-content.active { display: flex; flex-direction: column; height: 100%; }
+        .diag-content { 
+            display: none;
+            opacity: 0;
+            transform: translateY(6px);
+        }
+        .diag-content.active { 
+            display: flex; 
+            flex-direction: column; 
+            height: 100%;
+            animation: diagFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        @keyframes diagFadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Locked mode overlay */
+        .diag-content.locked-mode {
+            position: relative;
+        }
+        .diag-content.locked-mode > div:first-child {
+            filter: blur(6px);
+            pointer-events: none;
+            user-select: none;
+            position: relative;
+            z-index: 1;
+        }
+        .locked-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+            padding: 32px;
+            text-align: center;
+            background: rgba(9, 9, 11, 0.5);
+        }
+        .locked-overlay-icon {
+            font-size: 20px;
+            margin-bottom: 12px;
+            opacity: 0.5;
+        }
+        .locked-overlay-headline {
+            font-size: 15px;
+            font-weight: 600;
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 6px;
+            letter-spacing: -0.01em;
+        }
+        .locked-overlay-sub {
+            font-size: 12px;
+            color: rgba(255,255,255,0.4);
+            line-height: 1.5;
+            max-width: 280px;
+            margin-bottom: 20px;
+        }
+        .locked-overlay-cta {
+            padding: 10px 24px;
+            background: rgba(52,211,153,0.1);
+            border: 1px solid rgba(52,211,153,0.25);
+            border-radius: 8px;
+            color: #34D399;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: 'IBM Plex Sans', sans-serif;
+            transition: all 0.15s ease;
+        }
+        .locked-overlay-cta:hover {
+            background: rgba(52,211,153,0.18);
+            border-color: rgba(52,211,153,0.4);
+        }
+        .diag-mode-btn.is-locked {
+            opacity: 0.45;
+        }
+        .diag-mode-btn.is-locked::after {
+            content: '🔒';
+            font-size: 9px;
+            margin-left: 4px;
+        }
         
         /* Drawdown mode styles */
         .dd-distribution-chart { width: 100%; height: 200px; position: relative; }
@@ -2900,9 +2983,10 @@
         .dd-insight-box { padding: 10px 14px; border-radius: 8px; font-size: 12px; line-height: 1.6; }
         .dd-insight-normal { background: rgba(52,211,153,0.03); border: 1px solid rgba(52,211,153,0.06); color: rgba(255,255,255,0.5); }
         .dd-insight-warning { background: rgba(239,68,68,0.03); border: 1px solid rgba(239,68,68,0.06); color: rgba(255,255,255,0.5); }
-        .dd-stat-row { display: flex; justify-content: space-between; align-items: baseline; padding: 5px 0; font-size: 12px; }
+        .dd-stat-row { display: flex; justify-content: space-between; align-items: baseline; padding: 5px 0; font-size: 12px; border-radius: 4px; transition: background 0.15s ease; margin: 0 -6px; padding-left: 6px; padding-right: 6px; }
+        .dd-stat-row:hover { background: rgba(255,255,255,0.02); }
         .dd-stat-label { color: rgba(255,255,255,0.45); }
-        .dd-stat-value { font-family: var(--font-mono); font-weight: 600; letter-spacing: -0.01em; }
+        .dd-stat-value { font-family: var(--font-mono); font-weight: 600; letter-spacing: -0.01em; transition: color 0.3s ease; }
         
         .mc-v2-insight {
             padding: 14px 24px;
@@ -3366,9 +3450,11 @@
             font-size: 10px;
             letter-spacing: 0.05em;
             text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.25);
+            color: rgba(52, 211, 153, 0.4);
             margin-bottom: 6px;
             font-weight: 600;
+            padding-left: 10px;
+            border-left: 2px solid rgba(52, 211, 153, 0.25);
         }
         
         .reality-anchor-text {
@@ -5182,6 +5268,12 @@
         .pnl-input:focus, .risk-input:focus {
             border-color: rgba(52,211,153,0.3) !important;
             box-shadow: 0 0 0 2px rgba(52,211,153,0.08), 0 0 12px rgba(52,211,153,0.05) !important;
+            animation: inputFocusPulse 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        @keyframes inputFocusPulse {
+            0% { box-shadow: 0 0 0 0px rgba(52,211,153,0.15), 0 0 0px rgba(52,211,153,0); }
+            50% { box-shadow: 0 0 0 4px rgba(52,211,153,0.08), 0 0 20px rgba(52,211,153,0.06); }
+            100% { box-shadow: 0 0 0 2px rgba(52,211,153,0.08), 0 0 12px rgba(52,211,153,0.05); }
         }
         
         /* Drawdown severity colors applied via JS */
@@ -5450,6 +5542,7 @@
             font-weight: 700;
             overflow: hidden;
             position: relative;
+            transition: color 0.3s ease;
         }
         
         /* Odometer slide for non-equity stat values */
@@ -5627,6 +5720,24 @@
             );
             background-size: 200% 100%;
             animation: shimmer 1.5s infinite;
+        }
+        
+        /* Animated highlight on trade count thresholds */
+        .empty-shimmer {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 6px;
+            background: linear-gradient(
+                90deg,
+                rgba(52, 211, 153, 0.0) 0%,
+                rgba(52, 211, 153, 0.08) 25%,
+                rgba(52, 211, 153, 0.15) 50%,
+                rgba(52, 211, 153, 0.08) 75%,
+                rgba(52, 211, 153, 0.0) 100%
+            );
+            background-size: 200% 100%;
+            animation: shimmer 2.5s ease-in-out infinite;
+            color: rgba(52, 211, 153, 0.6);
         }
         
         /* Stagger animation for lists */
@@ -6695,11 +6806,12 @@
         .position-calc-content {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease;
+            transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1);
         }
         
         .position-calc.open .position-calc-content {
             max-height: 300px;
+            transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
         
         .position-calc-inner {
@@ -11278,6 +11390,7 @@ try {
                 <p class="lp2-hero-sub-bridge">RiskWise shows you what's actually happening underneath.</p>
                 <button class="lp2-cta-glow lp2-cta-glow-primary" id="lp2CtaHero"><span class="lp2-cta-glow-shine"></span><span class="lp2-cta-glow-inner lp2-cta-glow-inner-primary">Show me what my results mean →</span></button>
                 <div class="lp2-subtext" style="margin-top:20px;">No signals. No predictions. Just clarity.</div>
+                <div style="margin-top:12px;font-size:11px;color:rgba(255,255,255,0.3);font-family:'IBM Plex Mono',monospace;letter-spacing:0.3px;">Free to start · No sign-up required</div>
             </div>
             <div class="lp2-scroll-hint"><span>Scroll</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></div>
         </section>
@@ -11429,6 +11542,7 @@ try {
                     </button>
                 </div>
                 <div class="lp2-subtext" style="margin-top:20px;">No signals. No strategies. Just clarity.</div>
+                <div style="margin-top:12px;font-size:11px;color:rgba(255,255,255,0.3);font-family:'IBM Plex Mono',monospace;letter-spacing:0.3px;">Free to start · No sign-up required</div>
             </div>
         </section>
 
@@ -11749,7 +11863,8 @@ try {
         <!-- Footer -->
         <div class="instrument-footer">
             <div id="freeTradeCounter" style="font-size:11px;color:rgba(255,255,255,0.38);text-align:center;margin-bottom:4px;"></div>
-            <div class="footer-disclaimer" id="footerInsight" style="transition:opacity 0.3s ease;">Not advice. Your call.</div>
+            <div id="pricingHint" style="font-size:10px;color:rgba(255,255,255,0.22);text-align:center;margin-bottom:6px;font-family:'IBM Plex Mono',monospace;letter-spacing:0.3px;">Free to start · Full access $19/mo</div>
+            <div class="footer-disclaimer" id="footerInsight" style="transition:opacity 0.3s ease;"></div>
             <div style="margin-top:8px;display:flex;justify-content:center;gap:16px;flex-wrap:wrap;">
                 <a href="#" data-rw-legal="privacy" style="font-size:11px;color:rgba(255,255,255,0.35);text-decoration:none;font-family:'IBM Plex Mono',monospace;">Privacy</a>
                 <a href="#" data-rw-legal="terms" style="font-size:11px;color:rgba(255,255,255,0.35);text-decoration:none;font-family:'IBM Plex Mono',monospace;">Terms</a>
@@ -11913,8 +12028,8 @@ try {
                 <button class="diag-mode-btn active" data-diag-mode="risk" style="flex:1;text-align:center;">Risk</button>
                 <button class="diag-mode-btn" data-diag-mode="drawdown" style="flex:1;text-align:center;">Drawdown</button>
                 <button class="diag-mode-btn" data-diag-mode="streak" style="flex:1;text-align:center;">Streak</button>
-                <button class="diag-mode-btn" data-diag-mode="path" style="flex:1;text-align:center;">Path</button>
-                <button class="diag-mode-btn" data-diag-mode="edge" style="flex:1;text-align:center;">Edge</button>
+                <button class="diag-mode-btn" data-diag-mode="path" id="diagBtnPath" style="flex:1;text-align:center;">Path</button>
+                <button class="diag-mode-btn" data-diag-mode="edge" id="diagBtnEdge" style="flex:1;text-align:center;">Edge</button>
             </div>
         </div>
         
@@ -11961,7 +12076,7 @@ try {
                 <div style="border-top:1px solid var(--border-subtle);">
                     <button id="mcChartToggle" style="width:100%;padding:10px 20px;background:none;border:none;display:flex;align-items:center;justify-content:space-between;cursor:pointer;font-family:inherit;">
                         <span style="font-size:10px;font-weight:600;color:rgba(255,255,255,0.38);text-transform:uppercase;letter-spacing:0.06em;">Monte Carlo Fan Chart</span>
-                        <svg id="mcChartArrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="2" stroke-linecap="round" style="transition:transform 0.2s"><path d="M6 9l6 6 6-6"/></svg>
+                        <svg id="mcChartArrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="2" stroke-linecap="round" style="transition:transform 0.3s cubic-bezier(0.16,1,0.3,1)"><path d="M6 9l6 6 6-6"/></svg>
                     </button>
                     <div id="mcChartCollapsible" style="display:none;padding:0 16px 12px;">
                         <div class="mc-chart-container mc-v2-chart" style="height:160px;">
@@ -11981,7 +12096,7 @@ try {
                 <div style="border-top:1px solid var(--border-subtle);">
                     <button id="mcStatsToggle" style="width:100%;padding:10px 20px;background:none;border:none;display:flex;align-items:center;justify-content:space-between;cursor:pointer;font-family:inherit;">
                         <span style="font-size:10px;font-weight:600;color:rgba(255,255,255,0.38);text-transform:uppercase;letter-spacing:0.06em;">What Your Edge Produces</span>
-                        <svg id="mcStatsArrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="2" stroke-linecap="round" style="transition:transform 0.2s"><path d="M6 9l6 6 6-6"/></svg>
+                        <svg id="mcStatsArrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="2" stroke-linecap="round" style="transition:transform 0.3s cubic-bezier(0.16,1,0.3,1)"><path d="M6 9l6 6 6-6"/></svg>
                     </button>
                     <div id="mcStatsCollapsible" style="display:none;padding:0 20px 16px;">
                         <div class="mc-v2-expect-group">
@@ -12111,7 +12226,7 @@ try {
         </div>
         
         <!-- PATH LENS -->
-        <div class="diag-content" data-diag-mode="path">
+        <div class="diag-content locked-mode" data-diag-mode="path" style="position:relative;">
             <div style="padding:16px 24px;flex:1;display:flex;flex-direction:column;gap:0;overflow-y:auto;">
                 
                 <!-- Headline: Where does this go? -->
@@ -12142,10 +12257,16 @@ try {
                     <div class="dd-stat-row"><span class="dd-stat-label">Chance of new equity high</span><span class="dd-stat-value" id="pathNewHighProb" style="color:#34D399;">—</span></div>
                 </div>
             </div>
+            <div class="locked-overlay" id="pathLockedOverlay">
+                <div class="locked-overlay-icon">🔒</div>
+                <div class="locked-overlay-headline">Your results are pointing somewhere.</div>
+                <div class="locked-overlay-sub">You just can't see it yet. Without this, you're still guessing.</div>
+                <button class="locked-overlay-cta" onclick="showUpgradeModal('locked')">Show me what this actually means →</button>
+            </div>
         </div>
         
         <!-- EDGE LENS -->
-        <div class="diag-content" data-diag-mode="edge">
+        <div class="diag-content locked-mode" data-diag-mode="edge" style="position:relative;">
             <div style="padding:16px 24px;flex:1;display:flex;flex-direction:column;gap:0;overflow-y:auto;">
                 
                 <!-- Headline: Is this edge real? -->
@@ -12207,6 +12328,12 @@ try {
                     <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,0.50);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:2px;">What This Means</div>
                     <div style="font-size:12px;color:rgba(255,255,255,0.35);line-height:1.6;" id="edgeSampleExplain">Log trades to see sample size analysis.</div>
                 </div>
+            </div>
+            <div class="locked-overlay" id="edgeLockedOverlay">
+                <div class="locked-overlay-icon">🔒</div>
+                <div class="locked-overlay-headline">Is this edge real — or just variance?</div>
+                <div class="locked-overlay-sub">Your confidence level is calculated but hidden. Without this, you're still guessing.</div>
+                <button class="locked-overlay-cta" onclick="showUpgradeModal('locked')">Show me what this actually means →</button>
             </div>
         </div>
     </div>
@@ -12532,11 +12659,18 @@ try {
     <!-- Paywall Modal Overlay -->
     <div class="paywall-overlay" id="paywallOverlay">
         <div class="paywall-modal">
-            <div class="paywall-headline">Risk reference paused</div>
-            <div class="paywall-body">You've reached the point where RiskWise is responding to your real account state. To keep this reference live as conditions change, continue below.</div>
-            <button class="paywall-cta-primary" id="paywallContinue">Continue with RiskWise</button>
+            <div class="paywall-headline">You've started to see it.</div>
+            <div class="paywall-body">Your results aren't random. There's a structure underneath them — and RiskWise is recalculating it with every trade. Keep your probability reference live as conditions change.</div>
+            <div style="margin:16px 0 8px;font-size:12px;color:rgba(255,255,255,0.35);font-family:'IBM Plex Mono',monospace;text-align:center;">You're currently viewing limited data.</div>
+            <div style="margin:0 auto 20px;max-width:320px;text-align:left;font-size:12px;color:rgba(255,255,255,0.5);font-family:'IBM Plex Sans',sans-serif;line-height:1.8;">
+                <div>✓ Unlimited CSV imports</div>
+                <div>✓ Unlimited manual trades</div>
+                <div>✓ Full session heatmap & Monte Carlo</div>
+                <div>✓ Journal, progression & all analytics</div>
+            </div>
+            <button class="paywall-cta-primary" id="paywallContinue">Continue with full access — $19/mo</button>
             <button class="paywall-cta-secondary" id="paywallPause">Pause and trade without the reference</button>
-            <div class="paywall-pricing">$19 / month · cancel anytime</div>
+            <div class="paywall-pricing">Cancel anytime · No lock-in</div>
         </div>
     </div>
     
@@ -15715,6 +15849,60 @@ try {
         if (importCsvInput) importCsvInput.addEventListener('click', function() { this.value = ''; });
         const resetAccountBtn = document.getElementById('resetAccountBtn');
         
+        // ==================== ANIMATED VALUE TRANSITIONS ====================
+        function animateValue(el, newText, duration) {
+            if (!el || el.textContent === newText) return;
+            duration = duration || 300;
+            
+            // For elements with just '—', skip animation
+            if (el.textContent === '—' || newText === '—') {
+                el.textContent = newText;
+                return;
+            }
+            
+            // CSS-based flash + update
+            el.style.transition = 'none';
+            el.style.opacity = '0.4';
+            el.style.transform = 'translateY(-2px)';
+            
+            requestAnimationFrame(function() {
+                el.textContent = newText;
+                el.style.transition = 'opacity 0.35s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1)';
+                el.style.opacity = '1';
+                el.style.transform = 'translateY(0)';
+            });
+        }
+        
+        // Counting animation for numeric values
+        function countTo(el, target, prefix, suffix, decimals, duration) {
+            if (!el) return;
+            prefix = prefix || '';
+            suffix = suffix || '';
+            decimals = decimals || 0;
+            duration = duration || 400;
+            
+            var startText = el.textContent.replace(/[^0-9.\-]/g, '');
+            var start = parseFloat(startText) || 0;
+            
+            if (start === target) return;
+            if (el.textContent === '—') {
+                el.textContent = prefix + target.toFixed(decimals) + suffix;
+                return;
+            }
+            
+            var startTime = null;
+            function step(timestamp) {
+                if (!startTime) startTime = timestamp;
+                var progress = Math.min((timestamp - startTime) / duration, 1);
+                // Ease out cubic
+                var eased = 1 - Math.pow(1 - progress, 3);
+                var current = start + (target - start) * eased;
+                el.textContent = prefix + current.toFixed(decimals) + suffix;
+                if (progress < 1) requestAnimationFrame(step);
+            }
+            requestAnimationFrame(step);
+        }
+        
         // ==================== MONTE CARLO PROJECTION ====================
         const importToggle = document.getElementById('importToggle');
         const headerImportCsvInput = document.getElementById('headerImportCsvInput');
@@ -15886,7 +16074,7 @@ try {
             const currentDrawdown = (peakEquity - startingEquity) / peakEquity;
             
             // Display current drawdown
-            currentDDEl.textContent = currentDrawdown > 0 ? '-' + (currentDrawdown * 100).toFixed(1) + '%' : '0%';
+            animateValue(currentDDEl, currentDrawdown > 0 ? '-' + (currentDrawdown * 100).toFixed(1) + '%' : '0%');
             if (currentDrawdown >= 0.15) currentDDEl.style.color = '#EF4444';
             else if (currentDrawdown >= 0.05) currentDDEl.style.color = 'rgba(255,255,255,0.7)';
             else currentDDEl.style.color = '';
@@ -15935,9 +16123,9 @@ try {
             }
             
             // Update params display
-            winRateEl.textContent = winRate.toFixed(0) + '%';
-            avgREl.textContent = (avgR >= 0 ? '+' : '') + avgR.toFixed(2) + 'R';
-            riskPctEl.textContent = (avgRiskPct * 100).toFixed(2) + '%';
+            animateValue(winRateEl, winRate.toFixed(0) + '%');
+            animateValue(avgREl, (avgR >= 0 ? '+' : '') + avgR.toFixed(2) + 'R');
+            animateValue(riskPctEl, (avgRiskPct * 100).toFixed(2) + '%');
             
             // If already past ruin threshold (DD floor), show 0% survival
             if (currentDrawdown >= MAX_DRAWDOWN) {
@@ -16083,8 +16271,8 @@ try {
             const maxLoseStreak = maxLoseStreaks[Math.floor(PATHS * 0.95)]; // 95th percentile
             const loseStreak5Pct = (pathsWith5LoseStreak / PATHS) * 100;
             
-            // Update stats
-            survivalEl.textContent = survivalPct.toFixed(0) + '%';
+            // Update stats — count up survival percentage
+            countTo(survivalEl, parseFloat(survivalPct.toFixed(0)), '', '%', 0, 800);
             
             // Update survival description with avg risk and survival %
             const survRiskEl = document.getElementById('mcSurvivalRisk');
@@ -16284,16 +16472,17 @@ try {
                 }
                 
                 let rowsHtml = '';
-                displayResults.forEach(step => {
+                displayResults.forEach((step, idx) => {
                     const isCurrent = step.current;
                     const survColor = step.surv >= 70 ? '#34D399' : step.surv >= 40 ? '#D4A84B' : '#EF4444';
                     const barWidth = Math.max(step.surv, 3);
                     const valInside = step.surv >= 20;
+                    const delay = idx * 40;
                     
-                    rowsHtml += `<div style="display:flex;align-items:center;gap:8px;height:28px;${isCurrent ? 'opacity:1;' : 'opacity:0.65;'}">
+                    rowsHtml += `<div style="display:flex;align-items:center;gap:8px;height:28px;${isCurrent ? 'opacity:1;' : 'opacity:0.65;'}animation:diagFadeIn 0.3s cubic-bezier(0.16,1,0.3,1) ${delay}ms both;">
                         <span style="width:42px;text-align:right;font-weight:${isCurrent ? '700' : '500'};font-size:12px;color:${isCurrent ? 'rgba(255,255,255,0.9)' : 'rgba(255,255,255,0.4)'};">${step.label}</span>
                         <div style="flex:1;height:22px;background:rgba(255,255,255,0.015);border-radius:5px;overflow:hidden;position:relative;border:1px solid ${isCurrent ? 'rgba(255,255,255,0.06)' : 'rgba(255,255,255,0.02)'};">
-                            <div style="height:100%;width:${barWidth}%;background:${survColor};border-radius:4px;display:flex;align-items:center;justify-content:flex-end;padding-right:8px;${isCurrent ? 'box-shadow:0 0 10px ' + survColor + '22;' : ''}">
+                            <div style="height:100%;width:${barWidth}%;background:${survColor};border-radius:4px;display:flex;align-items:center;justify-content:flex-end;padding-right:8px;transition:width 0.6s cubic-bezier(0.16,1,0.3,1) ${delay + 100}ms;${isCurrent ? 'box-shadow:0 0 10px ' + survColor + '22;' : ''}">
                                 ${valInside ? '<span style="font-size:10px;font-weight:700;color:#0a0a0c;">' + step.surv + '%</span>' : ''}
                             </div>
                             ${!valInside ? '<span style="position:absolute;left:' + (barWidth + 2) + '%;top:50%;transform:translateY(-50%);font-size:10px;font-weight:600;color:rgba(255,255,255,0.38);">' + step.surv + '%</span>' : ''}
@@ -17436,6 +17625,7 @@ try {
                 showToast(`Added ${newTrades.length} new trades (${trades.length - newTrades.length} duplicates skipped)`, 'success');
                 if (!storage.get('riskwise_demo_mode')) incrementImports();
                 updateTradeCounter();
+                updateLockedState();
             } else {
                 // Replace mode
                 state.startingBalance = equityStart;
@@ -17456,6 +17646,7 @@ try {
                 showToast(`Imported ${trades.length} trades`, 'success');
                 if (!storage.get('riskwise_demo_mode')) incrementImports();
                 updateTradeCounter();
+                updateLockedState();
             }
         });
 
@@ -18321,17 +18512,17 @@ try {
             
             // Update drawdown
             if (stats.drawdown > 0) {
-                drawdownDisplay.textContent = '-' + (stats.drawdown * 100).toFixed(1) + '%';
+                animateValue(drawdownDisplay, '-' + (stats.drawdown * 100).toFixed(1) + '%');
                 const ddSeverity = stats.drawdown >= (state.ddCeiling || 0.30) * 0.7 ? 'dd-danger' : stats.drawdown >= (state.ddCeiling || 0.30) * 0.4 ? 'dd-warning' : '';
                 drawdownDisplay.className = 'state-value ' + ddSeverity;
             } else {
-                drawdownDisplay.textContent = '0%';
+                animateValue(drawdownDisplay, '0%');
                 drawdownDisplay.className = 'state-value';
             }
             
             // Update win rate
             if (stats.tradeCount > 0) {
-                winRateDisplay.textContent = Math.round(stats.winRate * 100) + '%';
+                animateValue(winRateDisplay, Math.round(stats.winRate * 100) + '%');
             } else {
                 winRateDisplay.textContent = '—';
             }
@@ -18922,6 +19113,9 @@ try {
                 // Hide demo banner
                 var banner = document.getElementById('demoBanner');
                 if (banner) banner.style.display = 'none';
+                
+                // Activate locked state now that demo is over
+                updateLockedState();
                 
                 // Start onboarding
                 coachPhase = 'balance';
@@ -19939,8 +20133,12 @@ try {
                     el.className = 'period-pnl-value';
                     return;
                 }
-                el.textContent = fmt(val);
-                el.className = 'period-pnl-value' + (val > 0 ? ' positive' : val < 0 ? ' negative' : '');
+                var newText = fmt(val);
+                var newClass = 'period-pnl-value' + (val > 0 ? ' positive' : val < 0 ? ' negative' : '');
+                if (el.textContent !== newText) {
+                    animateValue(el, newText);
+                }
+                el.className = newClass;
             }
             
             setEl('periodPnlToday', todayPnl);
@@ -20993,7 +21191,7 @@ try {
         function updateFooterInsight() {
             const el = document.getElementById('footerInsight');
             if (!el) return;
-            el.textContent = 'Not advice. Your call.';
+            el.textContent = '';
         }
         
         updateFooterInsight();
@@ -21088,6 +21286,7 @@ try {
             storage.set('riskwise_license_key', licenseKey);
             showToast('Pro activated! Unlimited access unlocked.', 'success', true);
             updateTradeCounter();
+            updateLockedState();
             saveState();
             updateDisplay();
             updateDrawer();
@@ -21103,14 +21302,17 @@ try {
         }
         
         function showUpgradeModal(reason) {
-            let title = 'Upgrade to RiskWise Pro';
-            let desc = 'Upgrade for unlimited CSV imports, unlimited trade logging, and continuous access to all analytics.';
+            let title = 'You\u2019ve started to see it.';
+            let desc = 'Your results have a structure. RiskWise keeps recalculating it \u2014 every trade. You\u2019re currently viewing limited data.';
             if (reason === 'import') {
-                title = 'Import limit reached';
-                desc = 'You\u2019ve used your free CSV import. Upgrade to RiskWise Pro for unlimited imports and continuous trade logging.';
+                title = 'You\u2019ve started to see it.';
+                desc = 'Your results have a structure \u2014 and your import just revealed part of it. Continue with full access to keep your probability reference live.';
             } else if (reason === 'trades') {
-                title = 'Trade limit reached';
-                desc = 'You\u2019ve logged ' + FREE_MANUAL_TRADE_LIMIT + ' free trades. Upgrade to RiskWise Pro for unlimited trade logging and imports.';
+                title = 'You\u2019ve started to see it.';
+                desc = 'After ' + FREE_MANUAL_TRADE_LIMIT + ' trades, your probability structure is taking shape. Continue with full access to keep it recalculating.';
+            } else if (reason === 'locked') {
+                title = 'You\u2019re seeing part of the picture.';
+                desc = 'Edge analysis and projected paths are where RiskWise turns data into clarity. Unlock the full interpretation layer.';
             }
             
             // Remove any existing
@@ -21136,7 +21338,7 @@ try {
                         <div style="font-size:13px;color:rgba(255,255,255,0.5);padding:5px 0;display:flex;align-items:center;gap:8px;"><span style="color:#34D399;font-weight:700;">✓</span> Full session heatmap & Monte Carlo</div>
                         <div style="font-size:13px;color:rgba(255,255,255,0.5);padding:5px 0;display:flex;align-items:center;gap:8px;"><span style="color:#34D399;font-weight:700;">✓</span> Journal, progression & all analytics</div>
                     </div>
-                    <a href="https://riskwiseapp.gumroad.com/l/riskwise-pro" data-gumroad-overlay-checkout="true" id="upgradeBuyBtn" style="display:block;width:100%;padding:13px 20px;background:#34D399;color:#0a0a0c;font-size:15px;font-weight:600;border:none;border-radius:10px;cursor:pointer;text-align:center;margin-bottom:20px;box-sizing:border-box;text-decoration:none;">Upgrade — $19/month</a>
+                    <a href="https://riskwiseapp.gumroad.com/l/riskwise-pro" data-gumroad-overlay-checkout="true" id="upgradeBuyBtn" style="display:block;width:100%;padding:13px 20px;background:#34D399;color:#0a0a0c;font-size:15px;font-weight:600;border:none;border-radius:10px;cursor:pointer;text-align:center;margin-bottom:20px;box-sizing:border-box;text-decoration:none;">Continue with full access — $19/month</a>
                     <div style="padding-top:16px;border-top:1px solid rgba(255,255,255,0.04);">
                         <span style="font-size:12px;color:rgba(255,255,255,0.35);margin-bottom:6px;display:block;">Have a license key?</span>
                         <div style="display:flex;gap:6px;">
@@ -21279,6 +21481,7 @@ try {
                         var upgradeModal = document.getElementById('upgradeModalDynamic');
                         if (upgradeModal) upgradeModal.remove();
                         updateTradeCounter();
+                        updateLockedState();
                         saveState();
                         updateDisplay();
                         updateDrawer();
@@ -21690,6 +21893,33 @@ try {
         const diagContents = document.querySelectorAll('.diag-content');
         var currentDiagMode = "risk";;
         
+        // Locked modes for free users
+        var LOCKED_MODES = ['path', 'edge'];
+        
+        function updateLockedState() {
+            var pro = isPro();
+            var isDemo = !!storage.get('riskwise_demo_mode');
+            var shouldUnlock = pro || isDemo;
+            LOCKED_MODES.forEach(function(mode) {
+                var panel = document.querySelector('.diag-content[data-diag-mode="' + mode + '"]');
+                var btn = document.querySelector('.diag-mode-btn[data-diag-mode="' + mode + '"]');
+                if (shouldUnlock) {
+                    if (panel) panel.classList.remove('locked-mode');
+                    if (btn) btn.classList.remove('is-locked');
+                    var overlay = panel ? panel.querySelector('.locked-overlay') : null;
+                    if (overlay) overlay.style.display = 'none';
+                } else {
+                    if (panel) panel.classList.add('locked-mode');
+                    if (btn) btn.classList.add('is-locked');
+                    var overlay = panel ? panel.querySelector('.locked-overlay') : null;
+                    if (overlay) overlay.style.display = '';
+                }
+            });
+        }
+        
+        // Initialize locked state on load
+        updateLockedState();
+        
         function switchDiagMode(mode) {
             currentDiagMode = mode;
             diagModeBtns.forEach(function(b) { 
@@ -21895,27 +22125,64 @@ try {
             });
             var maxBin = Math.max.apply(null, bins);
             
-            // Draw bars
+            // Draw bars with animation
             var barW = pw / binCount - 1;
-            bins.forEach(function(count, i) {
-                var barH = (count / maxBin) * ph;
-                var x = pad.left + i * (pw / binCount);
-                var y = pad.top + ph - barH;
-                var ddVal = (i + 0.5) * binWidth;
-                
-                // Color based on whether below or above current DD
-                if (ddVal <= currentDD) {
-                    ctx.fillStyle = 'rgba(52,211,153,0.25)';
-                } else {
-                    ctx.fillStyle = 'rgba(255,255,255,0.06)';
-                }
-                ctx.beginPath();
-                var bx=x, by=y, bw=Math.max(barW,2), bh=barH, br=2;
-                ctx.moveTo(bx+br,by);ctx.lineTo(bx+bw-br,by);ctx.quadraticCurveTo(bx+bw,by,bx+bw,by+br);ctx.lineTo(bx+bw,by+bh-br);ctx.quadraticCurveTo(bx+bw,by+bh,bx+bw-br,by+bh);ctx.lineTo(bx+br,by+bh);ctx.quadraticCurveTo(bx,by+bh,bx,by+bh-br);ctx.lineTo(bx,by+br);ctx.quadraticCurveTo(bx,by,bx+br,by);ctx.closePath();
-                ctx.fill();
-            });
+            var ddAnimStart = null;
+            var ddAnimDuration = 450;
             
-            // Draw current DD line
+            function drawDDFrame(timestamp) {
+                if (!ddAnimStart) ddAnimStart = timestamp;
+                var elapsed = timestamp - ddAnimStart;
+                var globalProgress = Math.min(elapsed / ddAnimDuration, 1);
+                var eased = 1 - Math.pow(1 - globalProgress, 3);
+                
+                ctx.clearRect(0, 0, w * dpr, h * dpr);
+                
+                bins.forEach(function(count, i) {
+                    var fullBarH = (count / maxBin) * ph;
+                    var barDelay = i * 15 / ddAnimDuration;
+                    var barProgress = Math.max(0, Math.min((eased - barDelay) / (1 - barDelay), 1));
+                    var barH = fullBarH * barProgress;
+                    var x = pad.left + i * (pw / binCount);
+                    var y = pad.top + ph - barH;
+                    var ddVal = (i + 0.5) * binWidth;
+                    
+                    if (ddVal <= currentDD) {
+                        ctx.fillStyle = 'rgba(52,211,153,0.25)';
+                    } else {
+                        ctx.fillStyle = 'rgba(255,255,255,0.06)';
+                    }
+                    ctx.beginPath();
+                    var bx=x, by=y, bw=Math.max(barW,2), bh=barH, br=2;
+                    ctx.moveTo(bx+br,by);ctx.lineTo(bx+bw-br,by);ctx.quadraticCurveTo(bx+bw,by,bx+bw,by+br);ctx.lineTo(bx+bw,by+bh-br);ctx.quadraticCurveTo(bx+bw,by+bh,bx+bw-br,by+bh);ctx.lineTo(bx+br,by+bh);ctx.quadraticCurveTo(bx,by+bh,bx,by+bh-br);ctx.lineTo(bx,by+br);ctx.quadraticCurveTo(bx,by,bx+br,by);ctx.closePath();
+                    ctx.fill();
+                });
+                
+                // Draw current DD line (fade in at end)
+                var lineAlpha = Math.max(0, (eased - 0.5) * 2);
+                var ddX = pad.left + (currentDD / maxVal) * pw;
+                if (ddX > pad.left && ddX < w - pad.right && lineAlpha > 0) {
+                    ctx.globalAlpha = lineAlpha;
+                    ctx.strokeStyle = '#EF4444';
+                    ctx.lineWidth = 2;
+                    ctx.setLineDash([4, 3]);
+                    ctx.beginPath();
+                    ctx.moveTo(ddX, pad.top);
+                    ctx.lineTo(ddX, pad.top + ph);
+                    ctx.stroke();
+                    ctx.setLineDash([]);
+                    ctx.globalAlpha = 1;
+                }
+                
+                if (globalProgress < 1) {
+                    requestAnimationFrame(drawDDFrame);
+                } else {
+                    // Final static draw of DD line + label
+                    drawDDStatic();
+                }
+            }
+            
+            function drawDDStatic() {
             var ddX = pad.left + (currentDD / maxVal) * pw;
             if (ddX > pad.left && ddX < w - pad.right) {
                 ctx.strokeStyle = '#EF4444';
@@ -21941,6 +22208,9 @@ try {
             ctx.fillText('0%', pad.left, pad.top + ph + 16);
             ctx.textAlign = 'right';
             ctx.fillText('-' + (maxVal * 100).toFixed(0) + '%', w - pad.right, pad.top + ph + 16);
+            }
+            
+            requestAnimationFrame(drawDDFrame);
         }
         
         // Edge Analysis — statistical significance
@@ -22454,26 +22724,43 @@ try {
             var barW = (pw / barCount) - 4;
             var gap = 4;
             
-            // 50% reference line
-            var refY = pad.top + ph * (1 - 50 / maxProb);
-            ctx.strokeStyle = 'rgba(255,255,255,0.06)';
-            ctx.lineWidth = 1;
-            ctx.setLineDash([4, 3]);
-            ctx.beginPath();
-            ctx.moveTo(pad.left, refY);
-            ctx.lineTo(w - pad.right, refY);
-            ctx.stroke();
-            ctx.setLineDash([]);
-            ctx.fillStyle = 'rgba(255,255,255,0.12)';
-            ctx.font = '400 9px IBM Plex Mono';
-            ctx.textAlign = 'right';
-            ctx.fillText('50%', pad.left - 4, refY + 3);
+            var animStart = null;
+            var animDuration = 500;
             
-            streakProbs.forEach(function(s, i) {
-                var barH = (s.prob / maxProb) * ph;
-                var x = pad.left + i * (barW + gap);
-                var y = pad.top + ph - barH;
-                var isCurrent = s.length === currentLen;
+            function drawFrame(timestamp) {
+                if (!animStart) animStart = timestamp;
+                var elapsed = timestamp - animStart;
+                var globalProgress = Math.min(elapsed / animDuration, 1);
+                // Ease out cubic
+                var eased = 1 - Math.pow(1 - globalProgress, 3);
+                
+                ctx.clearRect(0, 0, w * dpr, h * dpr);
+                
+                // 50% reference line
+                var refY = pad.top + ph * (1 - 50 / maxProb);
+                ctx.strokeStyle = 'rgba(255,255,255,0.06)';
+                ctx.lineWidth = 1;
+                ctx.setLineDash([4, 3]);
+                ctx.beginPath();
+                ctx.moveTo(pad.left, refY);
+                ctx.lineTo(w - pad.right, refY);
+                ctx.stroke();
+                ctx.setLineDash([]);
+                ctx.fillStyle = 'rgba(255,255,255,0.12)';
+                ctx.font = '400 9px IBM Plex Mono';
+                ctx.textAlign = 'right';
+                ctx.fillText('50%', pad.left - 4, refY + 3);
+                
+                streakProbs.forEach(function(s, i) {
+                    // Stagger each bar
+                    var barDelay = i * 30 / animDuration;
+                    var barProgress = Math.max(0, Math.min((eased - barDelay) / (1 - barDelay), 1));
+                    
+                    var fullBarH = (s.prob / maxProb) * ph;
+                    var barH = fullBarH * barProgress;
+                    var x = pad.left + i * (barW + gap);
+                    var y = pad.top + ph - barH;
+                    var isCurrent = s.length === currentLen;
                 
                 // Bar color
                 if (isCurrent) {
@@ -22517,6 +22804,10 @@ try {
             ctx.font = '400 9px IBM Plex Sans';
             ctx.textAlign = 'center';
             ctx.fillText('streak length', w / 2, h - 2);
+            
+                if (globalProgress < 1) requestAnimationFrame(drawFrame);
+            }
+            requestAnimationFrame(drawFrame);
         }
         
         // Risk Engine tooltip - hover
@@ -22544,16 +22835,24 @@ try {
         const mcStatsArrow = document.getElementById('mcStatsArrow');
         
         if (mcChartToggle && mcChartCollapsible) {
+            mcChartCollapsible.style.display = 'block';
+            mcChartCollapsible.style.maxHeight = '0';
+            mcChartCollapsible.style.overflow = 'hidden';
+            mcChartCollapsible.style.transition = 'max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1)';
             mcChartToggle.addEventListener('click', function() {
-                const open = mcChartCollapsible.style.display !== 'none';
-                mcChartCollapsible.style.display = open ? 'none' : 'block';
+                const open = mcChartCollapsible.style.maxHeight !== '0px';
+                mcChartCollapsible.style.maxHeight = open ? '0px' : '250px';
                 if (mcChartArrow) mcChartArrow.style.transform = open ? '' : 'rotate(180deg)';
             });
         }
         if (mcStatsToggle && mcStatsCollapsible) {
+            mcStatsCollapsible.style.display = 'block';
+            mcStatsCollapsible.style.maxHeight = '0';
+            mcStatsCollapsible.style.overflow = 'hidden';
+            mcStatsCollapsible.style.transition = 'max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1)';
             mcStatsToggle.addEventListener('click', function() {
-                const open = mcStatsCollapsible.style.display !== 'none';
-                mcStatsCollapsible.style.display = open ? 'none' : 'block';
+                const open = mcStatsCollapsible.style.maxHeight !== '0px';
+                mcStatsCollapsible.style.maxHeight = open ? '0px' : '500px';
                 if (mcStatsArrow) mcStatsArrow.style.transform = open ? '' : 'rotate(180deg)';
             });
         }
