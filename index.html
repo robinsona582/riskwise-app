@@ -330,7 +330,7 @@
             top: 24px;
             right: 24px;
             z-index: 200;
-            display: none; /* Hidden until converted */
+            display: block;
         }
         
         .user-menu-container.show {
@@ -2412,10 +2412,9 @@
         }
         .diag-left-col-dd {
             flex: 1;
-            padding: 16px 16px 12px 24px;
+            padding: 16px 24px 12px 24px;
             overflow: hidden;
             min-width: 0;
-            border-right: 1px solid var(--border-subtle);
         }
         .diag-left-col-slot {
             width: 220px;
@@ -2623,13 +2622,13 @@
         .mc-v2-title {
             font-size: 15px;
             font-weight: 700;
-            color: rgba(240,240,242,0.9);
+            color: rgba(240,240,242,0.92);
             letter-spacing: -0.025em;
             display: block;
         }
         .mc-v2-sub {
-            font-size: 11px;
-            color: rgba(255,255,255,0.35);
+            font-size: 11.5px;
+            color: rgba(255,255,255,0.40);
             display: block;
             margin-top: 4px;
             line-height: 1.5;
@@ -2649,14 +2648,16 @@
             color: var(--text-primary);
             display: block;
             letter-spacing: -0.02em;
+            font-variant-numeric: tabular-nums;
         }
         .mc-v2-param-lbl {
-            font-size: 11px;
-            color: rgba(255,255,255,0.40);
+            font-size: 10px;
+            color: rgba(255,255,255,0.35);
             display: block;
-            margin-top: 3px;
+            margin-top: 4px;
             text-transform: uppercase;
-            letter-spacing: 0.04em;
+            letter-spacing: 0.06em;
+            font-weight: 500;
         }
         .mc-v2-annotation {
             text-align: center;
@@ -2980,13 +2981,13 @@
         /* Drawdown mode styles */
         .dd-distribution-chart { width: 100%; height: 200px; position: relative; }
         .dd-percentile-label { font-family: var(--font-mono); font-size: 28px; font-weight: 700; }
-        .dd-insight-box { padding: 10px 14px; border-radius: 8px; font-size: 12px; line-height: 1.6; }
-        .dd-insight-normal { background: rgba(52,211,153,0.03); border: 1px solid rgba(52,211,153,0.06); color: rgba(255,255,255,0.5); }
-        .dd-insight-warning { background: rgba(239,68,68,0.03); border: 1px solid rgba(239,68,68,0.06); color: rgba(255,255,255,0.5); }
+        .dd-insight-box { padding: 12px 16px; border-radius: 8px; font-size: 12.5px; line-height: 1.65; }
+        .dd-insight-normal { background: rgba(52,211,153,0.03); border: 1px solid rgba(52,211,153,0.08); color: rgba(255,255,255,0.6); }
+        .dd-insight-warning { background: rgba(239,68,68,0.03); border: 1px solid rgba(239,68,68,0.08); color: rgba(255,255,255,0.6); }
         .dd-stat-row { display: flex; justify-content: space-between; align-items: baseline; padding: 5px 0; font-size: 12px; border-radius: 4px; transition: background 0.15s ease; margin: 0 -6px; padding-left: 6px; padding-right: 6px; }
         .dd-stat-row:hover { background: rgba(255,255,255,0.02); }
-        .dd-stat-label { color: rgba(255,255,255,0.45); }
-        .dd-stat-value { font-family: var(--font-mono); font-weight: 600; letter-spacing: -0.01em; transition: color 0.3s ease; }
+        .dd-stat-label { color: rgba(255,255,255,0.50); }
+        .dd-stat-value { font-family: var(--font-mono); font-weight: 600; letter-spacing: -0.01em; transition: color 0.3s ease; font-size: 12px; }
         
         .mc-v2-insight {
             padding: 14px 24px;
@@ -4169,7 +4170,7 @@
         }
         
         /* Trade Log Panel */
-        /* Trade Journal Modal */
+        /* Trade Log Modal */
         .trade-log-overlay {
             position: fixed;
             inset: 0;
@@ -5529,7 +5530,7 @@
         
         .state-label {
             font-size: 12px;
-            color: var(--text-secondary);
+            color: rgba(240,240,242,0.50);
             letter-spacing: 0.03em;
         }
         
@@ -6486,25 +6487,42 @@
         .paywall-overlay.open {
             opacity: 1;
             visibility: visible;
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
         }
         
         .paywall-modal {
-            background: #0c0c0e;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 12px;
-            padding: 32px;
-            max-width: 380px;
+            background: linear-gradient(180deg, #131318 0%, #0e0e12 100%);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 40px 36px;
+            max-width: 400px;
             width: 90%;
             text-align: center;
             transform: scale(0.95) translateY(10px);
-            transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 
+                0 32px 80px rgba(0,0,0,0.5),
+                0 0 0 1px rgba(255,255,255,0.03),
+                inset 0 1px 0 rgba(255,255,255,0.04);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Subtle top accent line */
+        .paywall-modal::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 40px;
+            right: 40px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(52,211,153,0.2), transparent);
         }
         
         @media (max-width: 480px) {
             .paywall-modal {
-                padding: 24px;
+                padding: 28px 24px;
             }
         }
         
@@ -6513,24 +6531,29 @@
         }
         
         .paywall-headline {
-            font-size: 18px;
-            font-weight: 600;
+            font-size: 20px;
+            font-weight: 700;
             color: var(--text-primary);
-            margin-bottom: 12px;
-            letter-spacing: -0.01em;
+            margin-bottom: 10px;
+            letter-spacing: -0.02em;
         }
         
         .paywall-body {
-            font-size: 14px;
-            color: var(--text-tertiary);
-            line-height: 1.6;
+            font-size: 13.5px;
+            color: rgba(255,255,255,0.50);
+            line-height: 1.65;
             margin-bottom: 28px;
         }
         
         /* Subtle glow pulse on primary CTA */
         @keyframes ctaGlow {
-            0%, 100% { box-shadow: 0 0 20px rgba(52, 211, 153, 0.25); }
-            50% { box-shadow: 0 0 30px rgba(52, 211, 153, 0.45); }
+            0%, 100% { box-shadow: 0 0 20px rgba(52, 211, 153, 0.15); }
+            50% { box-shadow: 0 0 35px rgba(52, 211, 153, 0.3); }
+        }
+        
+        @keyframes upgradeModalIn {
+            from { opacity: 0; transform: translate(-50%, -50%) scale(0.95); }
+            to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
         }
         
         .paywall-cta-primary {
@@ -6539,18 +6562,19 @@
             padding: 14px 20px;
             background: var(--color-primary);
             border: none;
-            border-radius: 8px;
-            color: #000;
+            border-radius: 10px;
+            color: #0a0a0c;
             font-size: 14px;
-            font-weight: 600;
+            font-weight: 700;
             cursor: pointer;
-            transition: background var(--transition-fast), transform 0.1s ease;
+            transition: background 0.15s ease, transform 0.1s ease;
             margin-bottom: 12px;
-            animation: ctaGlow 2.5s ease-in-out infinite;
+            animation: ctaGlow 3s ease-in-out infinite;
+            letter-spacing: -0.01em;
         }
         
         .paywall-cta-primary:hover {
-            background: #14d891;
+            background: #2ee89d;
         }
         
         .paywall-cta-primary:active {
@@ -6568,19 +6592,19 @@
             width: 100%;
             padding: 12px 20px;
             background: transparent;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-            color: var(--text-muted);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 10px;
+            color: rgba(255,255,255,0.40);
             font-size: 13px;
             font-weight: 500;
             cursor: pointer;
-            transition: all var(--transition-fast);
+            transition: all 0.15s ease;
         }
         
         .paywall-cta-secondary:hover {
             background: rgba(255, 255, 255, 0.03);
-            border-color: rgba(255, 255, 255, 0.15);
-            color: var(--text-secondary);
+            border-color: rgba(255, 255, 255, 0.12);
+            color: rgba(255,255,255,0.6);
         }
         
         .paywall-cta-secondary:focus-visible {
@@ -6594,9 +6618,9 @@
         
         .paywall-pricing {
             margin-top: 20px;
-            font-size: 13px;
-            color: var(--text-tertiary);
-            letter-spacing: -0.01em;
+            font-size: 12px;
+            color: rgba(255,255,255,0.30);
+            letter-spacing: 0.01em;
         }
         
         /* Paused State Indicator */
@@ -10821,6 +10845,7 @@
         /* Mobile gate - hide on desktop and during landing */
         .mobile-gate { display: none; }
         body.show-landing .mobile-gate { display: none !important; }
+        body.show-landing .user-menu-container { display: none !important; }
 
         /* ===== LANDING PAGE v7 ===== */
         .landing-wrapper {
@@ -11387,7 +11412,7 @@ try {
                 <h1 class="lp2-h1-gradient">You don't know what your results actually mean.</h1>
                 <p class="lp2-hero-sub-line">Good decisions can lose.</p>
                 <p class="lp2-hero-sub-line">Bad ones can win.</p>
-                <p class="lp2-hero-sub-bridge">RiskWise shows you what's actually happening underneath.</p>
+                <p class="lp2-hero-sub-bridge">RiskWise is a live interpretation engine — it shows you what's actually happening underneath, and recalibrates with every trade.</p>
                 <button class="lp2-cta-glow lp2-cta-glow-primary" id="lp2CtaHero"><span class="lp2-cta-glow-shine"></span><span class="lp2-cta-glow-inner lp2-cta-glow-inner-primary">Show me what my results mean →</span></button>
                 <div class="lp2-subtext" style="margin-top:20px;">No signals. No predictions. Just clarity.</div>
                 <div style="margin-top:12px;font-size:11px;color:rgba(255,255,255,0.3);font-family:'IBM Plex Mono',monospace;letter-spacing:0.3px;">Free to start · No sign-up required</div>
@@ -11407,6 +11432,7 @@ try {
                 <p class="lp2-body-accent" style="margin-top:32px;">You thought it was discipline.</p>
                 <p class="lp2-body-accent">It's not.</p>
                 <p class="lp2-body-accent" style="color:#34D399;font-size:26px;">It's interpretation.</p>
+                <p class="lp2-body-muted" style="margin-top:32px;">And it doesn't happen once.<br>It happens on every trade, every drawdown, every streak — because the uncertainty never stops.</p>
             </div>
         </section>
 
@@ -11414,19 +11440,19 @@ try {
         <section class="lp2-section lp2-narrow">
             <div class="lp2-sr">
                 <h2 class="lp2-h2">Trading doesn't fail the way you think it does.</h2>
-                <p class="lp2-body-muted" style="margin-bottom:40px;">The hardest part isn't finding an edge.<br>It's recognizing what a working edge actually looks like.</p>
+                <p class="lp2-body-muted" style="margin-bottom:40px;">The hardest part isn't finding an edge.<br>It's recognizing what a working edge actually looks like — while it's working.</p>
                 <p class="lp2-body-spaced" style="font-size:22px;color:rgba(255,255,255,0.55);">You can be right and still lose.</p>
                 <p class="lp2-body-spaced" style="font-size:22px;color:rgba(255,255,255,0.55);">You can be wrong and still win.</p>
                 <p class="lp2-body-accent" style="color:#f0f0f2;font-size:28px;margin-top:40px;letter-spacing:-0.03em;">Your results don't tell you which is which.</p>
-                <p class="lp2-body-muted" style="margin-top:40px;">So most traders end up fixing the wrong thing.</p>
+                <p class="lp2-body-muted" style="margin-top:40px;">And every new trade changes what the answer is.<br>So most traders end up fixing the wrong thing — over and over.</p>
             </div>
         </section>
 
         <!-- SECTION 4: INTRODUCE RISKWISE -->
         <section class="lp2-section lp2-narrow">
             <div class="lp2-sr">
-                <h2 class="lp2-h2">RiskWise shows you what's actually happening beneath your results.</h2>
-                <p class="lp2-body-muted">No signals. No opinions. Just reality.</p>
+                <h2 class="lp2-h2">RiskWise shows you what's actually happening beneath your results — continuously.</h2>
+                <p class="lp2-body-muted">Not a report. Not a one-time analysis. A live interpretation engine that recalibrates with every trade you log.</p>
             </div>
         </section>
 
@@ -11436,7 +11462,7 @@ try {
                 <div class="lp2-lens-text">
                     <div class="lp2-lens-tag" style="color:#34D399;">Drawdown</div>
                     <h3 class="lp2-h3">Nothing is broken.</h3>
-                    <p class="lp2-body-muted">Your current drawdown is expected for your edge. Most traders would think something is wrong here. It's not.</p>
+                    <p class="lp2-body-muted">Your current drawdown is expected for your edge. Most traders would think something is wrong here. It's not. And this assessment updates with every trade.</p>
                 </div>
                 <div class="lp2-lens-img">
                     <div class="lp2-lens-card lp2-lens-card-sm">
@@ -11451,7 +11477,7 @@ try {
                 <div class="lp2-lens-text">
                     <div class="lp2-lens-tag" style="color:#67E8F9;">Streak</div>
                     <h3 class="lp2-h3">This is part of your edge.</h3>
-                    <p class="lp2-body-muted">Winning and losing streaks aren't anomalies. They're built into your distribution.</p>
+                    <p class="lp2-body-muted">Winning and losing streaks aren't anomalies. They're built into your distribution — and the probabilities shift as your data grows.</p>
                 </div>
                 <div class="lp2-lens-img">
                     <div class="lp2-lens-card lp2-lens-card-sm">
@@ -11466,7 +11492,7 @@ try {
                 <div class="lp2-lens-text">
                     <div class="lp2-lens-tag" style="color:#A78BFA;">Path</div>
                     <h3 class="lp2-h3">If you stay consistent, this is where it leads.</h3>
-                    <p class="lp2-body-muted">Not a prediction. A probability-weighted outcome based on your actual data.</p>
+                    <p class="lp2-body-muted">Not a prediction. A probability-weighted projection based on your actual data — recalculated as your edge evolves.</p>
                 </div>
                 <div class="lp2-lens-img">
                     <div class="lp2-lens-card lp2-lens-card-sm">
@@ -11496,7 +11522,7 @@ try {
                 <div class="lp2-lens-text">
                     <div class="lp2-lens-tag" style="color:#EF4444;">Risk</div>
                     <h3 class="lp2-h3">Above this, your edge starts breaking.</h3>
-                    <p class="lp2-body-muted">Your sizing determines whether your edge survives long enough to play out.</p>
+                    <p class="lp2-body-muted">Your sizing determines whether your edge survives long enough to play out. This threshold shifts as your risk profile changes.</p>
                 </div>
                 <div class="lp2-lens-img">
                     <div class="lp2-lens-card lp2-lens-card-sm">
@@ -11515,40 +11541,41 @@ try {
                 <p class="lp2-body-spaced" style="margin-top:60px;">The moment you realize:</p>
                 <p class="lp2-body-spaced" style="font-size:21px;">Your losses don't mean you're wrong.</p>
                 <p class="lp2-body-spaced" style="font-size:21px;">Your drawdown doesn't mean your strategy is broken.</p>
-                <p class="lp2-body-spaced" style="font-size:21px;">Your edge hasn't failed —<br>you just didn't understand it.</p>
+                <p class="lp2-body-spaced" style="font-size:21px;">Your edge hasn't failed —<br>you just didn't understand it <em>yet</em>.</p>
                 <p style="font-size:24px;font-weight:700;color:#34D399;margin-top:60px;letter-spacing:-0.02em;">That's when trading starts to make sense.</p>
+                <p class="lp2-body-muted" style="margin-top:24px;">But that clarity isn't permanent. Markets shift. Your data changes.<br>Without a live reference, you're back to guessing by next week.</p>
             </div>
         </section>
 
         <!-- SECTION 7: BENEFITS -->
         <section class="lp2-section lp2-narrow">
             <div class="lp2-sr lp2-benefits">
-                <div class="lp2-benefit">Stop guessing.</div>
-                <div class="lp2-benefit">Stop overreacting.</div>
+                <div class="lp2-benefit">Stop guessing after every trade.</div>
+                <div class="lp2-benefit">Stop overreacting to normal variance.</div>
                 <div class="lp2-benefit">Stop fixing what isn't broken.</div>
-                <p class="lp2-body-accent" style="margin-top:40px;">And for the first time:<br>understand what's actually happening.</p>
+                <p class="lp2-body-accent" style="margin-top:40px;">And for the first time —<br>understand what's happening, <em>as it happens</em>.</p>
             </div>
         </section>
 
         <!-- SECTION 8: FINAL CTA -->
         <section class="lp2-section lp2-narrow lp2-final">
             <div class="lp2-sr">
-                <p class="lp2-body-muted" style="margin-bottom:16px;">Stop guessing what your results mean.</p>
-                <h2 class="lp2-h2">Know what's happening.<br>Then trade.</h2>
+                <p class="lp2-body-muted" style="margin-bottom:16px;">Uncertainty doesn't pause between sessions.</p>
+                <h2 class="lp2-h2">Your interpretation shouldn't either.</h2>
                 <div style="margin-top:44px;">
                     <button class="lp2-cta-glow lp2-cta-glow-primary" id="lp2CtaFinal">
                         <span class="lp2-cta-glow-shine"></span>
                         <span class="lp2-cta-glow-inner lp2-cta-glow-inner-primary">Show me what my results mean →</span>
                     </button>
                 </div>
-                <div class="lp2-subtext" style="margin-top:20px;">No signals. No strategies. Just clarity.</div>
+                <div class="lp2-subtext" style="margin-top:20px;">No signals. No strategies. Just continuous clarity.</div>
                 <div style="margin-top:12px;font-size:11px;color:rgba(255,255,255,0.3);font-family:'IBM Plex Mono',monospace;letter-spacing:0.3px;">Free to start · No sign-up required</div>
             </div>
         </section>
 
         <!-- FOOTER -->
         <div class="lp2-footer">
-            <p>RiskWise doesn't tell you what to do.<br>It shows you what's actually happening.</p>
+            <p>Trading journals record what happened.<br>RiskWise tells you what it means — and keeps telling you as conditions change.</p>
         </div>
         </div><!-- /lp2-sections-bg -->
     </div>
@@ -11575,7 +11602,7 @@ try {
                     <span class="paused-indicator-dot"></span>
                     <span>Paused</span>
                 </div>
-                <button class="log-toggle" id="logToggle" title="Trade Journal (J)" aria-label="Toggle trade journal" aria-expanded="false">
+                <button class="log-toggle" id="logToggle" title="Trade Log (J)" aria-label="Toggle trade log" aria-expanded="false">
                     <span class="kbd-hint"><kbd>J</kbd></span>
                     <svg class="log-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                         <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
@@ -11611,12 +11638,12 @@ try {
             </div>
         </div>
         
-        <!-- Trade Journal Modal -->
+        <!-- Trade Log Modal -->
         <div class="trade-log-overlay" id="tradeLogOverlay">
             <div class="trade-log" id="tradeLog">
                 <div class="trade-log-inner">
                     <div class="trade-log-header">
-                        <span class="trade-log-title">Trade Journal</span>
+                        <span class="trade-log-title">Trade Log</span>
                         <div class="trade-log-actions">
                             <span class="trade-log-clear" id="clearLog">Clear All</span>
                             <button class="trade-log-close" id="tradeLogClose" aria-label="Close trade log">
@@ -11865,12 +11892,6 @@ try {
             <div id="freeTradeCounter" style="font-size:11px;color:rgba(255,255,255,0.38);text-align:center;margin-bottom:4px;"></div>
             <div id="pricingHint" style="font-size:10px;color:rgba(255,255,255,0.22);text-align:center;margin-bottom:6px;font-family:'IBM Plex Mono',monospace;letter-spacing:0.3px;">Free to start · Full access $19/mo</div>
             <div class="footer-disclaimer" id="footerInsight" style="transition:opacity 0.3s ease;"></div>
-            <div style="margin-top:8px;display:flex;justify-content:center;gap:16px;flex-wrap:wrap;">
-                <a href="#" data-rw-legal="privacy" style="font-size:11px;color:rgba(255,255,255,0.35);text-decoration:none;font-family:'IBM Plex Mono',monospace;">Privacy</a>
-                <a href="#" data-rw-legal="terms" style="font-size:11px;color:rgba(255,255,255,0.35);text-decoration:none;font-family:'IBM Plex Mono',monospace;">Terms</a>
-                <a href="#" data-rw-legal="support" style="font-size:11px;color:rgba(255,255,255,0.35);text-decoration:none;font-family:'IBM Plex Mono',monospace;">Support</a>
-                <a href="#" data-rw-legal="changelog" style="font-size:11px;color:rgba(255,255,255,0.35);text-decoration:none;font-family:'IBM Plex Mono',monospace;">Changelog</a>
-            </div>
         </div>
     </div>
     
@@ -11882,7 +11903,7 @@ try {
             <!-- Header -->
             <div class="mc-v2-header">
                 <span class="mc-v2-title">Drawdown Diagnostics</span>
-                <span class="mc-v2-sub">Where your risk is coming from and how to recover.</span>
+                <span class="mc-v2-sub">What your current drawdown means and what recovery looks like.</span>
             </div>
             
             <!-- Top Row: Drawdown + Open Slot -->
@@ -11900,7 +11921,7 @@ try {
                         </div>
                         <div class="drawdown-bar-labels">
                             <span>0%</span>
-                            <span id="drawdownBarMax">30%</span>
+                            <span id="drawdownBarMax" style="color:#D4A84B;">30%</span>
                         </div>
                     </div>
                     <!-- Current State -->
@@ -11916,6 +11937,8 @@ try {
                         </div>
                         <div class="drawdown-recovery-text" id="drawdownRecoveryText"></div>
                     </div>
+                    <!-- Drawdown Verdict -->
+                    <div class="dd-insight-box dd-insight-normal" id="drawerDDVerdict" style="margin:10px 0;display:none;font-size:11px;"></div>
                     <!-- Recovery Stats -->
                     <div class="drawdown-stats">
                         <div class="drawdown-stat">
@@ -11924,42 +11947,11 @@ try {
                         </div>
                         <div class="drawdown-stat">
                             <div class="drawdown-stat-value" id="drawerAvgRecovery">—</div>
-                            <div class="drawdown-stat-label">Avg Recovery</div>
+                            <div class="drawdown-stat-label">Avg Recovery Time</div>
                         </div>
                         <div class="drawdown-stat">
                             <div class="drawdown-stat-value" id="drawerTradesInDD">0</div>
                             <div class="drawdown-stat-label">Trades in DD</div>
-                        </div>
-                    </div>
-                    <!-- Drawdown History -->
-                    <div class="drawdown-history" id="drawerDrawdownHistory">
-                    </div>
-                </div>
-                
-                <!-- Right: Open Slot -->
-                <div class="diag-left-col-slot">
-                    <div class="diag-col-header">P&L</div>
-                    <div class="period-pnl" id="periodPnl">
-                        <div class="period-pnl-row" data-period="today">
-                            <span class="period-pnl-label">Today</span>
-                            <span class="period-pnl-value" id="periodPnlToday">—</span>
-                        </div>
-                        <div class="period-pnl-row" data-period="week">
-                            <span class="period-pnl-label">Week</span>
-                            <span class="period-pnl-value" id="periodPnlWeek">—</span>
-                        </div>
-                        <div class="period-pnl-row" data-period="month">
-                            <span class="period-pnl-label">Month</span>
-                            <span class="period-pnl-value" id="periodPnlMonth">—</span>
-                        </div>
-                        <div class="period-pnl-row" data-period="ytd">
-                            <span class="period-pnl-label">YTD</span>
-                            <span class="period-pnl-value" id="periodPnlYtd">—</span>
-                        </div>
-                        <div class="period-pnl-divider"></div>
-                        <div class="period-pnl-row period-pnl-total" data-period="all">
-                            <span class="period-pnl-label">All Time</span>
-                            <span class="period-pnl-value" id="periodPnlAll">—</span>
                         </div>
                     </div>
                 </div>
@@ -12025,132 +12017,43 @@ try {
                 <div style="font-size:11px;font-weight:400;color:rgba(52,211,153,0.6);line-height:1.65;"><strong>This is not a prediction.</strong> It's a probability map built from your own data.</div>
             </div>
             <div style="display:flex;gap:2px;padding:4px;background:rgba(255,255,255,0.015);border-radius:8px;margin-bottom:-1px;">
-                <button class="diag-mode-btn active" data-diag-mode="risk" style="flex:1;text-align:center;">Risk</button>
+                <button class="diag-mode-btn" data-diag-mode="risk" style="flex:1;text-align:center;">Risk</button>
                 <button class="diag-mode-btn" data-diag-mode="drawdown" style="flex:1;text-align:center;">Drawdown</button>
-                <button class="diag-mode-btn" data-diag-mode="streak" style="flex:1;text-align:center;">Streak</button>
+                <button class="diag-mode-btn active" data-diag-mode="streak" style="flex:1;text-align:center;">Streak</button>
                 <button class="diag-mode-btn" data-diag-mode="path" id="diagBtnPath" style="flex:1;text-align:center;">Path</button>
                 <button class="diag-mode-btn" data-diag-mode="edge" id="diagBtnEdge" style="flex:1;text-align:center;">Edge</button>
             </div>
         </div>
         
-        <!-- Tab: Risk (default active) -->
-        <div class="diag-content active" data-diag-mode="risk">
+        <!-- Tab: Risk -->
+        <div class="diag-content" data-diag-mode="risk">
         <div class="mc-panel-v2" style="min-height:0;">
             
-            <!-- Params Row - Full Width -->
-            
-            <!-- RISK PROFILE — full panel, the centerpiece -->
+            <!-- RISK PROFILE — Survival Curve -->
             <div class="mc-v2-columns" style="flex-direction:column;flex:1;overflow-y:auto;">
                 
-                <!-- Survival Ring — prominent, centered -->
-                <div style="display:flex;flex-direction:column;align-items:center;padding:24px 20px 20px;border-bottom:1px solid var(--border-subtle);">
-                    <div class="survival-ring-wrap">
-                        <svg class="survival-ring" viewBox="0 0 120 120">
-                            <circle cx="60" cy="60" r="54" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
-                            <circle class="survival-ring-bg" cx="60" cy="60" r="52" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="4"/>
-                            <circle cx="60" cy="60" r="49.5" fill="none" stroke="rgba(255,255,255,0.02)" stroke-width="0.5"/>
-                            <line x1="60" y1="6" x2="60" y2="10" stroke="rgba(255,255,255,0.08)" stroke-width="1" transform="rotate(90 60 60)"/>
-                            <line x1="60" y1="6" x2="60" y2="10" stroke="rgba(255,255,255,0.08)" stroke-width="1" transform="rotate(180 60 60)"/>
-                            <line x1="60" y1="6" x2="60" y2="10" stroke="rgba(255,255,255,0.08)" stroke-width="1" transform="rotate(270 60 60)"/>
-                            <circle class="survival-ring-fill" id="survivalRingFill" cx="60" cy="60" r="52" fill="none" stroke="var(--color-primary)" stroke-width="4" stroke-linecap="round" stroke-dasharray="326.7" stroke-dashoffset="326.7" transform="rotate(-90 60 60)"/>
-                        </svg>
-                        <span class="mc-v2-survival-val" id="mcSurvival">—</span>
+                <!-- Headline -->
+                <div style="padding:16px 24px 0;">
+                    <div style="text-align:center;padding:16px 0 8px;">
+                        <div style="font-size:11px;color:rgba(255,255,255,0.45);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:10px;">How much risk can your edge support?</div>
+                        <div style="font-family:var(--font-mono);font-size:36px;font-weight:700;color:#34D399;" id="mcSurvival">—</div>
+                        <div style="font-size:12px;color:rgba(255,255,255,0.45);margin-top:4px;" id="riskHeadlineDesc">of paths stay above your <span style="color:#D4A84B;font-weight:600;">drawdown threshold</span></div>
                     </div>
-                    <span class="mc-v2-survival-title" style="margin-top:10px;">Paths Above DD Floor</span>
-                    <span class="mc-v2-survival-lbl" style="margin-top:6px;text-align:center;max-width:280px;">At <span id="mcSurvivalRisk" style="color:#67E8F9;font-weight:600;">—</span> avg risk, <span id="mcSurvivalPctText" style="color:rgba(255,255,255,0.7);font-weight:600;">—</span> of paths stayed above the <span id="mcCeilingDisplay" style="color:#D4A84B;font-weight:600;"></span> floor over <span id="mcHorizonLabel">50</span> trades</span>
                 </div>
                 
-                <!-- Risk Sensitivity Bars — the core visual -->
-                <div style="padding:18px 20px;flex:1;">
-                    <div style="font-size:13px;font-weight:700;color:var(--text-primary);letter-spacing:-0.02em;margin-bottom:4px;">How Much Risk Can Your Edge Support?</div>
-                    <div id="riskSensitivityMeta" style="font-size:10px;color:rgba(255,255,255,0.38);margin-bottom:14px;font-family:var(--font-mono);">% of paths above 30% drawdown floor · 500 paths per level</div>
-                    <div id="riskSensitivityInline" style="display:flex;flex-direction:column;gap:3px;font-family:var(--font-mono);font-size:12px;"></div>
+                <!-- Survival Curve Chart -->
+                <div style="padding:4px 20px 12px;flex:1;">
+                    <div id="riskSensitivityMeta" style="font-size:10px;color:rgba(255,255,255,0.38);margin-bottom:6px;font-family:var(--font-mono);text-align:center;">Survival probability vs risk per trade</div>
+                    <div id="riskSensitivityChart" style="height:240px;position:relative;display:none;">
+                        <canvas id="riskSurvivalCanvas" style="width:100%;height:100%;"></canvas>
+                    </div>
+                    <div id="riskSensitivityFinding" class="dd-insight-box dd-insight-normal" style="margin-top:10px;display:none;"></div>
                     <div id="riskSensitivityEmpty" style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 16px;text-align:center;">
                         <div style="font-size:11px;font-weight:600;color:var(--color-primary);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px;">Risk Engine</div>
                         <div style="font-size:13px;color:rgba(255,255,255,0.35);margin-bottom:10px;">Log 10+ trades to activate the Risk Engine.</div>
                         <div style="font-size:12px;color:rgba(255,255,255,0.35);font-family:var(--font-mono);" id="riskProfileProgress" class="empty-shimmer">0 of 10 trades</div>
                     </div>
                 </div>
-                
-                <!-- MC Chart — collapsed by default, expandable -->
-                <div style="border-top:1px solid var(--border-subtle);">
-                    <button id="mcChartToggle" style="width:100%;padding:10px 20px;background:none;border:none;display:flex;align-items:center;justify-content:space-between;cursor:pointer;font-family:inherit;">
-                        <span style="font-size:10px;font-weight:600;color:rgba(255,255,255,0.38);text-transform:uppercase;letter-spacing:0.06em;">Monte Carlo Fan Chart</span>
-                        <svg id="mcChartArrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="2" stroke-linecap="round" style="transition:transform 0.3s cubic-bezier(0.16,1,0.3,1)"><path d="M6 9l6 6 6-6"/></svg>
-                    </button>
-                    <div id="mcChartCollapsible" style="display:none;padding:0 16px 12px;">
-                        <div class="mc-chart-container mc-v2-chart" style="height:160px;">
-                            <svg id="mcChartSvg" viewBox="0 0 400 200" preserveAspectRatio="xMidYMid meet"></svg>
-                            <div class="mc-chart-empty" id="mcChartEmpty">
-                                <div style="text-align:center;">
-                                    <div style="font-size:11px;font-weight:600;color:var(--color-primary);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;">Monte Carlo Projection</div>
-                                    <div style="font-size:12px;color:rgba(255,255,255,0.35);margin-bottom:8px;">Log 10+ trades to activate.</div>
-                                    <div style="font-size:11px;color:rgba(255,255,255,0.35);" id="mcProgress" class="empty-shimmer">0 of 10 trades</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Expected Variance — what the edge produces -->
-                <div style="border-top:1px solid var(--border-subtle);">
-                    <button id="mcStatsToggle" style="width:100%;padding:10px 20px;background:none;border:none;display:flex;align-items:center;justify-content:space-between;cursor:pointer;font-family:inherit;">
-                        <span style="font-size:10px;font-weight:600;color:rgba(255,255,255,0.38);text-transform:uppercase;letter-spacing:0.06em;">What Your Edge Produces</span>
-                        <svg id="mcStatsArrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="2" stroke-linecap="round" style="transition:transform 0.3s cubic-bezier(0.16,1,0.3,1)"><path d="M6 9l6 6 6-6"/></svg>
-                    </button>
-                    <div id="mcStatsCollapsible" style="display:none;padding:0 20px 16px;">
-                        <div class="mc-v2-expect-group">
-                            <div class="mc-v2-expect-title">Expected Return</div>
-                            <div class="mc-v2-expect-row">
-                                <span class="mc-v2-expect-lbl">Typical outcome</span>
-                                <span class="mc-v2-expect-val" id="mcMedian">—</span>
-                            </div>
-                            <div class="mc-v2-expect-row">
-                                <span class="mc-v2-expect-lbl">Best case (1 in 10)</span>
-                                <span class="mc-v2-expect-val positive" id="mcUpside">—</span>
-                            </div>
-                            <div class="mc-v2-expect-row">
-                                <span class="mc-v2-expect-lbl">Worst case (1 in 10)</span>
-                                <span class="mc-v2-expect-val negative" id="mcDownside">—</span>
-                            </div>
-                        </div>
-                        <div class="mc-v2-expect-group">
-                            <div class="mc-v2-expect-title">Expected Drawdown</div>
-                            <div class="mc-v2-expect-row">
-                                <span class="mc-v2-expect-lbl">Typical max drawdown</span>
-                                <span class="mc-v2-expect-val" id="mcMedianDD">—</span>
-                            </div>
-                            <div class="mc-v2-expect-row">
-                                <span class="mc-v2-expect-lbl">Worst case drawdown</span>
-                                <span class="mc-v2-expect-val negative" id="mcWorstDD">—</span>
-                            </div>
-                            <div class="mc-v2-expect-row">
-                                <span class="mc-v2-expect-lbl">Chance of hitting <span id="mcDDCeilLabel">30</span>% floor</span>
-                                <span class="mc-v2-expect-val" id="mcDD30Pct">—</span>
-                            </div>
-                        </div>
-                        <div class="mc-v2-expect-group">
-                            <div class="mc-v2-expect-title">Expected Losing Streaks</div>
-                            <div class="mc-v2-expect-row">
-                                <span class="mc-v2-expect-lbl">Typical longest streak</span>
-                                <span class="mc-v2-expect-val" id="mcAvgLoseStreak">—</span>
-                            </div>
-                            <div class="mc-v2-expect-row">
-                                <span class="mc-v2-expect-lbl">Worst case streak</span>
-                                <span class="mc-v2-expect-val negative" id="mcMaxLoseStreak">—</span>
-                            </div>
-                            <div class="mc-v2-expect-row">
-                                <span class="mc-v2-expect-lbl">5+ losses in a row</span>
-                                <span class="mc-v2-expect-val" id="mc5LossStreak">—</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Insight Strip - Full Width -->
-            <div class="mc-v2-insight" id="mcInsightStrip">
-                <span class="mc-v2-insight-text" id="mcInsightText">Based on all-trade average risk of <span id="mcEffRisk">—</span> per trade.</span>
             </div>
         </div>
         </div><!-- /diag-content risk right -->
@@ -12166,14 +12069,41 @@ try {
                     <div style="font-size:12px;color:rgba(255,255,255,0.45);margin-top:6px;" id="ddPercentileDesc">of simulated paths hit a drawdown this deep or worse</div>
                 </div>
                 
-                <!-- Distribution chart -->
-                <div style="height:140px;margin:0 -4px;">
-                    <canvas id="ddDistCanvas" style="width:100%;height:100%;"></canvas>
+                <!-- Drawdown zone range -->
+                <div id="ddZoneBar" style="padding:12px 0 4px;">
+                    <!-- Bar track -->
+                    <div style="position:relative;height:28px;background:rgba(255,255,255,0.02);border-radius:8px;border:1px solid rgba(255,255,255,0.04);overflow:visible;margin:0 2px;">
+                        <!-- Normal zone -->
+                        <div id="ddZoneNormal" style="position:absolute;left:0;top:0;bottom:0;border-radius:8px 0 0 8px;background:linear-gradient(90deg, rgba(52,211,153,0.08), rgba(52,211,153,0.04));transition:width 0.6s cubic-bezier(0.16,1,0.3,1);"></div>
+                        <!-- Watch zone -->
+                        <div id="ddZoneWatch" style="position:absolute;top:0;bottom:0;background:rgba(212,168,75,0.06);transition:left 0.6s cubic-bezier(0.16,1,0.3,1), width 0.6s cubic-bezier(0.16,1,0.3,1);"></div>
+                        <!-- Danger zone -->
+                        <div id="ddZoneDanger" style="position:absolute;top:0;bottom:0;right:0;border-radius:0 8px 8px 0;background:rgba(239,68,68,0.06);transition:width 0.6s cubic-bezier(0.16,1,0.3,1);"></div>
+                        <!-- Typical worst DD marker -->
+                        <div id="ddZoneTypicalMarker" style="position:absolute;top:-3px;bottom:-3px;width:1px;background:rgba(212,168,75,0.35);transition:left 0.6s cubic-bezier(0.16,1,0.3,1);z-index:2;"></div>
+                        <!-- Your position marker -->
+                        <div id="ddZoneYouMarker" style="position:absolute;top:-5px;bottom:-5px;width:3px;border-radius:2px;background:#34D399;box-shadow:0 0 8px rgba(52,211,153,0.3);transition:left 0.6s cubic-bezier(0.16,1,0.3,1);z-index:3;"></div>
+                    </div>
+                    <!-- Labels below bar -->
+                    <div style="position:relative;height:20px;margin:6px 2px 0;">
+                        <!-- 0% label -->
+                        <span style="position:absolute;left:0;font-size:9px;font-family:var(--font-mono);color:rgba(255,255,255,0.20);">0%</span>
+                        <!-- Threshold label -->
+                        <span id="ddZoneFloorLabel" style="position:absolute;right:0;font-size:9px;font-family:var(--font-mono);color:#D4A84B;">30%</span>
+                        <!-- You label (positioned by JS) -->
+                        <span id="ddZoneYouLabel" style="position:absolute;font-size:9px;font-weight:700;font-family:var(--font-mono);color:#34D399;transform:translateX(-50%);white-space:nowrap;">You</span>
+                        <!-- Typical worst label (positioned by JS) -->
+                        <span id="ddZoneTypicalLabel" style="position:absolute;font-size:8px;font-family:var(--font-mono);color:rgba(212,168,75,0.4);transform:translateX(-50%);white-space:nowrap;top:10px;">typical worst</span>
+                    </div>
                 </div>
                 
                 <!-- Verdict -->
                 <div class="dd-insight-box dd-insight-normal" id="ddInsightBox" style="margin:12px 0;">
-                    Log 10+ trades to see where your drawdown falls.
+                    <div style="text-align:center;">
+                        <div style="font-size:11px;font-weight:600;color:var(--color-primary);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;">Drawdown Analysis</div>
+                        <div style="font-size:12.5px;color:rgba(255,255,255,0.40);margin-bottom:8px;">10 trades needed to interpret your drawdown.</div>
+                        <div style="font-size:12px;font-family:var(--font-mono);" id="ddProgress" class="empty-shimmer">0 of 10 trades</div>
+                    </div>
                 </div>
                 
                 <div style="height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.04),transparent);margin:4px 0;"></div>
@@ -12183,13 +12113,13 @@ try {
                     <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,0.50);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:2px;">Where You Stand</div>
                     <div class="dd-stat-row"><span class="dd-stat-label">You're down</span><span class="dd-stat-value" id="ddCurrentDD" style="color:#EF4444;">—</span></div>
                     <div class="dd-stat-row"><span class="dd-stat-label">Typical worst drawdown at this risk</span><span class="dd-stat-value" id="ddExpectedDD" style="color:#D4A84B;">—</span></div>
-                    <div class="dd-stat-row"><span class="dd-stat-label">Your drawdown floor</span><span class="dd-stat-value" id="ddFloorSetting">—</span></div>
+                    <div class="dd-stat-row"><span class="dd-stat-label">Your drawdown threshold</span><span class="dd-stat-value" id="ddFloorSetting" style="color:#D4A84B;">—</span></div>
                 </div>
             </div>
         </div>
         
         <!-- STREAK LENS -->
-        <div class="diag-content" data-diag-mode="streak">
+        <div class="diag-content active" data-diag-mode="streak">
             <div style="padding:16px 24px;flex:1;display:flex;flex-direction:column;gap:0;overflow-y:auto;">
                 
                 <!-- Headline: Is this streak normal? -->
@@ -12199,7 +12129,9 @@ try {
                         <span style="font-family:var(--font-mono);font-size:40px;font-weight:700;" id="streakLensLength">—</span>
                         <span style="font-family:var(--font-mono);font-size:20px;font-weight:700;" id="streakLensType" style="color:rgba(255,255,255,0.5);">—</span>
                     </div>
-                    <div style="font-size:12px;color:rgba(255,255,255,0.45);margin-top:6px;" id="streakLensProbLine">Log trades to see streak analysis.</div>
+                    <div style="font-size:12px;color:rgba(255,255,255,0.45);margin-top:6px;" id="streakLensProbLine">
+                        <span id="streakProgress" class="empty-shimmer" style="font-family:var(--font-mono);">0 of 10 trades</span>
+                    </div>
                 </div>
                 
                 <!-- Streak probability distribution chart -->
@@ -12209,7 +12141,10 @@ try {
                 
                 <!-- Verdict -->
                 <div class="dd-insight-box dd-insight-normal" id="streakInsightBox" style="margin:12px 0;">
-                    Log trades to activate streak analysis.
+                    <div style="text-align:center;">
+                        <div style="font-size:11px;font-weight:600;color:var(--color-primary);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;">Streak Analysis</div>
+                        <div style="font-size:12.5px;color:rgba(255,255,255,0.40);">10 trades needed to interpret your streaks.</div>
+                    </div>
                 </div>
                 
                 <div style="height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.04),transparent);margin:4px 0;"></div>
@@ -12243,7 +12178,11 @@ try {
                 
                 <!-- Verdict -->
                 <div class="dd-insight-box dd-insight-normal" id="pathInsightBox" style="margin:8px 0 12px;">
-                    Log 10+ trades to see projected paths.
+                    <div style="text-align:center;">
+                        <div style="font-size:11px;font-weight:600;color:var(--color-primary);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;">Path Projection</div>
+                        <div style="font-size:12.5px;color:rgba(255,255,255,0.40);margin-bottom:8px;">10 trades needed to project where your edge leads.</div>
+                        <div style="font-size:12px;font-family:var(--font-mono);" id="pathProgress" class="empty-shimmer">0 of 10 trades</div>
+                    </div>
                 </div>
                 
                 <div style="height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.04),transparent);margin:0;"></div>
@@ -12295,7 +12234,11 @@ try {
                 
                 <!-- Verdict -->
                 <div class="dd-insight-box dd-insight-normal" id="edgeInsightBox" style="margin:10px 0;">
-                    Log trades to analyze your edge.
+                    <div style="text-align:center;">
+                        <div style="font-size:11px;font-weight:600;color:var(--color-primary);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;">Edge Analysis</div>
+                        <div style="font-size:12.5px;color:rgba(255,255,255,0.40);margin-bottom:8px;">10 trades needed to analyze your edge.</div>
+                        <div style="font-size:12px;font-family:var(--font-mono);" id="edgeProgress" class="empty-shimmer">0 of 10 trades</div>
+                    </div>
                 </div>
                 
                 <div style="height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.04),transparent);margin:4px 0;"></div>
@@ -12316,9 +12259,8 @@ try {
                 <!-- Statistical tests -->
                 <div style="display:flex;flex-direction:column;gap:4px;padding:12px 0;">
                     <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,0.50);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:2px;">Statistical Tests</div>
-                    <div class="dd-stat-row"><span class="dd-stat-label">P-value (vs random)</span><span class="dd-stat-value" id="edgePValue">—</span></div>
+                    <div class="dd-stat-row"><span class="dd-stat-label">P-value (expectancy vs zero)</span><span class="dd-stat-value" id="edgePValue">—</span></div>
                     <div class="dd-stat-row"><span class="dd-stat-label">Trades logged</span><span class="dd-stat-value" id="edgeTradeCount">—</span></div>
-                    <div class="dd-stat-row"><span class="dd-stat-label">Trades needed for 95% confidence</span><span class="dd-stat-value" id="edgeTradesNeeded" style="color:#67E8F9;">—</span></div>
                 </div>
                 
                 <div style="height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.04),transparent);margin:0;"></div>
@@ -12353,33 +12295,57 @@ try {
         </button>
         
         <div class="user-dropdown" id="userDropdown">
-            <div class="user-dropdown-header">
-                <div class="user-dropdown-email" id="userDropdownEmail"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5b22342e1b3e363a323775383436">[email&#160;protected]</a></div>
-                <div class="user-dropdown-plan">Pro</div>
+            <div class="user-dropdown-header" id="userDropdownHeaderPro" style="display:none;">
+                <div class="user-dropdown-plan" style="color:#34D399;">Pro</div>
             </div>
             <div class="user-dropdown-items">
-                <button class="user-dropdown-item" id="openAccountModal">
+                <button class="user-dropdown-item" id="openSettingsFromMenu" data-action="settings">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                        <circle cx="12" cy="7" r="4"></circle>
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
                     </svg>
-                    Account
+                    Settings
                 </button>
-                <button class="user-dropdown-item" id="openSubscriptionModal">
+                <a class="user-dropdown-item" id="manageBillingLink" href="https://app.gumroad.com/library" target="_blank" rel="noopener" style="display:none;text-decoration:none;">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
                         <line x1="1" y1="10" x2="23" y2="10"></line>
                     </svg>
-                    Subscription
-                </button>
+                    Manage Billing
+                </a>
                 <div class="user-dropdown-divider"></div>
-                <button class="user-dropdown-item logout" id="logoutBtn">
+                <button class="user-dropdown-item" data-rw-legal="privacy">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
-                        <polyline points="16 17 21 12 16 7"></polyline>
-                        <line x1="21" y1="12" x2="9" y2="12"></line>
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
                     </svg>
-                    Log out
+                    Privacy
+                </button>
+                <button class="user-dropdown-item" data-rw-legal="terms">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                    </svg>
+                    Terms
+                </button>
+                <button class="user-dropdown-item" data-rw-legal="support">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                    </svg>
+                    Support
+                </button>
+                <button class="user-dropdown-item" data-rw-legal="changelog">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="8" y1="6" x2="21" y2="6"></line>
+                        <line x1="8" y1="12" x2="21" y2="12"></line>
+                        <line x1="8" y1="18" x2="21" y2="18"></line>
+                        <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                        <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                        <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                    </svg>
+                    Changelog
                 </button>
             </div>
         </div>
@@ -12626,10 +12592,14 @@ try {
             </button>
             <button class="mode-btn" id="modeJournal" data-mode="journal">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                    <line x1="8" y1="6" x2="21" y2="6"></line>
+                    <line x1="8" y1="12" x2="21" y2="12"></line>
+                    <line x1="8" y1="18" x2="21" y2="18"></line>
+                    <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                    <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                    <line x1="3" y1="18" x2="3.01" y2="18"></line>
                 </svg>
-                <span>Journal</span>
+                <span>Trade Log</span>
             </button>
             <button class="mode-btn" id="modeProgression" data-mode="progression">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -12649,9 +12619,54 @@ try {
         </div>
     </div>
     
+    <!-- Guided Demo Walkthrough -->
+    <div id="demoWalkthrough" style="display:none;">
+        <!-- Dark overlay with cutout hole (managed by JS) -->
+        <div id="walkOverlay" style="position:fixed;inset:0;z-index:8999;pointer-events:none;transition:opacity 0.4s ease;">
+            <svg width="100%" height="100%" style="position:absolute;inset:0;">
+                <defs>
+                    <mask id="walkMask">
+                        <rect width="100%" height="100%" fill="white"/>
+                        <rect id="walkCutout" x="0" y="0" width="0" height="0" rx="14" fill="black"/>
+                    </mask>
+                </defs>
+                <rect width="100%" height="100%" fill="rgba(0,0,0,0.45)" mask="url(#walkMask)"/>
+            </svg>
+            <!-- Glow ring around cutout -->
+            <div id="walkGlow" style="position:absolute;border:1px solid rgba(52,211,153,0.12);border-radius:14px;box-shadow:0 0 40px rgba(52,211,153,0.06);transition:all 0.5s cubic-bezier(0.16,1,0.3,1);pointer-events:none;"></div>
+        </div>
+        
+        <!-- Click blocker -->
+        <div id="walkBlocker" style="position:fixed;inset:0;z-index:9000;"></div>
+        
+        <!-- Card -->
+        <div id="walkCard" style="position:fixed;width:480px;max-width:88vw;background:linear-gradient(180deg,#14141a 0%,#101014 100%);border:1px solid rgba(255,255,255,0.08);border-radius:18px;padding:44px 40px 36px;box-shadow:0 32px 80px rgba(0,0,0,0.55),0 0 0 1px rgba(255,255,255,0.03),inset 0 1px 0 rgba(255,255,255,0.05);opacity:0;transition:opacity 0.4s ease, top 0.5s cubic-bezier(0.16,1,0.3,1), left 0.5s cubic-bezier(0.16,1,0.3,1);z-index:9001;font-family:'IBM Plex Sans',-apple-system,sans-serif;">
+            <!-- Top accent -->
+            <div style="position:absolute;top:0;left:48px;right:48px;height:1px;background:linear-gradient(90deg,transparent,rgba(52,211,153,0.20),transparent);"></div>
+            
+            <!-- Step counter -->
+            <div id="walkCounter" style="font-size:11px;font-family:'IBM Plex Mono',monospace;color:rgba(52,211,153,0.50);text-transform:uppercase;letter-spacing:0.10em;margin-bottom:20px;font-weight:500;"></div>
+            
+            <!-- Question -->
+            <div id="walkQuestion" style="font-size:16px;font-weight:500;color:rgba(255,255,255,0.45);margin-bottom:12px;line-height:1.5;"></div>
+            
+            <!-- Interpretation (hero text) -->
+            <div id="walkInterpretation" style="font-size:26px;font-weight:700;color:#f0f0f2;letter-spacing:-0.03em;line-height:1.25;margin-bottom:20px;"></div>
+            
+            <!-- Detail -->
+            <div id="walkDetail" style="font-size:14px;color:rgba(255,255,255,0.42);line-height:1.7;margin-bottom:32px;"></div>
+            
+            <!-- CTA -->
+            <button id="walkBtn" style="width:100%;padding:15px 24px;border-radius:12px;font-size:15px;font-weight:600;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;transition:all 0.15s;letter-spacing:-0.01em;background:rgba(52,211,153,0.08);border:1px solid rgba(52,211,153,0.18);color:#34D399;"></button>
+            
+            <!-- Skip -->
+            <button id="walkSkip" style="display:block;margin:14px auto 0;background:none;border:none;color:rgba(255,255,255,0.18);font-size:12px;cursor:pointer;font-family:'IBM Plex Mono',monospace;transition:color 0.15s;letter-spacing:0.02em;" onmouseenter="this.style.color='rgba(255,255,255,0.4)'" onmouseleave="this.style.color='rgba(255,255,255,0.18)'">Skip walkthrough</button>
+        </div>
+    </div>
+    
     <div id="demoBanner" style="display:none;position:fixed;top:48px;left:0;right:0;z-index:150;background:linear-gradient(90deg, rgba(52,211,153,0.12) 0%, rgba(52,211,153,0.06) 100%);border-bottom:1px solid rgba(52,211,153,0.15);padding:14px 24px;backdrop-filter:blur(12px);">
         <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;">
-            <span style="font-size:14px;color:rgba(255,255,255,0.7);font-weight:500;">This is sample data — import your trades to see your own probability structure.</span>
+            <span style="font-size:14px;color:rgba(255,255,255,0.7);font-weight:500;">This is sample data — your uncertainty needs its own interpretation.</span>
             <button id="demoBannerBtn" style="padding:9px 22px;background:#34D399;color:#0a0a0c;border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;white-space:nowrap;transition:background 0.15s;letter-spacing:0.01em;">Import my trades →</button>
         </div>
     </div>
@@ -12660,13 +12675,11 @@ try {
     <div class="paywall-overlay" id="paywallOverlay">
         <div class="paywall-modal">
             <div class="paywall-headline">You've started to see it.</div>
-            <div class="paywall-body">Your results aren't random. There's a structure underneath them — and RiskWise is recalculating it with every trade. Keep your probability reference live as conditions change.</div>
-            <div style="margin:16px 0 8px;font-size:12px;color:rgba(255,255,255,0.35);font-family:'IBM Plex Mono',monospace;text-align:center;">You're currently viewing limited data.</div>
-            <div style="margin:0 auto 20px;max-width:320px;text-align:left;font-size:12px;color:rgba(255,255,255,0.5);font-family:'IBM Plex Sans',sans-serif;line-height:1.8;">
-                <div>✓ Unlimited CSV imports</div>
-                <div>✓ Unlimited manual trades</div>
-                <div>✓ Full session heatmap & Monte Carlo</div>
-                <div>✓ Journal, progression & all analytics</div>
+            <div class="paywall-body">Your results aren't random. There's a structure underneath them — and RiskWise is recalculating it with every trade.</div>
+            <div style="margin:0 auto 24px;max-width:300px;text-align:left;font-size:12.5px;color:rgba(255,255,255,0.45);font-family:'IBM Plex Sans',sans-serif;line-height:2;">
+                <div style="display:flex;align-items:center;gap:10px;"><span style="color:#34D399;font-size:13px;">✓</span> Unlimited trade logging & CSV imports</div>
+                <div style="display:flex;align-items:center;gap:10px;"><span style="color:#34D399;font-size:13px;">✓</span> Full interpretation engine — all 5 modes</div>
+                <div style="display:flex;align-items:center;gap:10px;"><span style="color:#34D399;font-size:13px;">✓</span> Continuous recalibration with every trade</div>
             </div>
             <button class="paywall-cta-primary" id="paywallContinue">Continue with full access — $19/mo</button>
             <button class="paywall-cta-secondary" id="paywallPause">Pause and trade without the reference</button>
@@ -12741,11 +12754,11 @@ try {
     </div>
     </div> <!-- end help-overlay -->
     
-    <!-- Journal Panel Overlay -->
+    <!-- Trade Log Panel Overlay -->
     <div class="journal-overlay" id="journalOverlay">
         <div class="journal-panel">
             <div class="journal-header">
-                <span class="journal-title">Trade Journal</span>
+                <span class="journal-title">Trade Log</span>
                 <button class="journal-close" id="journalClose">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <line x1="18" y1="6" x2="6" y2="18"></line>
@@ -12754,60 +12767,10 @@ try {
                 </button>
             </div>
             <div class="journal-content">
-                <div class="calendar-nav">
-                    <button class="calendar-nav-btn" id="calendarPrev">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="15 18 9 12 15 6"></polyline>
-                        </svg>
-                    </button>
-                    <span class="calendar-month" id="calendarMonth">January 2026</span>
-                    <button class="calendar-nav-btn" id="calendarNext">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="9 18 15 12 9 6"></polyline>
-                        </svg>
-                    </button>
+                <div style="padding:16px 20px 12px;border-bottom:1px solid rgba(255,255,255,0.04);">
+                    <div style="font-size:11.5px;color:rgba(255,255,255,0.40);line-height:1.5;">All trades used by the interpretation engine. Delete any trade to recalculate.</div>
                 </div>
-                <div class="calendar-grid" id="calendarGrid">
-                    <!-- Calendar days will be rendered here -->
-                </div>
-                <div class="month-summary" id="monthSummary">
-                    <div class="month-summary-title">Monthly Summary</div>
-                    <div class="month-summary-stats">
-                        <div class="month-stat">
-                            <div class="month-stat-value" id="monthPnl">$0</div>
-                            <div class="month-stat-label">Net P&L</div>
-                        </div>
-                        <div class="month-stat">
-                            <div class="month-stat-value" id="monthTrades">0</div>
-                            <div class="month-stat-label">Trades</div>
-                        </div>
-                        <div class="month-stat">
-                            <div class="month-stat-value" id="monthWinRate">—</div>
-                            <div class="month-stat-label">Win Rate</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="today-summary" id="todaySummary">
-                    <div class="today-summary-title">Today</div>
-                    <div class="today-summary-stats" id="todayStats">
-                        <div class="today-stat">
-                            <div class="today-stat-value" id="todayPnl">$0</div>
-                            <div class="today-stat-label">P&L</div>
-                        </div>
-                        <div class="today-stat">
-                            <div class="today-stat-value" id="todayTrades">0</div>
-                            <div class="today-stat-label">Trades</div>
-                        </div>
-                        <div class="today-stat">
-                            <div class="today-stat-value" id="todayWins">0</div>
-                            <div class="today-stat-label">Wins</div>
-                        </div>
-                        <div class="today-stat">
-                            <div class="today-stat-value" id="todayLosses">0</div>
-                            <div class="today-stat-label">Losses</div>
-                        </div>
-                    </div>
-                </div>
+                <div id="journalTradeList" style="flex:1;overflow-y:auto;padding:8px 0;"></div>
             </div>
         </div>
     </div>
@@ -12946,7 +12909,7 @@ try {
                 <!-- Current Balance - FIRST for onboarding -->
                 <div class="settings-section" id="startingBalanceSection">
                     <div class="settings-section-title">Current Balance</div>
-                    <div class="settings-section-desc">The capital your probability structure is built on. All projections and risk calculations anchor to this number.</div>
+                    <div class="settings-section-desc">Your starting equity. All projections, risk calculations, and drawdown measurements anchor to this number.</div>
                     
                     <div class="settings-balance-input-wrap" id="startingBalanceWrap">
                         <span class="settings-balance-prefix">$</span>
@@ -12958,13 +12921,13 @@ try {
                 
                 <!-- Drawdown Constraint -->
                 <div class="settings-section" id="ddCeilingSection">
-                    <div class="settings-section-title">Monte Carlo Settings</div>
-                    <div class="settings-section-desc">These inputs shape your survival projection and equity outcomes.</div>
+                    <div class="settings-section-title">Simulation Parameters</div>
+                    <div class="settings-section-desc">These inputs shape how RiskWise interprets your risk and projects outcomes.</div>
                     
-                    <!-- Drawdown Floor -->
+                    <!-- Drawdown Threshold -->
                     <div style="margin-bottom:16px;">
-                        <div style="font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:6px;font-weight:500;">Drawdown Floor</div>
-                        <div style="font-size:11px;color:rgba(255,255,255,0.38);margin-bottom:8px;">The max drawdown you're willing to tolerate. Simulated paths that fall through this floor are counted as failures.</div>
+                        <div style="font-size:12px;color:#D4A84B;margin-bottom:6px;font-weight:600;">Drawdown Threshold</div>
+                        <div style="font-size:11px;color:rgba(255,255,255,0.42);margin-bottom:8px;line-height:1.5;">The maximum drawdown you're willing to tolerate. Simulated paths that breach this threshold are counted as failures. All survival calculations anchor to this number.</div>
                         <div class="settings-max-risk-row">
                             <input type="range" class="settings-max-risk-slider" id="ddCeilingSlider" min="10" max="60" step="5" value="30">
                             <span class="settings-max-risk-value" id="ddCeilingValue">30%</span>
@@ -12980,8 +12943,8 @@ try {
                     
                     <!-- Simulation Horizon -->
                     <div style="margin-bottom:16px;">
-                        <div style="font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:6px;font-weight:500;">Simulation Horizon</div>
-                        <div style="font-size:11px;color:rgba(255,255,255,0.38);margin-bottom:8px;">How many trades into the future to simulate.</div>
+                        <div style="font-size:12px;color:rgba(255,255,255,0.55);margin-bottom:6px;font-weight:600;">Simulation Horizon</div>
+                        <div style="font-size:11px;color:rgba(255,255,255,0.42);margin-bottom:8px;line-height:1.5;">How many trades into the future to simulate. Longer horizons reveal more about long-term survivability.</div>
                         <div class="settings-max-risk-presets" id="horizonPresets">
                             <button class="settings-preset-btn" data-horizon="25">25</button>
                             <button class="settings-preset-btn active" data-horizon="50">50</button>
@@ -12996,8 +12959,8 @@ try {
                 
                 <!-- Current Balance -->
                 <div class="settings-section">
-                    <div class="settings-section-title">Current Balance</div>
-                    <div class="settings-section-desc">For deposits or withdrawals only — P&L is tracked automatically.</div>
+                    <div class="settings-section-title">Balance Adjustments</div>
+                    <div class="settings-section-desc">For deposits or withdrawals only — P&L from trades is tracked automatically.</div>
                     
                     <div class="settings-current-balance">
                         <span class="settings-current-label">Balance</span>
@@ -13020,6 +12983,7 @@ try {
                 <!-- Data Section -->
                 <div class="settings-section">
                     <div class="settings-section-title">Data</div>
+                    <div class="settings-section-desc" style="margin-bottom:12px;">Export your trade history, import new trades, or reset everything.</div>
                     
                     <div class="settings-data-row">
                         <button class="settings-data-btn" id="exportCsvBtn">
@@ -13056,9 +13020,9 @@ try {
                             <span style="display:inline-block;padding:3px 8px;border-radius:4px;background:rgba(255,255,255,0.06);font-size:11px;color:rgba(255,255,255,0.4);font-weight:600;">FREE</span>
                             <span style="font-size:12px;color:rgba(255,255,255,0.35);">Limited access</span>
                         </div>
-                        <p style="font-size:12px;color:rgba(255,255,255,0.45);line-height:1.5;margin-bottom:12px;">Upgrade for unlimited trades, imports, and persistent data across sessions.</p>
+                        <p style="font-size:12px;color:rgba(255,255,255,0.45);line-height:1.5;margin-bottom:12px;">Unlock full access to all interpretation modes, unlimited trade logging, and CSV imports.</p>
                         <button class="settings-install-btn" id="settingsUpgradeBtn" style="background:var(--color-primary);color:#0a0a0c;font-weight:600;">
-                            Upgrade — $19/month
+                            Continue with full access — $19/month
                         </button>
                         <div style="margin-top:12px;">
                             <span style="font-size:11px;color:rgba(255,255,255,0.38);display:block;margin-bottom:6px;">Have a license key?</span>
@@ -13088,8 +13052,8 @@ try {
                 <div class="settings-section">
                     <div class="settings-section-title">How It Works</div>
                     <div class="settings-how-it-works">
-                        <p>Import your trades. RiskWise breaks them down by session, day, and conditions to surface where your edge is strong and where it leaks.</p>
-                        <p class="settings-how-detail">The Monte Carlo projection simulates 500 possible futures from your trade history to show survival probability, expected drawdowns, and equity outcomes.</p>
+                        <p>RiskWise is a trading interpretation engine. Import your trades, and it uses probability and statistics to show you what your results actually mean — compressing complex math into clarity.</p>
+                        <p class="settings-how-detail">The engine runs Monte Carlo simulations — 500 possible futures built from your actual trade data — to calculate survival probability, expected drawdowns, edge confidence, and projected paths. Every interpretation recalibrates as your data evolves.</p>
                     </div>
                 </div>
             </div>
@@ -13158,30 +13122,30 @@ try {
         
         <div class="coach-step" id="coachStep1" style="display:none;">
             <div class="coach-step-number">1 of 3</div>
-            <div class="coach-step-title" id="coachStep1Title">What are you protecting?</div>
-            <p class="coach-step-desc" id="coachStep1Desc">Enter the balance of the account you're tracking. This is the capital your probability structure is built on.</p>
+            <div class="coach-step-title" id="coachStep1Title">What are you tracking?</div>
+            <p class="coach-step-desc" id="coachStep1Desc">Set your balance and drawdown threshold — the two inputs that shape how RiskWise interprets your risk.</p>
             <button class="coach-step-btn" id="coachStep1Btn">I've set it →</button>
         </div>
         
         <div class="coach-step" id="coachStep2" style="display:none;">
-            <div class="coach-step-number">2 of 4</div>
-            <div class="coach-step-title">Show us how you trade.</div>
-            <p class="coach-step-desc">Import a CSV from your broker or TradingView. Your trade history reveals your probability structure — and how much risk your edge can actually support.</p>
+            <div class="coach-step-number">2 of 3</div>
+            <div class="coach-step-title">Import your trade history.</div>
+            <p class="coach-step-desc">Upload a CSV from your broker or TradingView. Your trades are the raw data that the interpretation engine runs on.</p>
             <button class="coach-step-btn" id="coachStep2Btn">Import CSV</button>
             <button class="coach-step-btn-secondary" id="coachStep2Skip">Skip — I'll log trades manually</button>
         </div>
         
         <div class="coach-step" id="coachStep3" style="display:none;">
-            <div class="coach-step-number">3 of 4</div>
-            <div class="coach-step-title">Every trade shifts your probability space.</div>
-            <p class="coach-step-desc">Enter your risk and P&L for each trade. Every entry recalculates your survival probability, drawdown projections, and edge metrics in real time.</p>
+            <div class="coach-step-number">3 of 3</div>
+            <div class="coach-step-title">Log your trades as you go.</div>
+            <p class="coach-step-desc">Enter risk and P&L for each trade. Every entry recalculates what your results mean — survival, drawdown context, streak probability, and edge confidence.</p>
             <button class="coach-step-btn" id="coachStep3Btn">Got it →</button>
         </div>
         
         <div class="coach-step" id="coachStep4" style="display:none;">
             <div class="coach-step-number">✓</div>
-            <div class="coach-step-title">Your probability structure is live.</div>
-            <p class="coach-step-desc">Left: where your risk comes from. Center: your current state. Right: where your probability structure leads. Everything updates with every trade.</p>
+            <div class="coach-step-title">Your interpretation engine is live.</div>
+            <p class="coach-step-desc">Every trade recalibrates what your results mean. The Risk Engine tells you what's normal, what's not, and how much risk your edge can actually support.</p>
             <button class="coach-step-btn" id="coachStep4Btn">Start trading</button>
         </div>
     </div>
@@ -13955,7 +13919,7 @@ try {
             }
         });
         
-        // Trade Journal Modal
+        // Trade Log Modal
         const tradeLogOverlay = document.getElementById('tradeLogOverlay');
         const tradeLogClose = document.getElementById('tradeLogClose');
         
@@ -14670,12 +14634,12 @@ try {
         // DRAWDOWN CONSTRAINT CONFIGURATION
         // ============================================================
         
-        // Derive risk config from user's drawdown floor
+        // Derive risk config from user's drawdown threshold
         function getRiskConfig() {
             const ddCeiling = state.ddCeiling || 0.30;
             const maxRisk = state.maxRiskPct || 0.045;
             
-            // Equity floor: if DD floor is 30%, floor is 1 - 0.30 = 0.70
+            // Equity floor: if DD threshold is 30%, floor is 1 - 0.30 = 0.70
             // Clamped to prevent extreme values
             const EQUITY_FLOOR = clamp(1 - ddCeiling, 0.30, 0.90);
             
@@ -14850,7 +14814,7 @@ try {
             
             if (!svg || !riskPeakEl) return;
             
-            // Update tooltip DD floor
+            // Update tooltip DD threshold
             const tooltipDdEl = document.getElementById('tooltipDdCeiling');
             if (tooltipDdEl) tooltipDdEl.textContent = Math.round((state.ddCeiling || 0.30) * 100);
             
@@ -15585,18 +15549,8 @@ try {
             const isOnboarding = !storage.get('riskwise_onboarding_complete') && !storage.get('riskwise_demo_mode');
             
             if (isOnboarding) {
-                // Auto-close settings with a brief delay for the toast to register
+                // Don't close settings — the coach will transition to the threshold section
                 showToast(`Balance set: $${val.toLocaleString()}`, 'success', false);
-                setTimeout(() => {
-                    const settingsOverlayEl = document.getElementById('settingsOverlay');
-                    const settingsToggleEl = document.getElementById('settingsToggle');
-                    if (settingsOverlayEl) {
-                        settingsOverlayEl.classList.remove('open'); // Fix: was 'show', should be 'open'
-                    }
-                    if (settingsToggleEl) {
-                        settingsToggleEl.classList.remove('active');
-                    }
-                }, 600);
             } else {
                 showToast(`Starting balance set to $${val.toLocaleString()}`, 'success', false);
             }
@@ -15685,6 +15639,69 @@ try {
         let currentCalendarDate = new Date();
         let currentTradeIndex = null;
         let toastTimeout = null;
+        
+        // ==================== TRADE LOG LIST (OVERLAY) ====================
+        function renderJournalTradeList() {
+            var listEl = document.getElementById('journalTradeList');
+            if (!listEl) return;
+            
+            if (state.trades.length === 0) {
+                listEl.innerHTML = '<div style="text-align:center;padding:40px 20px;color:rgba(255,255,255,0.30);font-size:13px;">No trades logged yet.</div>';
+                return;
+            }
+            
+            var html = '';
+            var trades = state.trades.slice().reverse();
+            trades.forEach(function(t, revIdx) {
+                var idx = state.trades.length - 1 - revIdx;
+                var pnl = t.pnl;
+                var isWin = pnl > 0;
+                var pnlStr = (isWin ? '+$' : '-$') + Math.abs(Math.round(pnl)).toLocaleString();
+                var pnlColor = isWin ? '#34D399' : '#EF4444';
+                var riskStr = t.risk ? '$' + Math.round(t.risk).toLocaleString() : '—';
+                var rStr = t.risk && t.risk > 0 ? (pnl / t.risk).toFixed(2) + 'R' : '—';
+                var dateStr = t.timestamp ? new Date(t.timestamp).toLocaleDateString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' }) : '—';
+                
+                html += '<div style="display:flex;align-items:center;padding:10px 20px;border-bottom:1px solid rgba(255,255,255,0.03);gap:12px;transition:background 0.15s ease;" onmouseenter="this.style.background=\'rgba(255,255,255,0.02)\'" onmouseleave="this.style.background=\'transparent\'">';
+                html += '<div style="flex:1;min-width:0;">';
+                html += '<div style="font-family:var(--font-mono);font-size:13px;font-weight:600;color:' + pnlColor + ';">' + pnlStr + '</div>';
+                html += '<div style="font-size:10px;color:rgba(255,255,255,0.30);margin-top:2px;">' + dateStr + '</div>';
+                html += '</div>';
+                html += '<div style="font-family:var(--font-mono);font-size:11px;color:rgba(255,255,255,0.40);width:50px;text-align:right;">' + rStr + '</div>';
+                html += '<div style="font-family:var(--font-mono);font-size:11px;color:rgba(255,255,255,0.30);width:60px;text-align:right;">' + riskStr + '</div>';
+                html += '<button onclick="deleteTradeFromLog(' + idx + ')" style="background:none;border:none;color:rgba(255,255,255,0.15);cursor:pointer;padding:4px;font-size:14px;line-height:1;transition:color 0.15s;" onmouseenter="this.style.color=\'#EF4444\'" onmouseleave="this.style.color=\'rgba(255,255,255,0.15)\'">&times;</button>';
+                html += '</div>';
+            });
+            
+            listEl.innerHTML = '<div style="display:flex;padding:6px 20px;font-size:9px;color:rgba(255,255,255,0.25);text-transform:uppercase;letter-spacing:0.06em;font-family:var(--font-mono);gap:12px;">' +
+                '<div style="flex:1;">P&L</div>' +
+                '<div style="width:50px;text-align:right;">R</div>' +
+                '<div style="width:60px;text-align:right;">Risk</div>' +
+                '<div style="width:22px;"></div>' +
+                '</div>' + html;
+        }
+        
+        function deleteTradeFromLog(idx) {
+            if (idx >= 0 && idx < state.trades.length) {
+                state.trades.splice(idx, 1);
+                // Recalculate balance
+                var bal = state.startingBalance;
+                state.trades.forEach(function(t) { bal += t.pnl; });
+                state.currentBalance = bal;
+                state.peakBalance = state.startingBalance;
+                state.trades.forEach(function(t, i) {
+                    var b = state.startingBalance;
+                    for (var j = 0; j <= i; j++) b += state.trades[j].pnl;
+                    if (b > state.peakBalance) state.peakBalance = b;
+                });
+                saveState();
+                updateDisplay();
+                updateDrawer();
+                runMCProjection();
+                renderJournalTradeList();
+                showToast('Trade deleted. All calculations recalculated.', 'success');
+            }
+        }
         
         // ==================== TOAST NOTIFICATIONS ====================
         
@@ -16036,22 +16053,31 @@ try {
             
             // Need at least 10 trades to project
             if (state.trades.length < 10) {
-                chartEmpty.classList.remove('hidden');
-                chartSvg.innerHTML = '';
-                survivalEl.textContent = '—';
-                medianEl.textContent = '—';
-                downsideEl.textContent = '—';
-                upsideEl.textContent = '—';
+                if (chartEmpty) chartEmpty.classList.remove('hidden');
+                if (chartSvg) chartSvg.innerHTML = '';
+                if (survivalEl) survivalEl.textContent = '—';
+                if (medianEl) medianEl.textContent = '—';
+                if (downsideEl) downsideEl.textContent = '—';
+                if (upsideEl) upsideEl.textContent = '—';
                 if (survivalFillEl) { survivalFillEl.style.width = '0%'; }
-                winRateEl.textContent = '—';
-                avgREl.textContent = '—';
-                riskPctEl.textContent = '—';
-                currentDDEl.textContent = '—';
-                // Update progress counters
+                if (winRateEl) winRateEl.textContent = '—';
+                if (avgREl) avgREl.textContent = '—';
+                if (riskPctEl) riskPctEl.textContent = '—';
+                if (currentDDEl) currentDDEl.textContent = '—';
+                // Update progress counters across all panels
+                const tradeCountStr = state.trades.length + ' of 10 trades';
                 const mcProg = document.getElementById('mcProgress');
-                if (mcProg) mcProg.textContent = state.trades.length + ' of 10 trades';
+                if (mcProg) mcProg.textContent = tradeCountStr;
                 const riskProg = document.getElementById('riskProfileProgress');
-                if (riskProg) riskProg.textContent = state.trades.length + ' of 10 trades';
+                if (riskProg) riskProg.textContent = tradeCountStr;
+                const ddProg = document.getElementById('ddProgress');
+                if (ddProg) ddProg.textContent = tradeCountStr;
+                const streakProg = document.getElementById('streakProgress');
+                if (streakProg) streakProg.textContent = tradeCountStr;
+                const pathProg = document.getElementById('pathProgress');
+                if (pathProg) pathProg.textContent = tradeCountStr;
+                const edgeProg = document.getElementById('edgeProgress');
+                if (edgeProg) edgeProg.textContent = tradeCountStr;
                 // Show risk profile empty state, hide sensitivity bars
                 const riskEmpty = document.getElementById('riskSensitivityEmpty');
                 if (riskEmpty) riskEmpty.style.display = 'flex';
@@ -16063,7 +16089,7 @@ try {
                 return;
             }
             
-            chartEmpty.classList.add('hidden');
+            if (chartEmpty) chartEmpty.classList.add('hidden');
             // Hide risk profile empty state
             const riskEmpty = document.getElementById('riskSensitivityEmpty');
             if (riskEmpty) riskEmpty.style.display = 'none';
@@ -16127,7 +16153,7 @@ try {
             animateValue(avgREl, (avgR >= 0 ? '+' : '') + avgR.toFixed(2) + 'R');
             animateValue(riskPctEl, (avgRiskPct * 100).toFixed(2) + '%');
             
-            // If already past ruin threshold (DD floor), show 0% survival
+            // If already past ruin threshold (DD threshold), show 0% survival
             if (currentDrawdown >= MAX_DRAWDOWN) {
                 survivalEl.textContent = '0%';
                 lastSurvivalPct = 0;
@@ -16178,7 +16204,7 @@ try {
                             '</div>';
                     });
                     
-                    rowsE += '<div style="margin-top:10px;padding:10px 12px;background:rgba(239,68,68,0.04);border:1px solid rgba(239,68,68,0.08);border-radius:8px;font-size:12px;color:rgba(255,255,255,0.55);line-height:1.5;text-align:center;">Your account has breached the <strong style="color:#D4A84B;">' + ddFloorPctE + '%</strong> drawdown floor. Recovery requires reducing position size.</div>';
+                    rowsE += '<div style="margin-top:10px;padding:10px 12px;background:rgba(239,68,68,0.04);border:1px solid rgba(239,68,68,0.08);border-radius:8px;font-size:12px;color:rgba(255,255,255,0.55);line-height:1.5;text-align:center;">Your account has breached the <strong style="color:#D4A84B;">' + ddFloorPctE + '%</strong> drawdown threshold. Recovery requires reducing position size.</div>';
                     
                     sensitivityInlineEarly.innerHTML = rowsE;
                     
@@ -16195,7 +16221,7 @@ try {
             const paths = [];
             const maxDrawdowns = []; // Track max DD per path
             const maxLoseStreaks = []; // Track max losing streak per path
-            let pathsWith30DD = 0; // Count paths hitting DD floor
+            let pathsWith30DD = 0; // Count paths hitting DD threshold
             let pathsWith5LoseStreak = 0; // Count paths with 5+ loss streak
             
             for (let p = 0; p < PATHS; p++) {
@@ -16274,11 +16300,9 @@ try {
             // Update stats — count up survival percentage
             countTo(survivalEl, parseFloat(survivalPct.toFixed(0)), '', '%', 0, 800);
             
-            // Update survival description with avg risk and survival %
-            const survRiskEl = document.getElementById('mcSurvivalRisk');
-            const survPctTextEl = document.getElementById('mcSurvivalPctText');
-            if (survRiskEl) survRiskEl.textContent = (avgRiskPct * 100).toFixed(1) + '%';
-            if (survPctTextEl) survPctTextEl.textContent = survivalPct.toFixed(0) + '%';
+            // Update headline description
+            const riskDescEl = document.getElementById('riskHeadlineDesc');
+            if (riskDescEl) riskDescEl.innerHTML = 'of paths stay above your <span style="color:#D4A84B;font-weight:600;">' + (MAX_DRAWDOWN * 100).toFixed(0) + '% threshold</span> at <span style="color:#67E8F9;font-weight:600;">' + (avgRiskPct * 100).toFixed(1) + '% avg risk</span>';
             
             // Color-code survival: green > 70%, amber 40-70%, red < 40%
             let survColor = '#34D399';
@@ -16288,33 +16312,29 @@ try {
             survivalEl.style.color = survColor;
             survivalEl.style.transition = 'color 0.6s ease';
             
-            // Animate survival ring
-            const ringFill = document.getElementById('survivalRingFill');
-            if (ringFill) {
-                const circumference = 326.7;
-                const offset = circumference - (circumference * survivalPct / 100);
-                ringFill.style.transition = 'stroke-dashoffset 0.8s cubic-bezier(0.16,1,0.3,1), stroke 0.6s ease';
-                ringFill.style.strokeDashoffset = offset;
-                ringFill.style.stroke = survColor;
-            }
-            
-            // Show drawdown floor value
+            // Show drawdown threshold value
             const ceilingDisplay = document.getElementById('mcCeilingDisplay');
             if (ceilingDisplay) {
                 ceilingDisplay.textContent = '(' + (MAX_DRAWDOWN * 100).toFixed(0) + '%)';
             }
             
             const medianChange = medianEquity - startingEquity;
-            medianEl.textContent = (medianChange >= 0 ? '+$' : '-$') + Math.abs(Math.round(medianChange)).toLocaleString();
-            medianEl.classList.remove('mc-value-update'); void medianEl.offsetWidth; medianEl.classList.add('mc-value-update');
+            if (medianEl) {
+                medianEl.textContent = (medianChange >= 0 ? '+$' : '-$') + Math.abs(Math.round(medianChange)).toLocaleString();
+                medianEl.classList.remove('mc-value-update'); void medianEl.offsetWidth; medianEl.classList.add('mc-value-update');
+            }
             
             const downsideChange = p10Equity - startingEquity;
-            downsideEl.textContent = (downsideChange >= 0 ? '+$' : '-$') + Math.abs(Math.round(downsideChange)).toLocaleString();
-            downsideEl.classList.remove('mc-value-update'); void downsideEl.offsetWidth; downsideEl.classList.add('mc-value-update');
+            if (downsideEl) {
+                downsideEl.textContent = (downsideChange >= 0 ? '+$' : '-$') + Math.abs(Math.round(downsideChange)).toLocaleString();
+                downsideEl.classList.remove('mc-value-update'); void downsideEl.offsetWidth; downsideEl.classList.add('mc-value-update');
+            }
             
             const upsideChange = p90Equity - startingEquity;
-            upsideEl.textContent = (upsideChange >= 0 ? '+$' : '-$') + Math.abs(Math.round(upsideChange)).toLocaleString();
-            upsideEl.classList.remove('mc-value-update'); void upsideEl.offsetWidth; upsideEl.classList.add('mc-value-update');
+            if (upsideEl) {
+                upsideEl.textContent = (upsideChange >= 0 ? '+$' : '-$') + Math.abs(Math.round(upsideChange)).toLocaleString();
+                upsideEl.classList.remove('mc-value-update'); void upsideEl.offsetWidth; upsideEl.classList.add('mc-value-update');
+            }
             
             // Update new metrics
             const medianDDEl = document.getElementById('mcMedianDD');
@@ -16401,31 +16421,35 @@ try {
                 const marginPct = (marginOfError * 100).toFixed(0);
                 const insightHTML = 'Based on ' + tradeCount + ' trades · ' + (avgRiskPct * 100).toFixed(1) + '% avg risk · ' + winRate.toFixed(0) + '% win rate · ' + (avgR >= 0 ? '+' : '') + avgR.toFixed(2) + 'R per trade' +
                     ' · <span style="color:' + confidenceColor + ';cursor:help;border-bottom:1px dotted ' + confidenceColor + ';" class="confidence-tip">' + confidenceLabel + ' confidence<span class="confidence-tooltip">Margin of error: ±' + marginPct + '%<br>Log more trades to increase confidence.</span></span>';
-                insightTextEl.innerHTML = insightHTML;
+                if (insightTextEl) insightTextEl.innerHTML = insightHTML;
                 if (effRiskEl) effRiskEl.textContent = (avgRiskPct * 100).toFixed(1) + '%';
             }
             
             // Render fan chart
             renderMCChart(chartSvg, paths, startingEquity, HORIZON);
             
-            // Risk Sensitivity — only show when survival < 90% and user is Pro
-            const sensitivityInline = document.getElementById('riskSensitivityInline');
-            if (sensitivityInline) {
-                // Run simulations at different risk levels using R-multiples
-                // More risk steps for better resolution
+            // Risk Sensitivity — Survival Curve
+            const sensitivityChart = document.getElementById('riskSensitivityChart');
+            const sensitivityFinding = document.getElementById('riskSensitivityFinding');
+            if (sensitivityChart) {
                 const riskSteps = [];
                 const baseRisk = avgRiskPct;
                 const ddFloorPct = Math.round(MAX_DRAWDOWN * 100);
                 
-                // Build range: start at 50% of current, go up until we find where survival drops below 50%
-                // This ensures the "supports up to" copy is always accurate
-                const multipliers = [0.5, 0.75, 1.0, 1.25, 1.5, 2.0, 2.5, 3.0, 4.0, 5.0];
-                multipliers.forEach(m => {
-                    const r = baseRisk * m;
-                    if (r > 0.001 && r <= 0.15) {
-                        riskSteps.push({ risk: r, label: (r * 100).toFixed(1) + '%', current: m === 1.0 });
-                    }
-                });
+                // Build finer risk range for a smooth curve
+                const stepCount = 20;
+                const maxTestRisk = Math.min(baseRisk * 6, 0.15);
+                const minTestRisk = Math.max(baseRisk * 0.2, 0.001);
+                for (let i = 0; i <= stepCount; i++) {
+                    const r = minTestRisk + (maxTestRisk - minTestRisk) * (i / stepCount);
+                    riskSteps.push({ risk: r, label: (r * 100).toFixed(1) + '%', current: Math.abs(r - baseRisk) < 0.0005 });
+                }
+                // Ensure current risk is included
+                let hasCurrent = riskSteps.some(s => s.current);
+                if (!hasCurrent) {
+                    riskSteps.push({ risk: baseRisk, label: (baseRisk * 100).toFixed(1) + '%', current: true });
+                    riskSteps.sort((a, b) => a.risk - b.risk);
+                }
                 
                 const QUICK_PATHS = 500;
                 let allResults = [];
@@ -16433,9 +16457,8 @@ try {
                 let currentSurvival = null;
                 let foundBreakpoint = false;
                 
-                // Update the meta label with actual path count and DD floor
                 const sensMetaEl = document.getElementById('riskSensitivityMeta');
-                if (sensMetaEl) sensMetaEl.textContent = '% of paths above ' + ddFloorPct + '% drawdown floor \u00B7 ' + QUICK_PATHS + ' paths per level';
+                if (sensMetaEl) sensMetaEl.textContent = 'Survival probability vs risk per trade \u00B7 ' + ddFloorPct + '% drawdown threshold';
                 
                 riskSteps.forEach(step => {
                     let survived = 0;
@@ -16461,46 +16484,32 @@ try {
                     allResults.push({ ...step, surv });
                 });
                 
-                // Only display rows up to 2 past the breakpoint (where it drops below 50%)
-                // If no breakpoint found, show all and note the limit
-                let displayResults = [];
-                let pastBreak = 0;
-                for (let i = 0; i < allResults.length; i++) {
-                    displayResults.push(allResults[i]);
-                    if (allResults[i].surv < 50) pastBreak++;
-                    if (pastBreak >= 2) break;
+                // Show chart, hide empty
+                sensitivityChart.style.display = 'block';
+                const emptyEl = document.getElementById('riskSensitivityEmpty');
+                if (emptyEl) emptyEl.style.display = 'none';
+                
+                // Store for redraw when Risk tab becomes visible
+                _lastSurvivalCurveData = { results: allResults, baseRisk: baseRisk, currentSurvival: currentSurvival };
+                
+                // Only draw if Risk tab is currently visible (canvas needs dimensions)
+                if (typeof currentDiagMode !== 'undefined' && currentDiagMode === 'risk') {
+                    drawSurvivalCurve(allResults, baseRisk, currentSurvival);
                 }
                 
-                let rowsHtml = '';
-                displayResults.forEach((step, idx) => {
-                    const isCurrent = step.current;
-                    const survColor = step.surv >= 70 ? '#34D399' : step.surv >= 40 ? '#D4A84B' : '#EF4444';
-                    const barWidth = Math.max(step.surv, 3);
-                    const valInside = step.surv >= 20;
-                    const delay = idx * 40;
-                    
-                    rowsHtml += `<div style="display:flex;align-items:center;gap:8px;height:28px;${isCurrent ? 'opacity:1;' : 'opacity:0.65;'}animation:diagFadeIn 0.3s cubic-bezier(0.16,1,0.3,1) ${delay}ms both;">
-                        <span style="width:42px;text-align:right;font-weight:${isCurrent ? '700' : '500'};font-size:12px;color:${isCurrent ? 'rgba(255,255,255,0.9)' : 'rgba(255,255,255,0.4)'};">${step.label}</span>
-                        <div style="flex:1;height:22px;background:rgba(255,255,255,0.015);border-radius:5px;overflow:hidden;position:relative;border:1px solid ${isCurrent ? 'rgba(255,255,255,0.06)' : 'rgba(255,255,255,0.02)'};">
-                            <div style="height:100%;width:${barWidth}%;background:${survColor};border-radius:4px;display:flex;align-items:center;justify-content:flex-end;padding-right:8px;transition:width 0.6s cubic-bezier(0.16,1,0.3,1) ${delay + 100}ms;${isCurrent ? 'box-shadow:0 0 10px ' + survColor + '22;' : ''}">
-                                ${valInside ? '<span style="font-size:10px;font-weight:700;color:#0a0a0c;">' + step.surv + '%</span>' : ''}
-                            </div>
-                            ${!valInside ? '<span style="position:absolute;left:' + (barWidth + 2) + '%;top:50%;transform:translateY(-50%);font-size:10px;font-weight:600;color:rgba(255,255,255,0.38);">' + step.surv + '%</span>' : ''}
-                        </div>
-                        ${isCurrent ? '<span style="font-size:9px;font-weight:700;color:#67E8F9;white-space:nowrap;">← you</span>' : ''}
-                    </div>`;
-                });
-                
-                // Key finding with DD floor reference
-                if (maxSupportedRisk && foundBreakpoint) {
-                    rowsHtml += `<div style="margin-top:10px;padding:10px 12px;background:rgba(52,211,153,0.04);border:1px solid rgba(52,211,153,0.08);border-radius:8px;font-size:12px;color:rgba(255,255,255,0.55);line-height:1.5;text-align:center;">Your edge supports up to <strong style="color:#34D399;">${maxSupportedRisk}</strong> risk per trade before breaching the <strong style="color:#D4A84B;">${ddFloorPct}%</strong> drawdown floor becomes more likely than not</div>`;
-                } else if (maxSupportedRisk && !foundBreakpoint) {
-                    rowsHtml += `<div style="margin-top:10px;padding:10px 12px;background:rgba(52,211,153,0.04);border:1px solid rgba(52,211,153,0.08);border-radius:8px;font-size:12px;color:rgba(255,255,255,0.55);line-height:1.5;text-align:center;">Your edge supports at least <strong style="color:#34D399;">${maxSupportedRisk}</strong> risk per trade — survival stays above 50% across all tested levels</div>`;
+                // Finding text
+                if (sensitivityFinding) {
+                    if (maxSupportedRisk && foundBreakpoint) {
+                        sensitivityFinding.innerHTML = 'Your edge supports up to <strong style="color:#34D399;">' + maxSupportedRisk + '</strong> risk per trade before breaching the <strong style="color:#D4A84B;">' + ddFloorPct + '%</strong> drawdown threshold becomes more likely than not';
+                        sensitivityFinding.style.display = 'block';
+                    } else if (maxSupportedRisk && !foundBreakpoint) {
+                        sensitivityFinding.innerHTML = 'Your edge supports at least <strong style="color:#34D399;">' + maxSupportedRisk + '</strong> risk per trade \u2014 survival stays above 50% across all tested levels';
+                        sensitivityFinding.style.display = 'block';
+                    } else {
+                        sensitivityFinding.style.display = 'none';
+                    }
                 }
                 
-                sensitivityInline.innerHTML = rowsHtml;
-                
-                // Surface finding as toast on first MC run after import
                 if (maxSupportedRisk && !window._riskFindingShown && state.trades.length >= 10) {
                     window._riskFindingShown = true;
                     setTimeout(() => {
@@ -16511,7 +16520,7 @@ try {
             
             // Update whichever lens is currently active
             try {
-                if (typeof currentDiagMode !== 'undefined' && currentDiagMode !== 'risk') {
+                if (typeof currentDiagMode !== 'undefined') {
                     if (currentDiagMode === 'drawdown') runDrawdownAnalysis();
                     if (currentDiagMode === 'streak') runStreakAnalysis();
                     if (currentDiagMode === 'path') runPathAnalysis();
@@ -16521,6 +16530,7 @@ try {
         }
         
         function renderMCChart(svg, paths, startingEquity, horizon) {
+            if (!svg) return;
             // Sweep flash effect
             const chartContainer = svg.closest('.mc-chart-container');
             if (chartContainer) {
@@ -16678,13 +16688,15 @@ try {
         
         function closeSettings() {
             settingsOverlay.classList.remove('open');
+            settingsOverlay.style.zIndex = '';
             settingsToggle.classList.remove('active');
             
-            // If in onboarding step 1 and balance is set, advance to step 2
-            if (typeof currentCoachStep !== 'undefined' && currentCoachStep === 1 && 
+            // If in onboarding step 1 ceiling phase and user closes settings manually, advance
+            if (typeof currentCoachStep !== 'undefined' && currentCoachStep === 1 && coachPhase === 'ceiling' &&
                 state.startingBalance > 0 && !storage.get('riskwise_onboarding_complete') && !storage.get('riskwise_demo_mode')) {
+                dismissModal();
+                removeHighlight();
                 setTimeout(() => {
-                    removeHighlight();
                     goToCoachStep(2);
                 }, 300);
             }
@@ -17671,11 +17683,15 @@ try {
                         const sensitivityEl = document.getElementById('riskSensitivityInline');
                         if (sensitivityEl) sensitivityEl.innerHTML = '';
                         const sensMetaEl = document.getElementById('riskSensitivityMeta');
-                        if (sensMetaEl) sensMetaEl.textContent = '% of paths above drawdown floor · 500 paths per level';
+                        if (sensMetaEl) sensMetaEl.textContent = '% of paths above drawdown threshold · 500 paths per level';
                         const riskEmptyEl = document.getElementById('riskSensitivityEmpty');
                         if (riskEmptyEl) riskEmptyEl.style.display = 'flex';
                         const riskProgEl = document.getElementById('riskProfileProgress');
                         if (riskProgEl) riskProgEl.textContent = '0 of 10 trades';
+                        ['ddProgress','streakProgress','pathProgress','edgeProgress'].forEach(function(id) {
+                            var el = document.getElementById(id);
+                            if (el) el.textContent = '0 of 10 trades';
+                        });
                         const survivalVal = document.getElementById('mcSurvival');
                         if (survivalVal) survivalVal.textContent = '—';
                         const survivalRing = document.getElementById('survivalRingFill');
@@ -17723,18 +17739,19 @@ try {
         }
         
         // Calendar navigation
-        calendarPrev.addEventListener('click', () => {
+        if (calendarPrev) calendarPrev.addEventListener('click', () => {
             currentCalendarDate.setMonth(currentCalendarDate.getMonth() - 1);
             renderCalendar();
         });
         
-        calendarNext.addEventListener('click', () => {
+        if (calendarNext) calendarNext.addEventListener('click', () => {
             currentCalendarDate.setMonth(currentCalendarDate.getMonth() + 1);
             renderCalendar();
         });
         
         // Render calendar
         function renderCalendar() {
+            if (!calendarGrid) return;
             const year = currentCalendarDate.getFullYear();
             const month = currentCalendarDate.getMonth();
             
@@ -17866,13 +17883,16 @@ try {
             const wins = monthTradesArr.filter(t => t.pnl > 0).length;
             const wr = monthTradesArr.length > 0 ? Math.round((wins / monthTradesArr.length) * 100) : 0;
             
-            monthPnl.textContent = (totalPnl >= 0 ? '+' : '') + '$' + Math.abs(totalPnl).toLocaleString();
-            monthPnl.className = 'month-stat-value ' + (totalPnl >= 0 ? 'positive' : 'negative');
-            monthTrades.textContent = monthTradesArr.length;
-            monthWinRate.textContent = monthTradesArr.length > 0 ? wr + '%' : '—';
+            if (monthPnl) {
+                monthPnl.textContent = (totalPnl >= 0 ? '+' : '') + '$' + Math.abs(totalPnl).toLocaleString();
+                monthPnl.className = 'month-stat-value ' + (totalPnl >= 0 ? 'positive' : 'negative');
+            }
+            if (monthTrades) monthTrades.textContent = monthTradesArr.length;
+            if (monthWinRate) monthWinRate.textContent = monthTradesArr.length > 0 ? wr + '%' : '—';
         }
         
         function updateTodaySummary() {
+            if (!todayPnl) return;
             const today = new Date();
             const todayStart = new Date(today.getFullYear(), today.getMonth(), today.getDate()).getTime();
             const todayEnd = todayStart + 24 * 60 * 60 * 1000;
@@ -17885,11 +17905,13 @@ try {
             const winsCount = todayTradesArr.filter(t => t.pnl > 0).length;
             const lossesCount = todayTradesArr.filter(t => t.pnl < 0).length;
             
-            todayPnl.textContent = (totalPnl >= 0 ? '+' : '-') + '$' + Math.abs(totalPnl).toLocaleString();
-            todayPnl.className = 'today-stat-value ' + (totalPnl >= 0 ? 'positive' : 'negative');
-            todayTrades.textContent = todayTradesArr.length;
-            todayWins.textContent = winsCount;
-            todayLosses.textContent = lossesCount;
+            if (todayPnl) {
+                todayPnl.textContent = (totalPnl >= 0 ? '+' : '-') + '$' + Math.abs(totalPnl).toLocaleString();
+                todayPnl.className = 'today-stat-value ' + (totalPnl >= 0 ? 'positive' : 'negative');
+            }
+            if (todayTrades) todayTrades.textContent = todayTradesArr.length;
+            if (todayWins) todayWins.textContent = winsCount;
+            if (todayLosses) todayLosses.textContent = lossesCount;
         }
         
         // Day trades list (for multiple trades on same day)
@@ -18843,66 +18865,53 @@ try {
         
         // Generate realistic mock trade data for demo mode
         function generateDemoTrades() {
-            const trades = [];
-            const startDate = new Date();
-            startDate.setDate(startDate.getDate() - 90); // 90 days of history
-            let balance = 25000;
-            const winRate = 0.52;
-            const avgWin = 380;
-            const avgLoss = 320;
-            const sessions = [
-                { hours: [7,8,9,10,11], weight: 0.45 },   // Morning
-                { hours: [12,13,14,15,16], weight: 0.35 }, // Afternoon
-                { hours: [17,18,19], weight: 0.15 },       // Evening
-                { hours: [20,21,22], weight: 0.05 }        // Night
-            ];
-            const days = [1,2,3,4,5]; // Mon-Fri
+            var trades = [];
+            var startDate = new Date();
+            startDate.setDate(startDate.getDate() - 90);
+            var balance = 25000;
+            var winRate = 0.55;
+            var avgWin = 400;
+            var avgLoss = 340;
             
-            let currentDate = new Date(startDate);
-            let tradeCount = 0;
-            const targetTrades = 85;
+            var currentDate = new Date(startDate);
+            var tradeCount = 0;
+            var targetTrades = 85;
             
             while (tradeCount < targetTrades) {
-                // Skip weekends
                 if (currentDate.getDay() === 0 || currentDate.getDay() === 6) {
                     currentDate.setDate(currentDate.getDate() + 1);
                     continue;
                 }
                 
-                // 1-3 trades per day
-                const tradesThisDay = Math.random() < 0.3 ? 1 : (Math.random() < 0.6 ? 2 : 3);
+                var tradesThisDay = Math.random() < 0.3 ? 1 : (Math.random() < 0.6 ? 2 : 3);
                 
-                for (let i = 0; i < tradesThisDay && tradeCount < targetTrades; i++) {
-                    // Pick session with weighted probability
-                    const r = Math.random();
-                    let session;
-                    if (r < 0.45) session = sessions[0];
-                    else if (r < 0.80) session = sessions[1];
-                    else if (r < 0.95) session = sessions[2];
-                    else session = sessions[3];
+                for (var i = 0; i < tradesThisDay && tradeCount < targetTrades; i++) {
+                    var hour = 8 + Math.floor(Math.random() * 8);
+                    var minute = Math.floor(Math.random() * 60);
                     
-                    const hour = session.hours[Math.floor(Math.random() * session.hours.length)];
-                    const minute = Math.floor(Math.random() * 60);
-                    
-                    const entryTime = new Date(currentDate);
+                    var entryTime = new Date(currentDate);
                     entryTime.setHours(hour, minute, 0, 0);
-                    const exitTime = new Date(entryTime);
+                    var exitTime = new Date(entryTime);
                     exitTime.setMinutes(exitTime.getMinutes() + 5 + Math.floor(Math.random() * 55));
                     
-                    // Determine win/loss with some streak clustering
-                    const isWin = Math.random() < winRate;
-                    const variance = 0.5 + Math.random() * 1.5;
-                    let pnl;
+                    // Force a 4-loss streak near the end for dramatic walkthrough
+                    var isWin;
+                    if (tradeCount >= targetTrades - 5 && tradeCount < targetTrades - 1) {
+                        isWin = false; // 4 consecutive losses
+                    } else {
+                        isWin = Math.random() < winRate;
+                    }
+                    
+                    var variance = 0.6 + Math.random() * 1.2;
+                    var pnl;
                     if (isWin) {
                         pnl = Math.round(avgWin * variance);
                     } else {
                         pnl = -Math.round(avgLoss * variance);
-                        // Occasional large loss
-                        if (Math.random() < 0.08) pnl = Math.round(pnl * 2.2);
                     }
                     
                     balance += pnl;
-                    const risk = Math.round(avgLoss * (0.8 + Math.random() * 0.4));
+                    var risk = Math.round(avgLoss * (0.85 + Math.random() * 0.3));
                     
                     trades.push({
                         pnl: pnl,
@@ -18919,7 +18928,7 @@ try {
                 }
                 currentDate.setDate(currentDate.getDate() + 1);
             }
-            return { trades, finalBalance: balance };
+            return { trades: trades, finalBalance: balance };
         }
         
         if (isDemoMode) {
@@ -18941,6 +18950,12 @@ try {
             runMCProjection();
             if (typeof renderLogCalendar === 'function') renderLogCalendar();
             if (typeof renderGoalsPanel === 'function') renderGoalsPanel();
+            
+            // Ensure the default Streak tab renders after everything is initialized
+            setTimeout(function() {
+                if (typeof switchDiagMode === 'function') switchDiagMode('streak');
+                else if (typeof runStreakAnalysis === 'function') runStreakAnalysis();
+            }, 100);
             
             var demoBannerEl = document.getElementById('demoBanner');
             if (demoBannerEl) demoBannerEl.style.display = 'block';
@@ -18994,12 +19009,20 @@ try {
                 runMCProjection();
                 if (typeof renderLogCalendar === 'function') renderLogCalendar();
                 if (typeof renderGoalsPanel === 'function') renderGoalsPanel();
+                setTimeout(function() { if (typeof switchDiagMode === 'function') switchDiagMode('streak'); }, 100);
             }
             
             // Show demo banner if still in demo mode
             if (storage.get('riskwise_demo_mode')) {
-                var demoBannerReturn = document.getElementById('demoBanner');
-                if (demoBannerReturn) demoBannerReturn.style.display = 'block';
+                // Show walkthrough if they haven't seen it yet
+                if (!storage.get('riskwise_walkthrough_done')) {
+                    setTimeout(function() {
+                        if (typeof startWalkthrough === 'function') startWalkthrough();
+                    }, 600);
+                } else {
+                    var demoBannerReturn = document.getElementById('demoBanner');
+                    if (demoBannerReturn) demoBannerReturn.style.display = 'block';
+                }
             }
         }
         
@@ -19032,8 +19055,16 @@ try {
                     runMCProjection();
                     if (typeof renderLogCalendar === 'function') renderLogCalendar();
                     if (typeof renderGoalsPanel === 'function') renderGoalsPanel();
-                    var db = document.getElementById('demoBanner');
-                    if (db) db.style.display = 'block';
+                    setTimeout(function() { if (typeof switchDiagMode === 'function') switchDiagMode('streak'); }, 100);
+                    // Start guided walkthrough instead of showing banner immediately
+                    setTimeout(function() {
+                        if (typeof startWalkthrough === 'function' && !storage.get('riskwise_walkthrough_done')) {
+                            startWalkthrough();
+                        } else {
+                            var db = document.getElementById('demoBanner');
+                            if (db) db.style.display = 'block';
+                        }
+                    }, 600);
                 }
                 // Close any modals that may have opened
                 var upgradeModal = document.getElementById('upgradeModal');
@@ -19052,6 +19083,295 @@ try {
         if (heroBtn2) heroBtn2.addEventListener('click', dismissLandingGlobal);
         if (finalBtn2) finalBtn2.addEventListener('click', dismissLandingGlobal);
         if (navBtn2) navBtn2.addEventListener('click', dismissLandingGlobal);
+        
+        // ==================== GUIDED DEMO WALKTHROUGH ====================
+        // Walkthrough steps are built dynamically from actual demo data
+        function buildWalkSteps() {
+            var trades = state.trades;
+            var tradeCount = trades.length;
+            
+            // Calculate live stats
+            var wins = trades.filter(function(t) { return t.pnl > 0; }).length;
+            var winRate = tradeCount > 0 ? Math.round((wins / tradeCount) * 100) : 55;
+            
+            // Current drawdown
+            var peak = state.peakBalance || state.startingBalance;
+            var ddPct = peak > 0 ? ((peak - state.currentBalance) / peak * 100).toFixed(1) : '0.0';
+            
+            // Current losing streak (from end)
+            var currentStreak = 0;
+            for (var i = trades.length - 1; i >= 0; i--) {
+                if (trades[i].pnl < 0) currentStreak++;
+                else break;
+            }
+            // If we ended on a win, find the most recent losing streak
+            var recentLossStreak = currentStreak;
+            if (recentLossStreak === 0) {
+                var tempStreak = 0;
+                var counting = false;
+                for (var j = trades.length - 1; j >= 0; j--) {
+                    if (trades[j].pnl < 0) { tempStreak++; counting = true; }
+                    else if (counting) break;
+                }
+                recentLossStreak = tempStreak || 4;
+            }
+            
+            // Avg risk %
+            var tradesWithRisk = trades.filter(function(t) { return t.risk && t.risk > 0; });
+            var avgRiskPct = '1.5';
+            if (tradesWithRisk.length >= 3) {
+                var avgRiskDollar = tradesWithRisk.reduce(function(s, t) { return s + t.risk; }, 0) / tradesWithRisk.length;
+                avgRiskPct = (avgRiskDollar / Math.max(state.currentBalance, 1) * 100).toFixed(1);
+            }
+            
+            return [
+                {
+                    counter: 'Interpretation 1 of 4',
+                    question: 'This trader is in a ' + ddPct + '% drawdown. Is something wrong?',
+                    interpretation: 'RiskWise says no.',
+                    detail: 'The Monte Carlo engine simulates hundreds of possible futures from this exact edge. At ' + avgRiskPct + '% avg risk, a drawdown this size is <strong style="color:#34D399;">mathematically normal</strong> — most traders would panic here for no reason.',
+                    btn: 'Next →',
+                    tab: 'drawdown',
+                    target: function() { return document.querySelector('.diag-content[data-diag-mode="drawdown"]'); }
+                },
+                {
+                    counter: 'Interpretation 2 of 4',
+                    question: recentLossStreak + ' losses in a row. Should they change their strategy?',
+                    interpretation: 'At a ' + winRate + '% win rate, this is expected.',
+                    detail: 'A ' + recentLossStreak + '-loss streak is a normal event for a ' + winRate + '% win rate over ' + tradeCount + ' trades. The math says <strong style="color:#67E8F9;">this is part of the distribution</strong> — not a signal that something broke.',
+                    btn: 'Next →',
+                    tab: 'streak',
+                    target: function() { return document.querySelector('.diag-content[data-diag-mode="streak"]'); }
+                },
+                {
+                    counter: 'Interpretation 3 of 4',
+                    question: 'How much risk can this edge actually support?',
+                    interpretation: 'The survival curve shows exactly where it breaks.',
+                    detail: 'The curve maps survival probability at every risk level. There\'s a clear threshold where the edge stops being sustainable — <strong style="color:#34D399;">above it, the math turns against you.</strong>',
+                    btn: 'Next →',
+                    tab: 'risk',
+                    target: function() { return document.querySelector('.diag-content[data-diag-mode="risk"]'); }
+                },
+                {
+                    counter: 'Your turn',
+                    question: '',
+                    interpretation: 'This was someone else\'s data.',
+                    detail: 'Your win rate, your drawdowns, your streaks — they need their own interpretation. And it changes with every trade you take.<br><br>Without a live interpretation engine, you\'re guessing what your results mean.',
+                    btn: 'Import my trades →',
+                    tab: null,
+                    target: null,
+                    final: true
+                }
+            ];
+        }
+        
+        var walkSteps = [];
+        var walkCurrentStep = 0;
+        var walkActive = false;
+        
+        function positionWalkSpotlight(targetEl) {
+            var cutout = document.getElementById('walkCutout');
+            var glow = document.getElementById('walkGlow');
+            if (!cutout) return { top: 0, left: 0, width: 0, height: 0 };
+            
+            if (!targetEl) {
+                // No target — no cutout, full dim
+                cutout.setAttribute('width', 0);
+                cutout.setAttribute('height', 0);
+                if (glow) { glow.style.width = '0'; glow.style.height = '0'; }
+                return { top: window.innerHeight / 2, left: window.innerWidth / 2, width: 0, height: 0 };
+            }
+            
+            var rect = targetEl.getBoundingClientRect();
+            var pad = 10;
+            cutout.setAttribute('x', rect.left - pad);
+            cutout.setAttribute('y', rect.top - pad);
+            cutout.setAttribute('width', rect.width + pad * 2);
+            cutout.setAttribute('height', rect.height + pad * 2);
+            cutout.setAttribute('rx', 14);
+            
+            // Position glow ring
+            if (glow) {
+                glow.style.left = (rect.left - pad) + 'px';
+                glow.style.top = (rect.top - pad) + 'px';
+                glow.style.width = (rect.width + pad * 2) + 'px';
+                glow.style.height = (rect.height + pad * 2) + 'px';
+            }
+            
+            return rect;
+        }
+        
+        function positionWalkCard(targetRect) {
+            var card = document.getElementById('walkCard');
+            if (!card) return;
+            
+            var cardW = Math.min(480, window.innerWidth * 0.88);
+            var cardH = card.offsetHeight || 380;
+            var vw = window.innerWidth;
+            var vh = window.innerHeight;
+            var gap = 24;
+            
+            var top, left;
+            
+            if (!targetRect || targetRect.width === 0) {
+                // Final step — center the card
+                top = (vh - cardH) / 2;
+                left = (vw - cardW) / 2;
+            } else if (targetRect.left > vw / 2) {
+                // Target is on the right side — place card on the left
+                left = targetRect.left - cardW - gap;
+                top = targetRect.top + Math.min(20, (targetRect.height - cardH) / 2);
+            } else {
+                // Target is on the left side — place card on the right
+                left = targetRect.right + gap;
+                top = targetRect.top + Math.min(20, (targetRect.height - cardH) / 2);
+            }
+            
+            // Clamp to viewport with comfortable margins
+            left = Math.max(20, Math.min(left, vw - cardW - 20));
+            top = Math.max(20, Math.min(top, vh - cardH - 20));
+            
+            card.style.left = left + 'px';
+            card.style.top = top + 'px';
+        }
+        
+        function startWalkthrough() {
+            var walkEl = document.getElementById('demoWalkthrough');
+            if (!walkEl) return;
+            walkActive = true;
+            walkEl.style.display = 'block';
+            
+            // Build steps from live demo data
+            walkSteps = buildWalkSteps();
+            
+            // Hide demo banner during walkthrough
+            var db = document.getElementById('demoBanner');
+            if (db) db.style.display = 'none';
+            
+            walkCurrentStep = 0;
+            renderWalkStep();
+            
+            setTimeout(function() {
+                var card = document.getElementById('walkCard');
+                if (card) card.style.opacity = '1';
+            }, 150);
+        }
+        
+        function renderWalkStep() {
+            var step = walkSteps[walkCurrentStep];
+            var counter = document.getElementById('walkCounter');
+            var question = document.getElementById('walkQuestion');
+            var interp = document.getElementById('walkInterpretation');
+            var detail = document.getElementById('walkDetail');
+            var btn = document.getElementById('walkBtn');
+            
+            if (counter) counter.textContent = step.counter;
+            if (question) { question.textContent = step.question; question.style.display = step.question ? '' : 'none'; }
+            if (interp) interp.textContent = step.interpretation;
+            if (detail) detail.innerHTML = step.detail;
+            if (btn) btn.textContent = step.btn;
+            
+            // Switch to the relevant Risk Engine tab
+            if (step.tab && typeof switchDiagMode === 'function') {
+                switchDiagMode(step.tab);
+            }
+            
+            // Style the final step differently
+            if (step.final && btn) {
+                btn.style.background = '#34D399';
+                btn.style.color = '#0a0a0c';
+                btn.style.borderColor = '#34D399';
+                btn.style.fontWeight = '700';
+            } else if (btn) {
+                btn.style.background = 'rgba(52,211,153,0.1)';
+                btn.style.color = '#34D399';
+                btn.style.borderColor = 'rgba(52,211,153,0.2)';
+                btn.style.fontWeight = '600';
+            }
+            
+            // Position spotlight and card after a brief delay for tab switch to render
+            setTimeout(function() {
+                var targetEl = step.target ? step.target() : null;
+                var rect = positionWalkSpotlight(targetEl);
+                positionWalkCard(rect);
+            }, 80);
+        }
+        
+        function advanceWalk() {
+            var step = walkSteps[walkCurrentStep];
+            
+            if (step.final) {
+                endWalkthrough();
+                // Trigger the demo banner "Import my trades" flow
+                var demoBannerBtn = document.getElementById('demoBannerBtn');
+                if (demoBannerBtn) demoBannerBtn.click();
+                return;
+            }
+            
+            walkCurrentStep++;
+            
+            // Animate card transition
+            var card = document.getElementById('walkCard');
+            if (card) {
+                card.style.opacity = '0';
+                setTimeout(function() {
+                    renderWalkStep();
+                    setTimeout(function() {
+                        card.style.opacity = '1';
+                    }, 100);
+                }, 300);
+            }
+        }
+        
+        function endWalkthrough() {
+            walkActive = false;
+            storage.set('riskwise_walkthrough_done', 'true');
+            var walkEl = document.getElementById('demoWalkthrough');
+            var card = document.getElementById('walkCard');
+            var overlay = document.getElementById('walkOverlay');
+            var glow = document.getElementById('walkGlow');
+            
+            if (card) card.style.opacity = '0';
+            if (overlay) overlay.style.opacity = '0';
+            if (glow) glow.style.opacity = '0';
+            
+            setTimeout(function() {
+                if (walkEl) walkEl.style.display = 'none';
+                // Show demo banner
+                var db = document.getElementById('demoBanner');
+                if (db) db.style.display = 'block';
+            }, 400);
+        }
+        
+        // Wire up walkthrough buttons
+        var walkBtnEl = document.getElementById('walkBtn');
+        var walkSkipEl = document.getElementById('walkSkip');
+        if (walkBtnEl) walkBtnEl.addEventListener('click', advanceWalk);
+        if (walkSkipEl) walkSkipEl.addEventListener('click', endWalkthrough);
+        
+        // ==================== END WALKTHROUGH ====================
+        
+        // Universal walkthrough trigger — fires for any user in demo mode who hasn't seen it
+        function tryStartWalkthrough() {
+            if (storage.get('riskwise_demo_mode') && 
+                !storage.get('riskwise_walkthrough_done') && 
+                !document.body.classList.contains('show-landing') &&
+                !walkActive) {
+                startWalkthrough();
+            }
+        }
+        // Try immediately (for returning users) and also watch for landing dismiss
+        setTimeout(tryStartWalkthrough, 1200);
+        // Also observe body class changes for when landing gets dismissed
+        var walkObserver = new MutationObserver(function(mutations) {
+            mutations.forEach(function(m) {
+                if (m.attributeName === 'class' && !document.body.classList.contains('show-landing')) {
+                    setTimeout(tryStartWalkthrough, 800);
+                    walkObserver.disconnect();
+                }
+            });
+        });
+        walkObserver.observe(document.body, { attributes: true });
         
         // Demo banner CTA — clear demo data, start real onboarding
         const demoBannerBtn = document.getElementById('demoBannerBtn');
@@ -19306,7 +19626,10 @@ try {
                 modeJournal.classList.add('active');
                 if (tradeLogEl) jBox.appendChild(tradeLogEl);
                 window.scrollTo(0, 0);
-                requestAnimationFrame(() => { if (typeof renderLogCalendar === 'function') renderLogCalendar(); });
+                requestAnimationFrame(() => { 
+                    if (typeof renderLogCalendar === 'function') renderLogCalendar();
+                    if (typeof renderJournalTradeList === 'function') renderJournalTradeList();
+                });
             } else if (mode === 'progression') {
                 document.body.classList.add('progression-mode');
                 modeProgression.classList.add('active');
@@ -19475,6 +19798,7 @@ try {
             
             // Days in current drawdown
             // Drawdown history (last 5)
+            if (historyEl) {
             const recentPeriods = drawdownPeriods.slice(-5).reverse();
             
             if (recentPeriods.length === 0) {
@@ -19504,6 +19828,7 @@ try {
                 });
                 historyEl.innerHTML = histHtml;
             }
+            }
             
             // === RECOVERY ESTIMATE ===
             const recoveryEstEl = document.getElementById('drawdownRecoveryEstimate');
@@ -19522,10 +19847,13 @@ try {
                 }
                 
                 const dollarToRecover = currentDDDollar;
+                const ddThreshold = state.ddCeiling || 0.30;
+                const verdictEl = document.getElementById('drawerDDVerdict');
                 
                 if (avgExpectancyR > 0 && tradesWithRisk.length >= 3) {
                     // Avg risk per trade in dollars
                     const avgRiskDollar = tradesWithRisk.reduce((s, t) => s + t.risk, 0) / tradesWithRisk.length;
+                    const avgRiskPctDD = (avgRiskDollar / state.currentBalance) * 100;
                     const avgPnlPerTrade = avgExpectancyR * avgRiskDollar;
                     const estTrades = Math.ceil(dollarToRecover / avgPnlPerTrade);
                     
@@ -19535,17 +19863,41 @@ try {
                     const recoveryProgress = currentDDMaxDepth > 0 ? (1 - currentDD / currentDDMaxDepth) * 100 : 0;
                     
                     recoveryBarFill.style.width = Math.max(0, Math.min(100, recoveryProgress)) + '%';
-                    recoveryText.innerHTML = `<strong>~${estTrades} trades</strong> to recover at current expectancy (+${avgExpectancyR.toFixed(2)}R)`;
+                    recoveryText.innerHTML = `<strong>~${estTrades} trades</strong> to recover at +${avgExpectancyR.toFixed(2)}R expectancy and <span style="color:#67E8F9;font-weight:600;">${avgRiskPctDD.toFixed(1)}% avg risk</span>`;
+                    
+                    // Verdict
+                    if (verdictEl) {
+                        verdictEl.style.display = 'block';
+                        const ddPctOfThreshold = currentDDPct / (ddThreshold * 100);
+                        if (ddPctOfThreshold < 0.4) {
+                            verdictEl.className = 'dd-insight-box dd-insight-normal';
+                            verdictEl.innerHTML = 'This drawdown is <strong style="color:#34D399;">minor</strong> relative to your <span style="color:#D4A84B;font-weight:600;">' + (ddThreshold * 100).toFixed(0) + '% threshold</span>. At current expectancy, recovery is straightforward.';
+                        } else if (ddPctOfThreshold < 0.7) {
+                            verdictEl.className = 'dd-insight-box dd-insight-normal';
+                            verdictEl.innerHTML = 'Drawdown is <strong style="color:#D4A84B;">approaching mid-range</strong> of your <span style="color:#D4A84B;font-weight:600;">' + (ddThreshold * 100).toFixed(0) + '% threshold</span>. Risk capacity is temporarily reduced — the math favors staying at or below <span style="color:#67E8F9;font-weight:600;">' + avgRiskPctDD.toFixed(1) + '% risk</span>.';
+                        } else {
+                            verdictEl.className = 'dd-insight-box dd-insight-warning';
+                            verdictEl.innerHTML = 'Drawdown is <strong style="color:#EF4444;">deep</strong> relative to your <span style="color:#D4A84B;font-weight:600;">' + (ddThreshold * 100).toFixed(0) + '% threshold</span>. Increasing risk from here makes recovery harder, not easier. The math favors consistency at current sizing.';
+                        }
+                    }
                 } else if (avgExpectancyR <= 0 && tradesWithRisk.length >= 3) {
                     recoveryBarFill.style.width = '0%';
                     recoveryText.innerHTML = 'Negative expectancy — recovery requires improving your edge';
+                    if (verdictEl) {
+                        verdictEl.style.display = 'block';
+                        verdictEl.className = 'dd-insight-box dd-insight-warning';
+                        verdictEl.innerHTML = 'Your current expectancy is <strong style="color:#EF4444;">negative</strong>. This drawdown will deepen, not recover, until the edge improves. Sizing changes won\'t fix this.';
+                    }
                 } else {
                     recoveryBarFill.style.width = '0%';
                     recoveryText.innerHTML = 'Log more trades with risk to estimate recovery';
+                    if (verdictEl) verdictEl.style.display = 'none';
                 }
             } else if (recoveryEstEl) {
                 recoveryEstEl.style.display = 'none';
                 recoveryEstEl.classList.remove('in-drawdown');
+                const verdictEl = document.getElementById('drawerDDVerdict');
+                if (verdictEl) verdictEl.style.display = 'none';
             }
         }
         
@@ -20928,9 +21280,13 @@ try {
             const checkmark = config.checkmark ? '<div style="font-size:24px;color:#34D399;margin-bottom:4px;">\u2713</div>' : '';
             const align = config.checkmark ? 'text-align:center;' : '';
             
+            // Don't render a backdrop if settings is already open (it has its own)
+            var settingsOpen = document.querySelector('.settings-overlay.open');
+            var bgHtml = settingsOpen ? '' : '<div style="position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:100002;opacity:0;transition:opacity 0.3s ease;pointer-events:none;" id="coachModalBg"></div>';
+            
             modal.innerHTML = 
-                '<div style="position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:99998;opacity:0;transition:opacity 0.3s ease;pointer-events:none;" id="coachModalBg"></div>' +
-                '<div style="position:fixed;' + modalPos + 'width:340px;max-width:85vw;background:#14141a;border:1px solid rgba(52,211,153,0.12);border-radius:14px;padding:20px 22px;z-index:99999;box-shadow:0 16px 64px rgba(0,0,0,0.7),0 0 24px rgba(52,211,153,0.04);color:#e8e8ed;font-family:IBM Plex Sans,-apple-system,sans-serif;opacity:0;transform:translateY(8px);transition:opacity 0.3s ease,transform 0.3s ease;' + align + '" id="coachModalCard">' +
+                bgHtml +
+                '<div style="position:fixed;' + modalPos + 'width:340px;max-width:85vw;background:#14141a;border:1px solid rgba(52,211,153,0.12);border-radius:14px;padding:20px 22px;z-index:100003;box-shadow:0 16px 64px rgba(0,0,0,0.7),0 0 24px rgba(52,211,153,0.04);color:#e8e8ed;font-family:IBM Plex Sans,-apple-system,sans-serif;opacity:0;transform:translateY(8px);transition:opacity 0.3s ease,transform 0.3s ease;' + align + '" id="coachModalCard">' +
                     checkmark +
                     '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;"><span style="font-size:10px;font-weight:600;color:rgba(52,211,153,0.5);text-transform:uppercase;letter-spacing:0.06em;">' + config.step + '</span><span style="font-size:10px;color:rgba(255,255,255,0.30);cursor:pointer;" id="coachModalX">Skip</span></div>' +
                     '<div style="font-size:17px;font-weight:600;letter-spacing:-0.01em;margin-bottom:6px;line-height:1.3;">' + config.title + '</div>' +
@@ -20975,25 +21331,97 @@ try {
             const settingsOv = document.getElementById('settingsOverlay');
             
             if (step === 1) {
-                // No tooltip — just open settings and highlight
-                hideCoach();
-                if (settingsOv) settingsOv.classList.add('open');
+                const settingsOv2 = document.getElementById('settingsOverlay');
                 
-                setTimeout(() => {
-                    if (coachPhase === 'balance') {
+                if (coachPhase === 'balance') {
+                    // Open settings and highlight balance section
+                    hideCoach();
+                    if (settingsOv2) {
+                        settingsOv2.classList.add('open');
+                        settingsOv2.style.zIndex = '100001';
+                    }
+                    
+                    setTimeout(() => {
                         const balanceSection = document.getElementById('startingBalanceSection');
+                        const balanceInput = document.getElementById('startingBalanceInput');
+                        const balanceWrap = document.getElementById('startingBalanceWrap');
+                        
                         if (balanceSection) {
                             addHighlight(balanceSection);
                             balanceSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
                         }
-                    } else if (coachPhase === 'ceiling') {
+                        
+                        // Illuminate and focus the input
+                        if (balanceWrap) {
+                            balanceWrap.style.background = 'rgba(52,211,153,0.10)';
+                            balanceWrap.style.borderColor = 'rgba(52,211,153,0.35)';
+                            balanceWrap.style.boxShadow = '0 0 20px rgba(52,211,153,0.12), inset 0 0 12px rgba(52,211,153,0.04)';
+                        }
+                        if (balanceInput) {
+                            setTimeout(function() { balanceInput.focus(); }, 300);
+                        }
+                        
+                        // Show a coach tooltip inside settings
+                        createCoachModal({
+                            step: 'Step 1 of 3',
+                            title: 'What are you tracking?',
+                            desc: 'Enter your account balance. This is the starting equity that all projections, risk calculations, and drawdown measurements anchor to.',
+                            target: balanceSection,
+                            buttons: []  // No buttons — they click the "Set" button naturally
+                        });
+                    }, 250);
+                    
+                } else if (coachPhase === 'ceiling') {
+                    // Stay in settings — just scroll and re-highlight
+                    dismissModal();
+                    
+                    // Reset balance input illumination
+                    var balanceWrapReset = document.getElementById('startingBalanceWrap');
+                    if (balanceWrapReset) {
+                        balanceWrapReset.style.background = '';
+                        balanceWrapReset.style.borderColor = '';
+                        balanceWrapReset.style.boxShadow = '';
+                    }
+                    
+                    // Ensure settings panel is above any backdrops
+                    var settingsOvEl = document.getElementById('settingsOverlay');
+                    if (settingsOvEl) settingsOvEl.style.zIndex = '100001';
+                    
+                    setTimeout(() => {
+                        removeHighlight();
                         const ceilingSection = document.getElementById('ddCeilingSection');
                         if (ceilingSection) {
                             addHighlight(ceilingSection);
                             ceilingSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
                         }
-                    }
-                }, 200);
+                        
+                        createCoachModal({
+                            step: 'Step 1 of 3',
+                            title: 'Set your risk tolerance.',
+                            desc: 'The drawdown threshold is the maximum loss you\'re willing to tolerate. All survival calculations and risk interpretations anchor to this number.',
+                            target: ceilingSection,
+                            buttons: [
+                                { id: 'coachCeilingDone', label: 'Looks good →', primary: true }
+                            ]
+                        });
+                        
+                        var ceilingDoneBtn = document.getElementById('coachCeilingDone');
+                        if (ceilingDoneBtn) {
+                            ceilingDoneBtn.addEventListener('click', function() {
+                                dismissModal();
+                                removeHighlight();
+                                // Reset settings z-index and close
+                                var settingsOvInner = document.getElementById('settingsOverlay');
+                                if (settingsOvInner) {
+                                    settingsOvInner.style.zIndex = '';
+                                    settingsOvInner.classList.remove('open');
+                                }
+                                setTimeout(function() { goToCoachStep(2); }, 400);
+                            });
+                        }
+                    }, 300);
+                }
+                
             } else if (step === 2) {
                 hideCoach();
                 if (settingsOv) settingsOv.classList.remove('open');
@@ -21003,9 +21431,9 @@ try {
                     if (importBtn) addHighlight(importBtn);
                     
                     const modal = createCoachModal({
-                        step: 'Step 2 of 4',
-                        title: 'Show us how you trade.',
-                        desc: 'Import a CSV from your broker or TradingView. Your trade history is the raw data behind your probability structure.',
+                        step: 'Step 2 of 3',
+                        title: 'Import your trade history.',
+                        desc: 'Upload a CSV from your broker or TradingView. Your trades are the raw data the interpretation engine runs on.',
                         target: importBtn,
                         buttons: [
                             { id: 'coachImportBtn', label: 'Import CSV', primary: true },
@@ -21032,9 +21460,9 @@ try {
                 if (tradeInput) addHighlight(tradeInput);
                 
                 const modal = createCoachModal({
-                    step: 'Step 3 of 4',
-                    title: 'Every trade shifts your probability space.',
-                    desc: 'Enter your risk and P&L. Every entry recalculates your survival probability, drawdown projections, and edge metrics in real time.',
+                    step: 'Step 3 of 3',
+                    title: 'Log your trades as you go.',
+                    desc: 'Enter risk and P&L. Every entry recalculates what your results mean — survival, drawdown context, streak probability, and edge confidence.',
                     target: tradeInput,
                     buttons: [
                         { id: 'coachGotIt', label: 'Got it \u2192', primary: true }
@@ -21053,8 +21481,8 @@ try {
                 
                 createCoachModal({
                     step: 'Complete',
-                    title: 'Your probability structure is live.',
-                    desc: 'Left: where your risk comes from. Center: your current state. Right: where your probability structure leads. Everything updates with every trade.',
+                    title: 'Your interpretation engine is live.',
+                    desc: 'Every trade recalibrates what your results mean. The Risk Engine tells you what\'s normal, what\'s not, and how much risk your edge can support.',
                     checkmark: true,
                     buttons: [
                         { id: 'coachDone', label: 'Start trading', primary: true }
@@ -21119,9 +21547,10 @@ try {
                 setTimeout(() => {
                     if (state.startingBalance > 0 && !storage.get('riskwise_onboarding_complete') && coachPhase === 'balance') {
                         coachPhase = 'ceiling';
+                        // Stay in settings, just transition to ceiling phase
                         goToCoachStep(1);
                     }
-                }, 700);
+                }, 500);
             });
         }
         
@@ -21322,28 +21751,24 @@ try {
             const modal = document.createElement('div');
             modal.id = 'upgradeModalDynamic';
             modal.innerHTML = `
-                <div style="position:fixed;inset:0;z-index:100000;background:rgba(0,0,0,0.6);backdrop-filter:blur(8px);" id="upgradeBg"></div>
-                <div style="position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:400px;max-width:90vw;background:linear-gradient(180deg,#161620,#111116);border:1px solid rgba(52,211,153,0.12);border-radius:18px;padding:36px 32px;z-index:100001;box-shadow:0 32px 80px rgba(0,0,0,0.6);color:#e8e8ed;text-align:center;font-family:IBM Plex Sans,-apple-system,sans-serif;">
-                    <button id="upgradeCloseX" style="position:absolute;top:14px;right:16px;background:none;border:none;color:rgba(255,255,255,0.45);font-size:22px;cursor:pointer;line-height:1;">&times;</button>
-                    <div style="margin-bottom:16px;">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:32px;height:32px;color:#34D399;">
-                            <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
-                        </svg>
+                <div style="position:fixed;inset:0;z-index:100000;background:rgba(0,0,0,0.7);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);" id="upgradeBg"></div>
+                <div style="position:fixed;top:50%;left:50%;transform:translate(-50%,-50%) scale(0.95);width:400px;max-width:90vw;background:linear-gradient(180deg,#131318,#0e0e12);border:1px solid rgba(255,255,255,0.06);border-radius:16px;padding:40px 36px;z-index:100001;box-shadow:0 32px 80px rgba(0,0,0,0.5),0 0 0 1px rgba(255,255,255,0.03),inset 0 1px 0 rgba(255,255,255,0.04);color:#e8e8ed;text-align:center;font-family:IBM Plex Sans,-apple-system,sans-serif;opacity:0;animation:upgradeModalIn 0.4s cubic-bezier(0.34,1.56,0.64,1) forwards;overflow:hidden;">
+                    <div style="position:absolute;top:0;left:40px;right:40px;height:1px;background:linear-gradient(90deg,transparent,rgba(52,211,153,0.2),transparent);"></div>
+                    <button id="upgradeCloseX" style="position:absolute;top:16px;right:18px;background:none;border:none;color:rgba(255,255,255,0.30);font-size:20px;cursor:pointer;line-height:1;transition:color 0.15s;" onmouseenter="this.style.color='rgba(255,255,255,0.6)'" onmouseleave="this.style.color='rgba(255,255,255,0.30)'">&times;</button>
+                    <h3 style="font-size:20px;font-weight:700;letter-spacing:-0.02em;margin-bottom:10px;color:#f0f0f2;">${title}</h3>
+                    <p style="font-size:13.5px;color:rgba(255,255,255,0.50);line-height:1.65;margin-bottom:24px;">${desc}</p>
+                    <div style="text-align:left;margin:0 auto 24px;max-width:300px;">
+                        <div style="font-size:12.5px;color:rgba(255,255,255,0.45);padding:6px 0;display:flex;align-items:center;gap:10px;"><span style="color:#34D399;font-size:13px;">✓</span> Unlimited trade logging & CSV imports</div>
+                        <div style="font-size:12.5px;color:rgba(255,255,255,0.45);padding:6px 0;display:flex;align-items:center;gap:10px;"><span style="color:#34D399;font-size:13px;">✓</span> Full interpretation engine — all 5 modes</div>
+                        <div style="font-size:12.5px;color:rgba(255,255,255,0.45);padding:6px 0;display:flex;align-items:center;gap:10px;"><span style="color:#34D399;font-size:13px;">✓</span> Continuous recalibration with every trade</div>
                     </div>
-                    <h3 style="font-size:20px;font-weight:700;letter-spacing:-0.02em;margin-bottom:8px;">${title}</h3>
-                    <p style="font-size:14px;color:rgba(255,255,255,0.55);line-height:1.55;margin-bottom:20px;">${desc}</p>
-                    <div style="text-align:left;margin-bottom:24px;">
-                        <div style="font-size:13px;color:rgba(255,255,255,0.5);padding:5px 0;display:flex;align-items:center;gap:8px;"><span style="color:#34D399;font-weight:700;">✓</span> Unlimited CSV imports</div>
-                        <div style="font-size:13px;color:rgba(255,255,255,0.5);padding:5px 0;display:flex;align-items:center;gap:8px;"><span style="color:#34D399;font-weight:700;">✓</span> Unlimited manual trades</div>
-                        <div style="font-size:13px;color:rgba(255,255,255,0.5);padding:5px 0;display:flex;align-items:center;gap:8px;"><span style="color:#34D399;font-weight:700;">✓</span> Full session heatmap & Monte Carlo</div>
-                        <div style="font-size:13px;color:rgba(255,255,255,0.5);padding:5px 0;display:flex;align-items:center;gap:8px;"><span style="color:#34D399;font-weight:700;">✓</span> Journal, progression & all analytics</div>
-                    </div>
-                    <a href="https://riskwiseapp.gumroad.com/l/riskwise-pro" data-gumroad-overlay-checkout="true" id="upgradeBuyBtn" style="display:block;width:100%;padding:13px 20px;background:#34D399;color:#0a0a0c;font-size:15px;font-weight:600;border:none;border-radius:10px;cursor:pointer;text-align:center;margin-bottom:20px;box-sizing:border-box;text-decoration:none;">Continue with full access — $19/month</a>
+                    <a href="https://riskwiseapp.gumroad.com/l/riskwise-pro" data-gumroad-overlay-checkout="true" id="upgradeBuyBtn" style="display:block;width:100%;padding:14px 20px;background:#34D399;color:#0a0a0c;font-size:14px;font-weight:700;border:none;border-radius:10px;cursor:pointer;text-align:center;margin-bottom:14px;box-sizing:border-box;text-decoration:none;letter-spacing:-0.01em;animation:ctaGlow 3s ease-in-out infinite;">Continue with full access — $19/month</a>
+                    <div style="font-size:12px;color:rgba(255,255,255,0.25);margin-bottom:20px;">Cancel anytime · No lock-in</div>
                     <div style="padding-top:16px;border-top:1px solid rgba(255,255,255,0.04);">
-                        <span style="font-size:12px;color:rgba(255,255,255,0.35);margin-bottom:6px;display:block;">Have a license key?</span>
+                        <span style="font-size:11px;color:rgba(255,255,255,0.30);margin-bottom:6px;display:block;">Have a license key?</span>
                         <div style="display:flex;gap:6px;">
-                            <input type="text" id="upgradeLicenseInput" placeholder="Enter license key" style="flex:1;padding:8px 12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:8px;color:#e8e8ed;font-family:IBM Plex Mono,monospace;font-size:12px;outline:none;">
-                            <button id="upgradeLicenseBtn" style="padding:8px 14px;background:rgba(52,211,153,0.1);border:1px solid rgba(52,211,153,0.2);border-radius:8px;color:#34D399;font-size:12px;font-weight:600;cursor:pointer;">Activate</button>
+                            <input type="text" id="upgradeLicenseInput" placeholder="Enter license key" style="flex:1;padding:8px 12px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:8px;color:#e8e8ed;font-family:IBM Plex Mono,monospace;font-size:11px;outline:none;transition:border-color 0.15s;">
+                            <button id="upgradeLicenseBtn" style="padding:8px 14px;background:rgba(52,211,153,0.08);border:1px solid rgba(52,211,153,0.15);border-radius:8px;color:#34D399;font-size:11px;font-weight:600;cursor:pointer;transition:all 0.15s;">Activate</button>
                         </div>
                         <div id="upgradeLicenseError" style="display:none;font-size:11px;color:#EF4444;margin-top:6px;"></div>
                     </div>
@@ -21591,14 +22016,19 @@ try {
         function updateAccountSection() {
             const freeEl = document.getElementById('accountStatusFree');
             const proEl = document.getElementById('accountStatusPro');
-            if (!freeEl || !proEl) return;
+            const billingLink = document.getElementById('manageBillingLink');
+            const proHeader = document.getElementById('userDropdownHeaderPro');
             
             if (isPro()) {
-                freeEl.style.display = 'none';
-                proEl.style.display = 'block';
+                if (freeEl) freeEl.style.display = 'none';
+                if (proEl) proEl.style.display = 'block';
+                if (billingLink) billingLink.style.display = '';
+                if (proHeader) proHeader.style.display = '';
             } else {
-                freeEl.style.display = 'block';
-                proEl.style.display = 'none';
+                if (freeEl) freeEl.style.display = 'block';
+                if (proEl) proEl.style.display = 'none';
+                if (billingLink) billingLink.style.display = 'none';
+                if (proHeader) proHeader.style.display = 'none';
             }
         }
         
@@ -21697,6 +22127,24 @@ try {
         });
         
         // Open Account Modal
+        const openSettingsFromMenu = document.getElementById('openSettingsFromMenu');
+        if (openSettingsFromMenu) {
+            openSettingsFromMenu.addEventListener('click', () => {
+                userDropdown.classList.remove('open');
+                userMenuBtn.classList.remove('active');
+                const settingsOv = document.getElementById('settingsOverlay');
+                if (settingsOv) settingsOv.classList.add('open');
+            });
+        }
+        
+        // Close dropdown when clicking legal links
+        document.querySelectorAll('.user-dropdown-item[data-rw-legal]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                if (userDropdown) userDropdown.classList.remove('open');
+                if (userMenuBtn) userMenuBtn.classList.remove('active');
+            });
+        });
+        
         if (openAccountModal) {
             openAccountModal.addEventListener('click', () => {
                 userDropdown.classList.remove('open');
@@ -21891,7 +22339,7 @@ try {
         // Risk Engine Tab Selector (right panel only)
         const diagModeBtns = document.querySelectorAll('.diag-mode-btn');
         const diagContents = document.querySelectorAll('.diag-content');
-        var currentDiagMode = "risk";;
+        var currentDiagMode = "streak";
         
         // Locked modes for free users
         var LOCKED_MODES = ['path', 'edge'];
@@ -21920,6 +22368,9 @@ try {
         // Initialize locked state on load
         updateLockedState();
         
+        // Store last survival curve data for redraw when Risk tab becomes visible
+        // (assigned inside runMCProjection, read inside switchDiagMode)
+        
         function switchDiagMode(mode) {
             currentDiagMode = mode;
             diagModeBtns.forEach(function(b) { 
@@ -21928,6 +22379,16 @@ try {
             diagContents.forEach(function(c) {
                 c.classList.toggle('active', c.getAttribute('data-diag-mode') === mode);
             });
+            if (mode === 'risk') {
+                requestAnimationFrame(function() {
+                    if (typeof _lastSurvivalCurveData !== 'undefined' && _lastSurvivalCurveData) {
+                        drawSurvivalCurve(_lastSurvivalCurveData.results, _lastSurvivalCurveData.baseRisk, _lastSurvivalCurveData.currentSurvival);
+                    } else if (state.trades.length >= 10) {
+                        // Data not stored yet — re-run MC which will store and draw
+                        runMCProjection();
+                    }
+                });
+            }
             if (mode === 'drawdown') runDrawdownAnalysis();
             if (mode === 'streak') runStreakAnalysis();
             if (mode === 'path') runPathAnalysis();
@@ -21952,7 +22413,18 @@ try {
             var startEq = state.currentBalance;
             var peakEq = state.peakBalance || startEq;
             var currentDD = (peakEq - startEq) / peakEq;
-            var avgRisk = stats.blendedAvgRisk ? stats.blendedAvgRisk / startEq : 0.02;
+            
+            // Calculate avgRisk from actual trade data — same method as MC projection
+            var tradesWithRiskDD = state.trades.filter(function(t) { return t.risk && t.risk > 0; });
+            var avgRisk = 0.02; // fallback
+            var currentBal = Math.max(state.currentBalance, 1);
+            if (tradesWithRiskDD.length >= 3) {
+                var avgRiskDollar = tradesWithRiskDD.reduce(function(s, t) { return s + t.risk; }, 0) / tradesWithRiskDD.length;
+                avgRisk = avgRiskDollar / currentBal;
+            } else if (stats.blendedAvgLoss > 0) {
+                avgRisk = stats.blendedAvgLoss / currentBal;
+            }
+            
             var winRate = stats.winRate / 100;
             var avgR = stats.avgR || 0.3;
             var maxDD = state.ddCeiling || 0.30;
@@ -22028,15 +22500,17 @@ try {
                 percDescEl.textContent = 'of simulated paths hit a drawdown this deep or worse';
             }
             if (insightEl) {
+                var ddPctStr = (currentDD * 100).toFixed(1) + '%';
+                var riskPctStr = (avgRisk * 100).toFixed(1) + '%';
                 if (percentile <= 75) {
                     insightEl.className = 'dd-insight-box dd-insight-normal';
-                    insightEl.innerHTML = 'This drawdown is <strong style="color:#34D399;">normal</strong> for your edge. Most simulated paths experience a drawdown this size or larger.';
+                    insightEl.innerHTML = 'At your current risk profile (' + riskPctStr + ' avg risk), a <strong style="color:#34D399;">' + ddPctStr + ' drawdown is normal</strong>. Most simulated paths experience this or worse.';
                 } else if (percentile <= 90) {
                     insightEl.className = 'dd-insight-box dd-insight-normal';
-                    insightEl.innerHTML = 'This drawdown is <strong style="color:#D4A84B;">larger than usual</strong> but still within the range your edge produces. Worth watching.';
+                    insightEl.innerHTML = 'At your current risk profile (' + riskPctStr + ' avg risk), this drawdown is <strong style="color:#D4A84B;">larger than usual</strong> but still within the range your edge produces.';
                 } else {
                     insightEl.className = 'dd-insight-box dd-insight-warning';
-                    insightEl.innerHTML = 'This drawdown is <strong style="color:#EF4444;">outside normal range</strong> for your edge. Only ' + (100 - percentile) + '% of simulated paths got this deep.';
+                    insightEl.innerHTML = 'At your current risk profile (' + riskPctStr + ' avg risk), this drawdown is <strong style="color:#EF4444;">outside normal range</strong>. Only ' + (100 - percentile) + '% of simulated paths got this deep.';
                 }
             }
             
@@ -22095,12 +22569,75 @@ try {
                 else ddHistEl.innerHTML = '<div style="color:rgba(255,255,255,0.35);">No completed drawdowns yet.</div>';
             }
             
-            // Draw distribution chart
-            drawDDDistribution(simDDs, currentDD);
+            // Update zone bar visualization
+            updateDDZoneBar(simDDs, currentDD, maxDD);
         }
         
-        function drawDDDistribution(simDDs, currentDD) {
-            var canvas = document.getElementById('ddDistCanvas');
+        function updateDDZoneBar(simDDs, currentDD, ddFloor) {
+            // Calculate key thresholds from simulation
+            var sorted = simDDs.slice().sort(function(a, b) { return a - b; });
+            var medianDD = sorted[Math.floor(sorted.length * 0.5)];
+            var p75DD = sorted[Math.floor(sorted.length * 0.75)];
+            var p90DD = sorted[Math.floor(sorted.length * 0.90)];
+            
+            // Zone boundaries relative to floor
+            var scale = ddFloor;
+            var normalEnd = Math.min(medianDD / scale, 1) * 100;
+            var watchEnd = Math.min(p90DD / scale, 1) * 100;
+            var youPos = Math.min(currentDD / scale, 1) * 100;
+            var typicalPos = Math.min(p75DD / scale, 1) * 100;
+            
+            var normalEl = document.getElementById('ddZoneNormal');
+            var watchEl = document.getElementById('ddZoneWatch');
+            var dangerEl = document.getElementById('ddZoneDanger');
+            var youMarker = document.getElementById('ddZoneYouMarker');
+            var youLabel = document.getElementById('ddZoneYouLabel');
+            var typicalMarker = document.getElementById('ddZoneTypicalMarker');
+            var typicalLabel = document.getElementById('ddZoneTypicalLabel');
+            var floorLabel = document.getElementById('ddZoneFloorLabel');
+            
+            if (normalEl) normalEl.style.width = normalEnd + '%';
+            if (watchEl) { watchEl.style.left = normalEnd + '%'; watchEl.style.width = (watchEnd - normalEnd) + '%'; }
+            if (dangerEl) dangerEl.style.width = (100 - watchEnd) + '%';
+            
+            // Determine marker color based on zone
+            var youColor = '#34D399';
+            if (youPos > watchEnd) { youColor = '#EF4444'; }
+            else if (youPos > normalEnd) { youColor = '#D4A84B'; }
+            
+            if (youMarker) {
+                youMarker.style.left = 'calc(' + youPos + '% - 1.5px)';
+                youMarker.style.background = youColor;
+                youMarker.style.boxShadow = '0 0 8px ' + youColor + '4D';
+            }
+            
+            // Position labels below bar — clamp to avoid overflow
+            var youPosClamp = Math.max(8, Math.min(youPos, 88));
+            if (youLabel) {
+                youLabel.textContent = '-' + (currentDD * 100).toFixed(1) + '%';
+                youLabel.style.left = youPosClamp + '%';
+                youLabel.style.color = youColor;
+            }
+            
+            if (typicalMarker) typicalMarker.style.left = 'calc(' + typicalPos + '% - 0.5px)';
+            
+            // Clamp typical label and hide if too close to you label or edges
+            var typicalPosClamp = Math.max(8, Math.min(typicalPos, 85));
+            if (typicalLabel) {
+                typicalLabel.style.left = typicalPosClamp + '%';
+                // Hide if too close to "you" label
+                if (Math.abs(typicalPosClamp - youPosClamp) < 15) {
+                    typicalLabel.style.display = 'none';
+                } else {
+                    typicalLabel.style.display = '';
+                }
+            }
+            
+            if (floorLabel) floorLabel.textContent = (ddFloor * 100).toFixed(0) + '%';
+        }
+        
+        function drawSurvivalCurve(results, currentRisk, currentSurvival) {
+            var canvas = document.getElementById('riskSurvivalCanvas');
             if (!canvas) return;
             var rect = canvas.parentElement.getBoundingClientRect();
             var dpr = window.devicePixelRatio || 1;
@@ -22111,106 +22648,130 @@ try {
             var ctx = canvas.getContext('2d');
             ctx.scale(dpr, dpr);
             var w = rect.width, h = rect.height;
-            var pad = { top: 10, right: 20, bottom: 30, left: 10 };
+            var pad = { top: 16, right: 16, bottom: 32, left: 36 };
             var pw = w - pad.left - pad.right, ph = h - pad.top - pad.bottom;
             
-            // Build histogram bins
-            var maxVal = Math.max.apply(null, simDDs);
-            var binCount = 30;
-            var binWidth = maxVal / binCount;
-            var bins = new Array(binCount).fill(0);
-            simDDs.forEach(function(dd) {
-                var bin = Math.min(Math.floor(dd / binWidth), binCount - 1);
-                bins[bin]++;
-            });
-            var maxBin = Math.max.apply(null, bins);
+            var minRisk = results[0].risk;
+            var maxRisk = results[results.length - 1].risk;
             
-            // Draw bars with animation
-            var barW = pw / binCount - 1;
-            var ddAnimStart = null;
-            var ddAnimDuration = 450;
+            function xScale(risk) { return pad.left + ((risk - minRisk) / (maxRisk - minRisk)) * pw; }
+            function yScale(surv) { return pad.top + (1 - surv / 100) * ph; }
             
-            function drawDDFrame(timestamp) {
-                if (!ddAnimStart) ddAnimStart = timestamp;
-                var elapsed = timestamp - ddAnimStart;
-                var globalProgress = Math.min(elapsed / ddAnimDuration, 1);
-                var eased = 1 - Math.pow(1 - globalProgress, 3);
+            // Animation
+            var animStart = null;
+            var animDuration = 600;
+            
+            function drawFrame(ts) {
+                if (!animStart) animStart = ts;
+                var progress = Math.min((ts - animStart) / animDuration, 1);
+                var eased = 1 - Math.pow(1 - progress, 3);
                 
                 ctx.clearRect(0, 0, w * dpr, h * dpr);
                 
-                bins.forEach(function(count, i) {
-                    var fullBarH = (count / maxBin) * ph;
-                    var barDelay = i * 15 / ddAnimDuration;
-                    var barProgress = Math.max(0, Math.min((eased - barDelay) / (1 - barDelay), 1));
-                    var barH = fullBarH * barProgress;
-                    var x = pad.left + i * (pw / binCount);
-                    var y = pad.top + ph - barH;
-                    var ddVal = (i + 0.5) * binWidth;
-                    
-                    if (ddVal <= currentDD) {
-                        ctx.fillStyle = 'rgba(52,211,153,0.25)';
-                    } else {
-                        ctx.fillStyle = 'rgba(255,255,255,0.06)';
-                    }
-                    ctx.beginPath();
-                    var bx=x, by=y, bw=Math.max(barW,2), bh=barH, br=2;
-                    ctx.moveTo(bx+br,by);ctx.lineTo(bx+bw-br,by);ctx.quadraticCurveTo(bx+bw,by,bx+bw,by+br);ctx.lineTo(bx+bw,by+bh-br);ctx.quadraticCurveTo(bx+bw,by+bh,bx+bw-br,by+bh);ctx.lineTo(bx+br,by+bh);ctx.quadraticCurveTo(bx,by+bh,bx,by+bh-br);ctx.lineTo(bx,by+br);ctx.quadraticCurveTo(bx,by,bx+br,by);ctx.closePath();
-                    ctx.fill();
+                // Grid lines
+                ctx.strokeStyle = 'rgba(255,255,255,0.04)';
+                ctx.lineWidth = 1;
+                [0, 25, 50, 75, 100].forEach(function(v) {
+                    var y = yScale(v);
+                    ctx.beginPath(); ctx.moveTo(pad.left, y); ctx.lineTo(w - pad.right, y); ctx.stroke();
                 });
                 
-                // Draw current DD line (fade in at end)
-                var lineAlpha = Math.max(0, (eased - 0.5) * 2);
-                var ddX = pad.left + (currentDD / maxVal) * pw;
-                if (ddX > pad.left && ddX < w - pad.right && lineAlpha > 0) {
-                    ctx.globalAlpha = lineAlpha;
-                    ctx.strokeStyle = '#EF4444';
-                    ctx.lineWidth = 2;
-                    ctx.setLineDash([4, 3]);
+                // 50% reference line (dashed)
+                ctx.strokeStyle = 'rgba(255,255,255,0.08)';
+                ctx.setLineDash([4, 3]);
+                ctx.beginPath(); ctx.moveTo(pad.left, yScale(50)); ctx.lineTo(w - pad.right, yScale(50)); ctx.stroke();
+                ctx.setLineDash([]);
+                
+                // Y axis labels
+                ctx.fillStyle = 'rgba(255,255,255,0.2)';
+                ctx.font = '400 9px IBM Plex Mono';
+                ctx.textAlign = 'right';
+                [0, 50, 100].forEach(function(v) {
+                    ctx.fillText(v + '%', pad.left - 6, yScale(v) + 3);
+                });
+                
+                // X axis labels
+                ctx.textAlign = 'center';
+                var xLabels = [results[0], results[Math.floor(results.length / 2)], results[results.length - 1]];
+                xLabels.forEach(function(r) {
+                    ctx.fillText(r.label, xScale(r.risk), h - pad.bottom + 18);
+                });
+                
+                // X axis title
+                ctx.fillStyle = 'rgba(255,255,255,0.15)';
+                ctx.font = '400 9px IBM Plex Sans';
+                ctx.fillText('risk per trade', w / 2, h - 2);
+                
+                // Draw curve area fill (animated)
+                var drawCount = Math.ceil(results.length * eased);
+                if (drawCount >= 2) {
+                    // Gradient fill under curve
+                    var grad = ctx.createLinearGradient(0, pad.top, 0, pad.top + ph);
+                    grad.addColorStop(0, 'rgba(52,211,153,0.08)');
+                    grad.addColorStop(1, 'rgba(52,211,153,0.0)');
+                    
                     ctx.beginPath();
-                    ctx.moveTo(ddX, pad.top);
-                    ctx.lineTo(ddX, pad.top + ph);
+                    ctx.moveTo(xScale(results[0].risk), yScale(results[0].surv));
+                    for (var i = 1; i < drawCount; i++) {
+                        ctx.lineTo(xScale(results[i].risk), yScale(results[i].surv));
+                    }
+                    ctx.lineTo(xScale(results[drawCount - 1].risk), yScale(0));
+                    ctx.lineTo(xScale(results[0].risk), yScale(0));
+                    ctx.closePath();
+                    ctx.fillStyle = grad;
+                    ctx.fill();
+                    
+                    // Curve line
+                    ctx.beginPath();
+                    ctx.moveTo(xScale(results[0].risk), yScale(results[0].surv));
+                    for (var i = 1; i < drawCount; i++) {
+                        ctx.lineTo(xScale(results[i].risk), yScale(results[i].surv));
+                    }
+                    // Color gradient along the curve
+                    var lineGrad = ctx.createLinearGradient(xScale(minRisk), 0, xScale(maxRisk), 0);
+                    lineGrad.addColorStop(0, '#34D399');
+                    lineGrad.addColorStop(0.5, '#D4A84B');
+                    lineGrad.addColorStop(1, '#EF4444');
+                    ctx.strokeStyle = lineGrad;
+                    ctx.lineWidth = 2;
                     ctx.stroke();
+                }
+                
+                // "You" marker (fade in at end)
+                if (eased > 0.5) {
+                    var markerAlpha = (eased - 0.5) * 2;
+                    var youX = xScale(currentRisk);
+                    var youY = yScale(currentSurvival || 0);
+                    
+                    // Vertical dashed line
+                    ctx.globalAlpha = markerAlpha * 0.4;
+                    ctx.strokeStyle = '#67E8F9';
+                    ctx.lineWidth = 1;
+                    ctx.setLineDash([3, 3]);
+                    ctx.beginPath(); ctx.moveTo(youX, youY); ctx.lineTo(youX, yScale(0)); ctx.stroke();
                     ctx.setLineDash([]);
+                    
+                    // Dot
+                    ctx.globalAlpha = markerAlpha;
+                    ctx.fillStyle = '#67E8F9';
+                    ctx.beginPath(); ctx.arc(youX, youY, 4, 0, Math.PI * 2); ctx.fill();
+                    
+                    // Glow
+                    ctx.fillStyle = 'rgba(103,232,249,0.15)';
+                    ctx.beginPath(); ctx.arc(youX, youY, 8, 0, Math.PI * 2); ctx.fill();
+                    
+                    // Label
+                    ctx.fillStyle = '#67E8F9';
+                    ctx.font = '700 10px IBM Plex Mono';
+                    ctx.textAlign = 'center';
+                    ctx.fillText('you', youX, youY - 12);
+                    
                     ctx.globalAlpha = 1;
                 }
                 
-                if (globalProgress < 1) {
-                    requestAnimationFrame(drawDDFrame);
-                } else {
-                    // Final static draw of DD line + label
-                    drawDDStatic();
-                }
+                if (progress < 1) requestAnimationFrame(drawFrame);
             }
-            
-            function drawDDStatic() {
-            var ddX = pad.left + (currentDD / maxVal) * pw;
-            if (ddX > pad.left && ddX < w - pad.right) {
-                ctx.strokeStyle = '#EF4444';
-                ctx.lineWidth = 2;
-                ctx.setLineDash([4, 3]);
-                ctx.beginPath();
-                ctx.moveTo(ddX, pad.top);
-                ctx.lineTo(ddX, pad.top + ph);
-                ctx.stroke();
-                ctx.setLineDash([]);
-                
-                // Label
-                ctx.fillStyle = '#EF4444';
-                ctx.font = '600 10px IBM Plex Mono';
-                ctx.textAlign = 'center';
-                ctx.fillText('You: -' + (currentDD * 100).toFixed(1) + '%', ddX, pad.top + ph + 16);
-            }
-            
-            // X axis label
-            ctx.fillStyle = 'rgba(255,255,255,0.15)';
-            ctx.font = '400 9px IBM Plex Sans';
-            ctx.textAlign = 'left';
-            ctx.fillText('0%', pad.left, pad.top + ph + 16);
-            ctx.textAlign = 'right';
-            ctx.fillText('-' + (maxVal * 100).toFixed(0) + '%', w - pad.right, pad.top + ph + 16);
-            }
-            
-            requestAnimationFrame(drawDDFrame);
+            requestAnimationFrame(drawFrame);
         }
         
         // Edge Analysis — statistical significance
@@ -22249,6 +22810,8 @@ try {
             var confidence = (1 - pValue) * 100;
             
             // T-test on R-multiples (are they significantly > 0?)
+            // This is the PRIMARY edge test — a trader can have a real edge 
+            // with a sub-50% win rate if avg winners > avg losers
             var meanR = 0, sumR = 0;
             rMultiples.forEach(function(r) { sumR += r; });
             meanR = sumR / rMultiples.length;
@@ -22259,10 +22822,17 @@ try {
             var tStat = stdErr > 0 ? meanR / stdErr : 0;
             var tPValue = tStat > 0 ? (1 - normalCDF(tStat)) : 1; // approximation
             
-            // Use the more conservative of the two tests
-            var finalPValue = Math.max(pValue, tPValue);
-            var finalConfidence = Math.min(confidence, (1 - tPValue) * 100);
+            // Use R-multiple expectancy test as primary
+            // Win rate vs 50% is shown as context but doesn't determine edge verdict
+            var finalPValue = tPValue;
+            var finalConfidence = (1 - tPValue) * 100;
             finalConfidence = Math.max(0, Math.min(100, finalConfidence));
+            
+            // If expectancy is negative, confidence should be 0 regardless
+            if (meanR <= 0) {
+                finalConfidence = 0;
+                finalPValue = 1;
+            }
             
             // 95% CI for win rate (Wilson score interval)
             var z95 = 1.96;
@@ -22318,19 +22888,24 @@ try {
             
             // Verdict
             var insightEl = document.getElementById('edgeInsightBox');
+            var edgeWrPct = Math.round(winRate * 100);
+            var expectancyStr = meanR > 0 ? '+' + meanR.toFixed(3) + 'R' : meanR.toFixed(3) + 'R';
             if (insightEl) {
                 if (n < 30) {
                     insightEl.className = 'dd-insight-box dd-insight-normal';
-                    insightEl.innerHTML = '<strong style="color:rgba(255,255,255,0.6);">Not enough data.</strong> At ' + n + ' trades, your results cannot be distinguished from random chance. Keep logging.';
+                    insightEl.innerHTML = '<strong style="color:rgba(255,255,255,0.6);">Too early to interpret.</strong> At ' + n + ' trades, the math can\'t distinguish signal from noise yet.';
                 } else if (finalConfidence >= 95) {
                     insightEl.className = 'dd-insight-box dd-insight-normal';
-                    insightEl.innerHTML = 'Your edge is <strong style="color:#34D399;">statistically significant</strong>. There is less than a 5% chance these results are random.';
+                    insightEl.innerHTML = 'At ' + n + ' trades with ' + expectancyStr + ' avg expectancy and a ' + edgeWrPct + '% win rate, your edge is <strong style="color:#34D399;">statistically real</strong>. Less than a 5% chance this is noise.';
                 } else if (finalConfidence >= 80) {
                     insightEl.className = 'dd-insight-box dd-insight-normal';
-                    insightEl.innerHTML = 'Your edge is <strong style="color:#D4A84B;">showing positive signs</strong> but hasn\'t reached statistical significance yet. More trades will clarify.';
-                } else {
+                    insightEl.innerHTML = 'At ' + n + ' trades with ' + expectancyStr + ' avg expectancy, your edge is <strong style="color:#D4A84B;">showing positive signs</strong> but the data hasn\'t fully separated from noise yet. The signal is there — the certainty isn\'t.';
+                } else if (meanR > 0) {
                     insightEl.className = 'dd-insight-box dd-insight-normal';
-                    insightEl.innerHTML = 'Your results <strong style="color:rgba(255,255,255,0.5);">could still be random</strong>. At ' + n + ' trades, the sample size isn\'t large enough to confirm an edge.';
+                    insightEl.innerHTML = 'At ' + n + ' trades with ' + expectancyStr + ' avg expectancy and a ' + edgeWrPct + '% win rate, your expectancy is positive but <strong style="color:rgba(255,255,255,0.5);">could still be variance</strong>. The math can\'t confirm this is a real edge yet.';
+                } else {
+                    insightEl.className = 'dd-insight-box dd-insight-warning';
+                    insightEl.innerHTML = 'At ' + n + ' trades with ' + expectancyStr + ' avg expectancy, <strong style="color:#EF4444;">the math shows no edge</strong>. Your average trade outcome is negative — this isn\'t a sample size issue.';
                 }
             }
             
@@ -22356,7 +22931,6 @@ try {
             // Stats
             var pvEl = document.getElementById('edgePValue');
             var tcEl = document.getElementById('edgeTradeCount');
-            var tnEl = document.getElementById('edgeTradesNeeded');
             var sampleEl = document.getElementById('edgeSampleExplain');
             
             if (pvEl) {
@@ -22364,27 +22938,16 @@ try {
                 pvEl.style.color = finalPValue < 0.05 ? '#34D399' : finalPValue < 0.2 ? '#D4A84B' : 'rgba(255,255,255,0.4)';
             }
             if (tcEl) tcEl.textContent = n;
-            if (tnEl) {
-                if (finalConfidence >= 95) {
-                    tnEl.textContent = '✓ Reached';
-                    tnEl.style.color = '#34D399';
-                } else if (tradesNeeded >= 9999 || meanR <= 0) {
-                    tnEl.textContent = 'N/A — expectancy ≤ 0';
-                    tnEl.style.color = 'rgba(255,255,255,0.3)';
-                } else {
-                    tnEl.textContent = '~' + tradesNeeded + ' trades';
-                    tnEl.style.color = '#67E8F9';
-                }
-            }
             if (sampleEl) {
+                var expectancyStr = meanR > 0 ? '+' + meanR.toFixed(3) + 'R' : meanR.toFixed(3) + 'R';
                 if (n < 30) {
-                    sampleEl.textContent = 'Under 30 trades is considered too small for statistical inference. Most statisticians require 100+ trades minimum, and 200+ for reliable conclusions. Every trade you log narrows the uncertainty.';
+                    sampleEl.textContent = 'Under 30 trades is too small for statistical inference. Every trade you log narrows the uncertainty.';
                 } else if (n < 100) {
-                    sampleEl.textContent = 'At ' + n + ' trades you\'re building a sample but the confidence interval is still wide. The difference between a 52% and 58% win rate is invisible at this sample size. Keep logging — clarity comes with volume.';
+                    sampleEl.textContent = 'At ' + n + ' trades with ' + expectancyStr + ' avg expectancy, the confidence interval is still wide. Keep logging — clarity comes with volume.';
                 } else if (n < 200) {
-                    sampleEl.textContent = 'At ' + n + ' trades your data is starting to tell a real story. The confidence interval is narrowing and patterns are becoming distinguishable from noise.';
+                    sampleEl.textContent = 'At ' + n + ' trades with ' + expectancyStr + ' avg expectancy, your data is telling a real story. Edge detection tests whether this expectancy is distinguishable from zero.';
                 } else {
-                    sampleEl.textContent = 'At ' + n + ' trades you have a meaningful dataset. Statistical tests at this sample size can reliably distinguish a real edge from random variance.';
+                    sampleEl.textContent = 'At ' + n + ' trades with ' + expectancyStr + ' avg expectancy per trade, statistical tests can reliably determine whether this edge is real or variance. ' + (winRate < 0.5 ? 'A sub-50% win rate doesn\'t mean no edge — what matters is whether winners outpay losers.' : '');
                 }
             }
         }
@@ -22396,7 +22959,17 @@ try {
             var stats = getStats();
             var startEq = state.currentBalance;
             var peakEq = state.peakBalance || startEq;
-            var avgRisk = stats.blendedAvgRisk ? stats.blendedAvgRisk / startEq : 0.02;
+            
+            // Calculate avgRisk from actual trade data — same method as MC projection
+            var tradesWithRiskPath = state.trades.filter(function(t) { return t.risk && t.risk > 0; });
+            var avgRisk = 0.02;
+            var currentBalPath = Math.max(state.currentBalance, 1);
+            if (tradesWithRiskPath.length >= 3) {
+                var avgRiskDollarPath = tradesWithRiskPath.reduce(function(s, t) { return s + t.risk; }, 0) / tradesWithRiskPath.length;
+                avgRisk = avgRiskDollarPath / currentBalPath;
+            } else if (stats.blendedAvgLoss > 0) {
+                avgRisk = stats.blendedAvgLoss / currentBalPath;
+            }
             var rMultiples = [];
             state.trades.forEach(function(t) {
                 if (t.risk && t.risk > 0) rMultiples.push(t.pnl / t.risk);
@@ -22671,21 +23244,23 @@ try {
                 typeEl.style.color = currentType === 'W' ? '#34D399' : '#EF4444';
             }
             if (probLineEl) {
-                probLineEl.textContent = 'A ' + currentLen + '-' + (currentType === 'W' ? 'win' : 'loss') + ' streak has a ' + Math.round(currentProb) + '% chance of happening in ' + tradeCount + ' trades';
+                var wrPctStr = Math.round(winRate * 100) + '%';
+                probLineEl.innerHTML = 'At your current win rate (<strong style="color:rgba(255,255,255,0.8);">' + wrPctStr + '</strong>), a ' + currentLen + '-' + (currentType === 'W' ? 'win' : 'loss') + ' streak has a ' + Math.round(currentProb) + '% chance of happening in ' + tradeCount + ' trades';
             }
             
             // Verdict
             var insightEl = document.getElementById('streakInsightBox');
+            var wrPct = Math.round(winRate * 100);
             if (insightEl) {
                 if (currentProb >= 50) {
                     insightEl.className = 'dd-insight-box dd-insight-normal';
-                    insightEl.innerHTML = 'This streak is <strong style="color:#34D399;">expected</strong>. At your win rate, this happens more often than not.';
+                    insightEl.innerHTML = 'This streak is <strong style="color:#34D399;">expected</strong> at your current ' + wrPct + '% win rate. This happens more often than not.';
                 } else if (currentProb >= 15) {
                     insightEl.className = 'dd-insight-box dd-insight-normal';
-                    insightEl.innerHTML = 'This streak is <strong style="color:#D4A84B;">uncommon but not unusual</strong>. It has a ' + Math.round(currentProb) + '% chance of occurring in ' + tradeCount + ' trades.';
+                    insightEl.innerHTML = 'This streak is <strong style="color:#D4A84B;">uncommon but not unusual</strong> at a ' + wrPct + '% win rate. ' + Math.round(currentProb) + '% chance across ' + tradeCount + ' trades.';
                 } else {
                     insightEl.className = 'dd-insight-box dd-insight-warning';
-                    insightEl.innerHTML = 'This streak is <strong style="color:#EF4444;">statistically rare</strong> for your win rate. Only a ' + Math.round(currentProb) + '% chance in ' + tradeCount + ' trades. Your edge may be shifting.';
+                    insightEl.innerHTML = 'This streak is <strong style="color:#EF4444;">statistically rare</strong> at your ' + wrPct + '% win rate. Only ' + Math.round(currentProb) + '% chance in ' + tradeCount + ' trades. Your edge may be shifting.';
                 }
             }
             
